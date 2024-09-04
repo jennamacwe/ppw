@@ -32,6 +32,6 @@ Here is a preview of the cell contents:
 -------------------
 ['# Looping untuk 50 berita pertama', 'page = 1', 'while len(data) < 50:', "    response = requests.get(base_url + f'?page={page}')", "    soup = BeautifulSoup(response.content, 'html.parser')"]
 ...
-["                'tanggal_berita': date,", "                'kategori_berita': category", '            })', '', '    page += 1']
+['', '    page += 1', '', '# Mengonversi data menjadi DataFrame', 'df = pd.DataFrame(data)']
 -------------------
 
