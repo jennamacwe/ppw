@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Crawling Berita Online &#8212; My sample book</title>
+    <title>&lt;no title&gt; &#8212; My sample book</title>
   
   
   
@@ -57,10 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'berita-online';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Berita-2-kategori';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,8 +179,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Berita Online</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling Berita Online</a></li>
 </ul>
 
     </div>
@@ -251,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fberita-online.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBerita-2-kategori.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +282,7 @@
       
       
       
-      <li><a href="_sources/berita-online.ipynb" target="_blank"
+      <li><a href="_sources/Berita-2-kategori.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Crawling Berita Online</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,12 +375,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-crawling-data">Konsep Crawling Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-dan-cara-crawling-menggunakan-python">Teknik dan Cara Crawling Menggunakan Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-yang-digunakan-lybrary">Tools yang Digunakan (Lybrary)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-crawling-berita-online">Code Crawling Berita Online</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -390,119 +388,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="crawling-berita-online">
-<h1>Crawling Berita Online<a class="headerlink" href="#crawling-berita-online" title="Link to this heading">#</a></h1>
-<section id="konsep-crawling-data">
-<h2>Konsep Crawling Data<a class="headerlink" href="#konsep-crawling-data" title="Link to this heading">#</a></h2>
-<p>Crawling data adalah proses otomatis di mana sebuah program komputer (disebut “crawler” atau “spider”) menjelajahi internet untuk mengumpulkan informasi dari berbagai situs web. Bayangkan seperti laba-laba yang berjalan di seluruh jaring untuk menemukan dan mengumpulkan informasi. Crawler ini biasanya digunakan untuk mengindeks halaman web, sehingga informasi tersebut dapat dicari dan diakses dengan mudah, seperti yang dilakukan oleh mesin pencari seperti Google.</p>
-<p>Crawling digunakan untuk mengumpulkan data dari berbagai sumber web untuk analisis, pelatihan model machine learning, atau keperluan riset. Mesin pencari seperti Google menggunakan crawler untuk mengindeks halaman web sehingga dapat ditampilkan dalam hasil pencarian, dan Beberapa perusahaan menggunakan crawling untuk memantau harga produk, berita, atau ulasan secara real-time.</p>
-</section>
-<section id="teknik-dan-cara-crawling-menggunakan-python">
-<h2>Teknik dan Cara Crawling Menggunakan Python<a class="headerlink" href="#teknik-dan-cara-crawling-menggunakan-python" title="Link to this heading">#</a></h2>
-<p>Crawling data dengan Python adalah proses mengambil data dari situs web secara otomatis dengan menggunakan alat dan pustaka tertentu. Berikut adalah penjelasan langkah-langkahnya:</p>
-<ol class="arabic simple">
-<li><p>Persiapan Lingkungan (Instalasi Pustaka Python) : menginstal beberapa pustaka Python yang digunakan untuk mengakses dan memanipulasi data web. Pustaka utama yang biasanya digunakan meliputi:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Requests: Untuk mengirim permintaan HTTP ke situs web dan mengambil halaman web sebagai respons.</p></li>
-<li><p>BeautifulSoup: Untuk mem-parsing dan mengekstrak data dari konten HTML yang didapatkan dari situs web.</p></li>
-<li><p>Scrapy: Sebuah framework yang lebih canggih yang dirancang khusus untuk crawling data dalam skala besar.</p></li>
-<li><p>Selenium: Digunakan untuk situs web yang menggunakan JavaScript, di mana berinteraksi dengan elemen web yang dinamis.</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>Mengirim Permintaan HTTP : Langkah pertama dalam crawling adalah mengirimkan permintaan ke situs web target menggunakan metode HTTP, seperti GET. Hal ini memungkinkan untuk mendapatkan konten halaman web yang kemudian dapat diolah lebih lanjut.</p></li>
-<li><p>Parsing HTML
-Setelah menerima respons dari situs web, akan mendapatkan konten HTML dari halaman tersebut. HTML ini perlu diurai untuk mengekstrak informasi yang relevan seperti teks, gambar, link, atau data lain yang diinginkan.
-Pustaka seperti BeautifulSoup memungkinkan untuk mengurai struktur HTML dan menavigasi melalui elemen-elemen di dalamnya, seperti tag div, a, p, dan lainnya, untuk menemukan data yang dibutuhkan.</p></li>
-<li><p>Mengatasi Halaman Web Dinamis
-Beberapa situs web tidak menampilkan konten secara langsung dalam HTML, melainkan menggunakan JavaScript untuk memuat data secara dinamis. Untuk meng-crawl data dari situs semacam ini, perlu menggunakan alat seperti Selenium, yang dapat mengotomatiskan browser web untuk berinteraksi dengan elemen halaman (seperti klik tombol atau mengisi formulir) dan mengambil data setelah halaman sepenuhnya dimuat.</p></li>
-<li><p>Framework Scrapy
-Untuk crawling yang lebih kompleks dan dalam skala besar, Scrapy merupakan pilihan yang tepat. Framework ini memungkinkan untuk mengelola seluruh proses crawling, mulai dari mengirim permintaan, mengolah data, hingga menyimpannya dalam berbagai format. Scrapy juga mendukung fitur seperti crawling paralel, pengaturan ulang URL yang akan dikunjungi, dan middleware untuk menyesuaikan perilaku crawler.</p></li>
-<li><p>Pengaturan Batasan dan Kepatuhan
-Dalam melakukan crawling, penting untuk memperhatikan beberapa batasan agar tidak membebani server situs web yang ditargetkan. Ini termasuk mengatur interval waktu antara permintaan dan mematuhi aturan yang ditetapkan oleh situs dalam file robots.txt, yang mengatur halaman mana yang boleh di-crawl dan mana yang tidak.</p></li>
-<li><p>Penyimpanan Data
-Setelah data diekstraksi dari situs web, langkah berikutnya adalah menyimpannya. Data ini bisa disimpan dalam berbagai format seperti CSV, JSON, atau langsung dimasukkan ke dalam database. Penyimpanan ini memungkinkan untuk menganalisis data lebih lanjut atau menggunakannya untuk tujuan lain.</p></li>
-<li><p>Pemantauan dan Pemeliharaan
-Proses crawling perlu dipantau untuk memastikan bahwa tidak ada masalah yang muncul, seperti situs web yang mengubah struktur HTML mereka. Pemeliharaan rutin mungkin diperlukan untuk memperbarui crawler agar tetap efektif dalam mengumpulkan data.
-Dengan memahami dan menerapkan langkah-langkah ini, dapat melakukan crawling data menggunakan Python dengan cara yang efisien dan sesuai dengan praktik terbaik.</p></li>
-</ol>
-</section>
-<section id="tools-yang-digunakan-lybrary">
-<h2>Tools yang Digunakan (Lybrary)<a class="headerlink" href="#tools-yang-digunakan-lybrary" title="Link to this heading">#</a></h2>
-<p>Dalam proses crawling data menggunakan Python, beberapa pustaka (library) utama sering digunakan. Berikut adalah pustaka-pustaka tersebut beserta fungsinya:</p>
-<ol class="arabic simple">
-<li><p>Requests</p></li>
-</ol>
-<p>Fungsi: Mengirimkan permintaan HTTP ke situs web untuk mendapatkan data.
-Kegunaan: Mengambil konten halaman web seperti HTML, JSON, atau file lainnya.</p>
-<ol class="arabic simple" start="2">
-<li><p>BeautifulSoup (bs4)</p></li>
-</ol>
-<p>Fungsi: Mem-parsing HTML dan XML untuk mengekstrak informasi.
-Kegunaan: Menavigasi dan mencari elemen dalam struktur HTML, seperti tag div, a, p, dll., untuk mendapatkan data yang diinginkan.</p>
-<ol class="arabic simple" start="3">
-<li><p>Scrapy</p></li>
-</ol>
-<p>Fungsi: Framework komprehensif untuk crawling dan scraping data web.
-Kegunaan: Mengelola seluruh proses crawling termasuk pengiriman permintaan, parsing data, dan penyimpanan hasil. Mendukung fitur seperti pengaturan concurrency, pengelolaan antrian URL, dan pengolahan middleware.</p>
-<ol class="arabic simple" start="4">
-<li><p>Selenium</p></li>
-</ol>
-<p>Fungsi: Mengotomatiskan interaksi dengan browser web.
-Kegunaan: Cocok untuk situs web dinamis yang memerlukan interaksi pengguna, seperti klik tombol, pengisian formulir, atau berinteraksi dengan elemen yang dimuat dengan JavaScript.
-5. Pandas</p>
-<p>Fungsi: Memanipulasi dan menganalisis data dalam format tabular.
-Kegunaan: Setelah data diambil, Pandas dapat digunakan untuk membersihkan, mengolah, dan menganalisis data sebelum menyimpannya dalam format seperti CSV atau Excel.
-6. BeautifulSoup4</p>
-<p>Fungsi: Memparsing dan mengekstrak data dari halaman web.
-Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi data</p>
-</section>
-<section id="code-crawling-berita-online">
-<h2>Code Crawling Berita Online<a class="headerlink" href="#code-crawling-berita-online" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Meng-import Library yang Dibutuhkan</p></li>
-</ol>
-<ul class="simple">
-<li><p>requests: untuk mengirim permintaan HTTP ke server dan mendapatkan respons.</p></li>
-<li><p>BeautifulSoup dari bs4: untuk mem-parsing HTML dan mengekstrak informasi dari halaman web.</p></li>
-<li><p>pandas: untuk mengelola dan memanipulasi data dalam bentuk DataFrame.</p></li>
-</ul>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">133</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>         <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Menentukan URL Awal</p></li>
-</ol>
-<p>base_url menyimpan URL halaman web utama yang akan di-crawl, halaman politik dan gaya hidup dari situs Times Indonesia. Untuk setiap kategori, saya menetapkan nama kategorinya sebagai key (‘Politik’ dan ‘Gaya Hidup’) dan URL untuk setiap kategori sebagai nilai (URL untuk halaman yang menampilkan berita dalam kategori tersebut).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_urls</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Politik&#39;</span><span class="p">:</span> <span class="s1">&#39;https://timesindonesia.co.id/kanal/politik&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">:</span> <span class="s1">&#39;https://timesindonesia.co.id/kanal/gaya-hidup&#39;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Fungsi untuk Mengambil Konten Berita dari Link Detail</p></li>
-</ol>
-<p>Fungsi get_content(news_url) digunakan untuk mengambil isi berita dari halaman detail. Fungsi ini melakukan hal berikut:</p>
-<ul class="simple">
-<li><p>Mengirim permintaan GET ke news_url.</p></li>
-<li><p>Memparsing konten HTML respons menggunakan BeautifulSoup.</p></li>
-<li><p>Mencari div dengan id=”news_content” yang diharapkan berisi teks berita.</p></li>
-<li><p>Mengembalikan teks yang telah di-strip jika ditemukan, atau mengembalikan string kosong jika tidak ditemukan.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fungsi untuk mengambil konten berita dari link detail</span>
+
+<span class="c1"># URL awal</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://timesindonesia.co.id/kanal/politik&#39;</span>
+
+<span class="c1"># Fungsi untuk mengambil konten berita dari link detail</span>
 <span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="n">news_url</span><span class="p">):</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span>
     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
@@ -510,63 +450,75 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
     <span class="k">if</span> <span class="n">content_div</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">content_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">return</span> <span class="s2">&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Membuat List untuk Menyimpan Data</p></li>
-</ol>
-<p>List data dibuat untuk menyimpan informasi dari setiap artikel berita yang akan diambil.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List untuk menyimpan data</span>
+
+<span class="c1"># List untuk menyimpan data</span>
 <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Looping untuk 50 berita pertama</span>
+<span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="sa">f</span><span class="s1">&#39;?page=</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+    <span class="n">articles</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;media-body&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">article</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">articles</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="c1"># Mengambil data dari tag yang sesuai</span>
+        <span class="n">title_tag</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;h6 mt-0 mb-1&#39;</span><span class="p">)</span>
+        <span class="n">date_tag</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text-muted&#39;</span><span class="p">)</span>
+        <span class="n">link_tag</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text-light stretched-link&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">title_tag</span> <span class="ow">and</span> <span class="n">date_tag</span> <span class="ow">and</span> <span class="n">link_tag</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">title_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">date</span> <span class="o">=</span> <span class="n">date_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">category</span> <span class="o">=</span> <span class="s2">&quot;Politik&quot;</span>  <span class="c1"># Kategori tetap karena berasal dari kanal Politik</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="s1">&#39;https://timesindonesia.co.id&#39;</span> <span class="o">+</span> <span class="n">link_tag</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">get_content</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+            <span class="c1"># Menyimpan data dalam dictionary dengan nomor urut</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;NO&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;Judul Berita&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                <span class="s1">&#39;Isi Berita&#39;</span><span class="p">:</span> <span class="n">content</span><span class="p">,</span>
+                <span class="s1">&#39;Tanggal Berita&#39;</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+                <span class="s1">&#39;Kategori Berita&#39;</span><span class="p">:</span> <span class="n">category</span>
+            <span class="p">})</span>
+
+    <span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Mengonversi data menjadi DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Looping untuk Mengambil 50 Berita Politik dan 50 Berita Gaya Hidup</p></li>
-</ol>
-<p>Looping ini bertujuan untuk terus mengambil data dari halaman web hingga jumlah berita yang terkumpul mencapai 50 Berita Politik dan 50 Berita Gaya Hidup dari kanal politik.</p>
-<ol class="arabic simple">
-<li><p>Looping Utama:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Variabel page diinisialisasi dengan nilai 1, yang mewakili halaman pertama.
-- Looping while len(data) &lt; 50: akan terus berjalan selama jumlah berita yang terkumpul di dalam list data belum mencapai 50.
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Mengambil Konten Setiap Halaman:
-- Dalam setiap iterasi, program mengirimkan permintaan GET ke URL halaman yang sesuai dengan page saat ini.
-- Konten HTML dari respons tersebut kemudian diparsing menggunakan BeautifulSoup.</p></li>
-<li><p>Mengidentifikasi dan Mengekstrak Artikel:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Semua artikel berita pada halaman tersebut diidentifikasi dengan mencari elemen div yang memiliki kelas media-body.
-- Looping for article in articles: digunakan untuk mengiterasi setiap artikel yang ditemukan.
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Pengambilan dan Penyimpanan Data Artikel:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Untuk setiap artikel, jika list data sudah berisi 50 berita, maka proses looping dihentikan dengan break.
-- Selanjutnya, kode mencoba untuk mengekstrak judul berita, tanggal, dan link ke halaman detail artikel dari tag HTML yang sesuai.
-- Jika semua elemen yang dibutuhkan (judul, tanggal, link) ditemukan, data tersebut diproses lebih lanjut.
-- Isi berita diambil dengan memanggil fungsi get_content(link).
-- Data dari artikel tersebut kemudian disimpan dalam list data sebagai dictionary.
-</pre></div>
-</div>
-<ol class="arabic simple" start="5">
-<li><p>Pindah ke Halaman Berikutnya:</p></li>
-</ol>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Setelah semua artikel pada halaman saat ini selesai diproses, variabel page ditingkatkan (page += 1) untuk melanjutkan ke halaman berikutnya dalam iterasi berikutnya.
-- Proses ini terus berjalan hingga list data berisi 50 berita, di mana proses looping akan berhenti.
-</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looping melalui tiap kategori</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># URL awal untuk dua kategori</span>
+<span class="n">base_urls</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Politik&#39;</span><span class="p">:</span> <span class="s1">&#39;https://timesindonesia.co.id/kanal/politik&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">:</span> <span class="s1">&#39;https://timesindonesia.co.id/kanal/gaya-hidup&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Fungsi untuk mengambil konten berita dari link detail</span>
+<span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="n">news_url</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="n">content_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;news_content&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">content_div</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">content_div</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># List untuk menyimpan data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Looping melalui tiap kategori</span>
 <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">base_url</span> <span class="ow">in</span> <span class="n">base_urls</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">category_count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Menghitung jumlah berita per kategori</span>
@@ -609,144 +561,13 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-5-c482cdd9ce4e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>                 <span class="n">date</span> <span class="o">=</span> <span class="n">date_tag</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                 <span class="n">link</span> <span class="o">=</span> <span class="s1">&#39;https://timesindonesia.co.id&#39;</span> <span class="o">+</span> <span class="n">link_tag</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">24</span>                 <span class="n">content</span> <span class="o">=</span> <span class="n">get_content</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> 
-<span class="g g-Whitespace">     </span><span class="mi">26</span>                 <span class="c1"># Menyimpan data dalam dictionary dengan nomor urut</span>
-
-<span class="nn">&lt;ipython-input-3-0611e7a7d08c&gt;</span> in <span class="ni">get_content</span><span class="nt">(news_url)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Fungsi untuk mengambil konten berita dari link detail</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="n">news_url</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">news_url</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">content_div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;news_content&#39;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="s2"> </span>
-<span class="ne">---&gt; </span><span class="mi">73</span><span class="s2">     return request(&quot;get&quot;, url, params=params, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2"> </span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span><span class="s2">     # cases, and look like a memory leak in others.</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     with sessions.Session() as session:</span>
-<span class="ne">---&gt; </span><span class="mi">59</span><span class="s2">         return session.request(method=method, url=url, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2"> </span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s2">         }</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s2">         send_kwargs.update(settings)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span><span class="s2">         resp = self.send(prep, **send_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s2">         return resp</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span><span class="s2">         # Send the request</span>
-<span class="ne">--&gt; </span><span class="mi">703</span><span class="s2">         r = adapter.send(request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span><span class="s2">         # Total elapsed time of the request (approximately)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">667</span><span class="s2">             resp = conn.urlopen(</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span><span class="s2">                 method=request.method,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span><span class="s2">                 url=url,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span><span class="s2">             # Make the request on the HTTPConnection object</span>
-<span class="ne">--&gt; </span><span class="mi">791</span><span class="s2">             response = self._make_request(</span>
-<span class="g g-Whitespace">    </span><span class="mi">792</span><span class="s2">                 conn,</span>
-<span class="g g-Whitespace">    </span><span class="mi">793</span><span class="s2">                 method,</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
-<span class="g g-Whitespace">    </span><span class="mi">535</span><span class="s2">         # Receive the response from the server</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">537</span><span class="s2">             response = conn.getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span><span class="s2">         except (BaseSSLError, OSError) as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span><span class="s2">             self._raise_timeout(err=e, url=url, timeout_value=read_timeout)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="s2">         # Get the response from http.client.HTTPConnection</span>
-<span class="ne">--&gt; </span><span class="mi">461</span><span class="s2">         httplib_response = super().getresponse()</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span><span class="s2">         try:</span>
-
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">getresponse</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1373</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1374</span><span class="s2">             try:</span>
-<span class="ne">-&gt; </span><span class="mi">1375</span><span class="s2">                 response.begin()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1376</span><span class="s2">             except ConnectionError:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1377</span><span class="s2">                 self.close()</span>
-
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">begin</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span><span class="s2">         # read until we get a non-100 response</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="s2">         while True:</span>
-<span class="ne">--&gt; </span><span class="mi">318</span><span class="s2">             version, status, reason = self._read_status()</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span><span class="s2">             if status != CONTINUE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="s2">                 break</span>
-
-<span class="nn">/usr/lib/python3.10/http/client.py</span> in <span class="ni">_read_status</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="s2">     def _read_status(self):</span>
-<span class="ne">--&gt; </span><span class="mi">279</span><span class="s2">         line = str(self.fp.readline(_MAXLINE + 1), &quot;iso-8859-1&quot;)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span><span class="s2">         if len(line) &gt; _MAXLINE:</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span><span class="s2">             raise LineTooLong(&quot;status line&quot;)</span>
-
-<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span><span class="s2">         while True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">705</span><span class="s2">                 return self._sock.recv_into(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span><span class="s2">             except timeout:</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="s2">                 self._timeout_occurred = True</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span><span class="s2">                   &quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot; %</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span><span class="s2">                   self.__class__)</span>
-<span class="ne">-&gt; </span><span class="mi">1303</span><span class="s2">             return self.read(nbytes, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1304</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1305</span><span class="s2">             return super().recv_into(buffer, nbytes, flags)</span>
-
-<span class="nn">/usr/lib/python3.10/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1157</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1158</span><span class="s2">             if buffer is not None:</span>
-<span class="ne">-&gt; </span><span class="mi">1159</span><span class="s2">                 return self._sslobj.read(len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1160</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1161</span><span class="s2">                 return self._sslobj.read(len)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
 </div>
-</div>
-</div>
-<ol class="arabic simple" start="6">
-<li><p>Menyimpan Data ke dalam File CSV</p></li>
-</ol>
-<p>DataFrame disimpan ke dalam file CSV dengan nama Tugas-Crawling-Data-Berita.csv</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan data ke dalam file CSV</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="7">
-<li><p>Mencetak Jumlah Artikel yang Berhasil Diambil</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Successfully scraped </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s1"> articles.&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita-2-kategori.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Successfully scraped </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s1"> articles.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -764,7 +585,7 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c22f2a03-a9f8-4489-bfc4-15a17fa89e61" class="colab-df-container">
+  <div id="df-c1bcdc00-ab41-49ed-a044-3e800ffd9d04" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -886,7 +707,7 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c22f2a03-a9f8-4489-bfc4-15a17fa89e61')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c1bcdc00-ab41-49ed-a044-3e800ffd9d04')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -938,12 +759,12 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c22f2a03-a9f8-4489-bfc4-15a17fa89e61 button.colab-df-convert');
+        document.querySelector('#df-c1bcdc00-ab41-49ed-a044-3e800ffd9d04 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c22f2a03-a9f8-4489-bfc4-15a17fa89e61');
+        const element = document.querySelector('#df-c1bcdc00-ab41-49ed-a044-3e800ffd9d04');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -963,8 +784,8 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
   </div>
 
 
-<div id="df-f108dd10-9db8-4477-9576-5da7aaf511af">
-  <button class="colab-df-quickchart" onclick="quickchart('df-f108dd10-9db8-4477-9576-5da7aaf511af')"
+<div id="df-4cb17ec0-52a5-4dd7-a2c9-f3e1b01e0479">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4cb17ec0-52a5-4dd7-a2c9-f3e1b01e0479')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1083,14 +904,14 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-f108dd10-9db8-4477-9576-5da7aaf511af button');
+        document.querySelector('#df-4cb17ec0-52a5-4dd7-a2c9-f3e1b01e0479 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_6b7baae3-0a3f-4419-93a7-3332fab6ca08">
+  <div id="id_ee5c8ad9-5f87-4262-bb02-457e689741f5">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1134,7 +955,7 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_6b7baae3-0a3f-4419-93a7-3332fab6ca08 button.colab-df-generate');
+        document.querySelector('#id_ee5c8ad9-5f87-4262-bb02-457e689741f5 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1149,9 +970,6 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
   </div>
 </div></div>
 </div>
-<p>link csv : <a class="reference external" href="https://drive.google.com/file/d/1oSWXN_-w-gOh4PfcJxblUcbsluoupCgi/view?usp=sharing">Hasil Crawlink Data Berita Online</a></p>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1183,15 +1001,6 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -1207,12 +1016,9 @@ Kegunaan: Mirip dengan BeautifulSoup, sering digunakan untuk proses ekstraksi da
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-crawling-data">Konsep Crawling Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-dan-cara-crawling-menggunakan-python">Teknik dan Cara Crawling Menggunakan Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-yang-digunakan-lybrary">Tools yang Digunakan (Lybrary)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-crawling-berita-online">Code Crawling Berita Online</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>
