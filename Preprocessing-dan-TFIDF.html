@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Preprosesing dan TFIDF &#8212; My sample book</title>
+    <title>Vector Space Model &#8212; My sample book</title>
   
   
   
@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Preprocessing-dan-TFIDF';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia" href="berita-online.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,8 +180,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vector Space Model</a></li>
+
+
+
+
 </ul>
 
     </div>
@@ -368,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Preprosesing dan TFIDF</h1>
+    <h1>Vector Space Model</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -378,7 +382,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprosesing dan TFIDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Vector Space Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dan-import-library-yang-dibutuhkan">Install dan Import Library yang Dibutuhkan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data">Menampilkan Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleansing"><strong>1. Cleansing</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>2. Case Folding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>3. Tokenization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words"><strong>4. Stop Words</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
 </ul>
 
@@ -392,14 +406,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="preprosesing-dan-tfidf">
-<h1>Preprosesing dan TFIDF<a class="headerlink" href="#preprosesing-dan-tfidf" title="Link to this heading">#</a></h1>
-<p>Pre-processing adalah tahap awal untuk membersihkan dan menyiapkan data dari internet agar mudah dipahami dan digunakan. Proses ini meliputi penghapusan data yang tidak relevan, format ulang data, normalisasi (menyatukan data dalam bentuk yang konsisten), dan penghilangan duplikasi. Tujuannya adalah untuk meningkatkan kualitas data sehingga analisis yang dilakukan lebih akurat dan efisien.</p>
-<p>Misalnya, dalam menganalisis teks dari sebuah situs web, pre-processing bisa melibatkan penghapusan tag HTML, stop words (kata-kata umum yang tidak penting, seperti “dan” atau “yang”), dan pengubahan kata ke dalam bentuk dasar (stemming).</p>
-<p>langkah-langkah dalam pre-processing:</p>
-<p><strong>1. Cleansing</strong></p>
-<p>proses pembersihan data dari elemen-elemen yang tidak relevan atau mengganggu (seperti URL, HTML, emoji, simbol, angka, dan tanda baca) agar data menjadi lebih fokus dan siap dianalisis. Dalam konteks teks, cleansing menghapus elemen-elemen yang tidak mempengaruhi analisis (seperti sentimen) dan menggantinya dengan spasi, sehingga struktur teks tetap utuh, ini dilakukan untuk menjaga struktur kalimat agar tetap terjaga, sehingga teks tetap mudah dibaca dan dimengerti meskipun beberapa elemen telah dihapus.</p>
-<p>Tujuannya adalah mengurangi “noise” atau kebisingan dalam data, dengan menghapus “noise”, proses cleansing membantu memastikan bahwa analisis atau model yang digunakan hanya berfokus pada informasi yang benar-benar relevan. Ini sangat penting untuk meningkatkan akurasi hasil analisis, seperti analisis sentimen dalam dokumen review.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="vector-space-model">
+<h1>Vector Space Model<a class="headerlink" href="#vector-space-model" title="Link to this heading">#</a></h1>
+<p>Vektor Space Model (VSM) adalah cara untuk mewakili teks seperti dokumen dalam bentuk angka-angka. Setiap dokumen dianggap sebagai kumpulan kata, dan setiap kata diubah menjadi angka berdasarkan seberapa sering kata itu muncul. Dokumen kemudian digambarkan sebagai vektor, atau garis dengan arah tertentu, dalam ruang yang memiliki banyak dimensi (setiap kata adalah satu dimensi). Ketika kita ingin mencari dokumen yang mirip dengan pertanyaan atau teks tertentu, kita membandingkan vektor-vektor ini dan melihat seberapa dekat mereka satu sama lain. Semakin dekat vektor-vektor tersebut, semakin mirip dokumen-dokumennya.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="install-dan-import-library-yang-dibutuhkan">
+<h1>Install dan Import Library yang Dibutuhkan<a class="headerlink" href="#install-dan-import-library-yang-dibutuhkan" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -459,6 +471,23 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
+Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">1.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">import</span> <span class="nn">re</span>
@@ -468,12 +497,18 @@ document.write(`
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
 
+<span class="c1">#stemming</span>
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+
 <span class="c1">#tfidf</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="menampilkan-data">
+<h1>Menampilkan Data<a class="headerlink" href="#menampilkan-data" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Tugas-Crawling-Data-Berita-2-kategori.csv&quot;</span><span class="p">)</span>
@@ -484,7 +519,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0fa2150f-fb4e-4939-95ce-7f5852d9848a" class="colab-df-container">
+  <div id="df-bd3ad314-604c-4339-bf9c-5bb62062cc6f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -606,7 +641,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-0fa2150f-fb4e-4939-95ce-7f5852d9848a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bd3ad314-604c-4339-bf9c-5bb62062cc6f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -658,12 +693,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-0fa2150f-fb4e-4939-95ce-7f5852d9848a button.colab-df-convert');
+        document.querySelector('#df-bd3ad314-604c-4339-bf9c-5bb62062cc6f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-0fa2150f-fb4e-4939-95ce-7f5852d9848a');
+        const element = document.querySelector('#df-bd3ad314-604c-4339-bf9c-5bb62062cc6f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -683,8 +718,8 @@ document.write(`
   </div>
 
 
-<div id="df-84adf982-0de7-4457-bbcf-e71b01c54974">
-  <button class="colab-df-quickchart" onclick="quickchart('df-84adf982-0de7-4457-bbcf-e71b01c54974')"
+<div id="df-f21b6d07-ec1f-4b48-9791-b5ba84d04b3d">
+  <button class="colab-df-quickchart" onclick="quickchart('df-f21b6d07-ec1f-4b48-9791-b5ba84d04b3d')"
             title="Suggest charts"
             style="display:none;">
 
@@ -803,14 +838,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-84adf982-0de7-4457-bbcf-e71b01c54974 button');
+        document.querySelector('#df-f21b6d07-ec1f-4b48-9791-b5ba84d04b3d button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_ccaf6741-4f38-4312-90a6-204d12dbfccb">
+  <div id="id_979fd229-261e-460c-b033-1d2ed3fd3c02">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -854,7 +889,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_ccaf6741-4f38-4312-90a6-204d12dbfccb button.colab-df-generate');
+        document.querySelector('#id_979fd229-261e-460c-b033-1d2ed3fd3c02 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -869,23 +904,33 @@ document.write(`
   </div>
 </div></div>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing">
+<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h1>
+<p>Pre-processing adalah tahap awal untuk membersihkan dan menyiapkan data dari internet agar mudah dipahami dan digunakan. Proses ini meliputi penghapusan data yang tidak relevan, format ulang data, normalisasi (menyatukan data dalam bentuk yang konsisten), dan penghilangan duplikasi. Tujuannya adalah untuk meningkatkan kualitas data sehingga analisis yang dilakukan lebih akurat dan efisien.</p>
+<p>Misalnya, dalam menganalisis teks dari sebuah situs web, pre-processing bisa melibatkan penghapusan tag HTML, stop words (kata-kata umum yang tidak penting, seperti “dan” atau “yang”), dan pengubahan kata ke dalam bentuk dasar (stemming).</p>
+<p>langkah-langkah dalam pre-processing:</p>
+<section id="cleansing">
+<h2><strong>1. Cleansing</strong><a class="headerlink" href="#cleansing" title="Link to this heading">#</a></h2>
+<p>proses pembersihan data dari elemen-elemen yang tidak relevan atau mengganggu (seperti URL, HTML, emoji, simbol, angka, dan tanda baca) agar data menjadi lebih fokus dan siap dianalisis. Dalam konteks teks, cleansing menghapus elemen-elemen yang tidak mempengaruhi analisis (seperti sentimen) dan menggantinya dengan spasi, sehingga struktur teks tetap utuh, ini dilakukan untuk menjaga struktur kalimat agar tetap terjaga, sehingga teks tetap mudah dibaca dan dimengerti meskipun beberapa elemen telah dihapus.</p>
+<p>Tujuannya adalah mengurangi “noise” atau kebisingan dalam data, dengan menghapus “noise”, proses cleansing membantu memastikan bahwa analisis atau model yang digunakan hanya berfokus pada informasi yang benar-benar relevan. Ini sangat penting untuk meningkatkan akurasi hasil analisis, seperti analisis sentimen dalam dokumen review.</p>
 <p>berikut code untuk proses Cleansing:</p>
 <p>function <code class="docutils literal notranslate"><span class="pre">remove_url</span></code> berfungsi untuk menghapus URL dari teks.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">url</span> <span class="pre">=</span> <span class="pre">re.compile(r'https?://\S+|www\.\S+')</span></code> adalah regular expression (regex) untuk mendeteksi pola URL. Pola yang dicari mencakup URL yang diawali dengan http://, https://, atau www..</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">url.sub(r'',</span> <span class="pre">data_berita)</span></code> untuk mengganti setiap URL yang ditemukan dengan string kosong <code class="docutils literal notranslate"><span class="pre">('')</span></code>, artinya URL tersebut dihapus dari teks.</p></li>
 <li><p><em>Tujuan:</em> Menghapus tag HTML dari teks.</p></li>
-<li><p><strong>html = re.compile(r’&lt;.*?&gt;’):</strong> Regex ini mencari semua tag HTML, yaitu teks yang diapit oleh tanda kurung sudut (&lt; dan &gt;).</p></li>
+<li><p><strong>html = re.compile(r’&lt;.*?&gt;’):</strong> mencari semua tag HTML, yaitu teks yang diapit oleh tanda kurung sudut (&lt; dan &gt;).</p></li>
 <li><p><strong>html.sub(r’’, data_berita):</strong> Mengganti semua tag HTML yang ditemukan dengan string kosong, sehingga tag HTML dihapus dari teks.</p></li>
 </ul>
 <p>function <code class="docutils literal notranslate"><span class="pre">remove_html</span></code> berfungsi untuk menghapus tag HTML dari teks.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">html</span> <span class="pre">=</span> <span class="pre">re.compile(r'&lt;.*?&gt;')</span></code> : Regex ini mencari semua tag HTML, yaitu teks yang diapit oleh tanda kurung sudut (&lt; dan &gt;).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">html</span> <span class="pre">=</span> <span class="pre">re.compile(r'&lt;.*?&gt;')</span></code> : mencari semua tag HTML, yaitu teks yang diapit oleh tanda kurung sudut (&lt; dan &gt;).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">html.sub(r'',</span> <span class="pre">data_berita)</span></code>: Mengganti semua tag HTML yang ditemukan dengan string kosong, sehingga tag HTML dihapus dari teks.</p></li>
 </ul>
 <p>function <code class="docutils literal notranslate"><span class="pre">remove_emoji</span></code> berfungsi untuk menghapus emoji dari teks.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">emoji_pattern</span> <span class="pre">=</span> <span class="pre">re.compile(...)</span></code>: Regex ini mendeteksi karakter emoji berdasarkan rentang kode Unicode yang terkait dengan berbagai kategori emoji.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emoji_pattern</span> <span class="pre">=</span> <span class="pre">re.compile(...)</span></code>: mendeteksi karakter emoji berdasarkan rentang kode Unicode yang terkait dengan berbagai kategori emoji.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">emoji_pattern.sub(r'',</span> <span class="pre">data_berita)</span></code>: Mengganti setiap emoji yang ditemukan dengan string kosong, sehingga emoji dihapus dari teks.</p></li>
 </ul>
 <p>function <code class="docutils literal notranslate"><span class="pre">remove_numbers</span></code> berfungsi untuk menghapus angka dari teks.</p>
@@ -894,7 +939,7 @@ document.write(`
 </ul>
 <p>function <code class="docutils literal notranslate"><span class="pre">remove_symbols</span></code> berfungsi untuk menghapus simbol yang bukan huruf, angka, atau spasi dari teks.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">re.sub(r'[^a-zA-Z0-9\s]',</span> <span class="pre">'',</span> <span class="pre">data_berita):</span></code> Regex ini mencari semua karakter yang bukan huruf (a-z, A-Z), angka (0-9), atau spasi (\s) dan menggantinya dengan string kosong, sehingga simbol dihapus dari teks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">re.sub(r'[^a-zA-Z0-9\s]',</span> <span class="pre">'',</span> <span class="pre">data_berita):</span></code> mencari semua karakter yang bukan huruf (a-z, A-Z), angka (0-9), atau spasi (\s) dan menggantinya dengan string kosong, sehingga simbol dihapus dari teks.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -934,7 +979,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9c14673c-bae3-4e8d-83aa-7bf4e4d42ed5" class="colab-df-container">
+  <div id="df-55e1c868-0aed-4172-9949-0ef7fe369df0" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1068,7 +1113,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-9c14673c-bae3-4e8d-83aa-7bf4e4d42ed5')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-55e1c868-0aed-4172-9949-0ef7fe369df0')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1120,12 +1165,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-9c14673c-bae3-4e8d-83aa-7bf4e4d42ed5 button.colab-df-convert');
+        document.querySelector('#df-55e1c868-0aed-4172-9949-0ef7fe369df0 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-9c14673c-bae3-4e8d-83aa-7bf4e4d42ed5');
+        const element = document.querySelector('#df-55e1c868-0aed-4172-9949-0ef7fe369df0');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1145,8 +1190,8 @@ document.write(`
   </div>
 
 
-<div id="df-c04486a3-34c0-494d-aac0-74885dbf7d40">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c04486a3-34c0-494d-aac0-74885dbf7d40')"
+<div id="df-28433e86-603d-415f-a352-468f878b94a5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-28433e86-603d-415f-a352-468f878b94a5')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1265,14 +1310,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c04486a3-34c0-494d-aac0-74885dbf7d40 button');
+        document.querySelector('#df-28433e86-603d-415f-a352-468f878b94a5 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_6b5f2ec2-704f-4fdf-9c3d-75f18c49a2fd">
+  <div id="id_6f3de721-962f-412d-913c-abefbd9c29e0">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1316,7 +1361,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_6b5f2ec2-704f-4fdf-9c3d-75f18c49a2fd button.colab-df-generate');
+        document.querySelector('#id_6f3de721-962f-412d-913c-abefbd9c29e0 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1331,7 +1376,9 @@ document.write(`
   </div>
 </div></div>
 </div>
-<p><strong>2. Case Folding</strong></p>
+</section>
+<section id="case-folding">
+<h2><strong>2. Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h2>
 <p>Case folding adalah proses dalam pemrosesan teks yang melibatkan konversi semua karakter dalam teks menjadi bentuk huruf kecil (lowercase). Tujuan utama dari case folding adalah untuk mengurangi variasi yang tidak perlu dalam teks yang bisa disebabkan oleh perbedaan huruf besar dan kecil.</p>
 <p>Misalnya, “Apple” dan “apple” dianggap sebagai kata yang sama setelah case folding.</p>
 <p>berikut code untuk proses Case Folding:</p>
@@ -1359,7 +1406,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e26a7707-a1dd-4c0d-bf06-8b0832d06509" class="colab-df-container">
+  <div id="df-594699f6-0d8b-4ca0-9530-700780a1a8ed" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1505,7 +1552,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e26a7707-a1dd-4c0d-bf06-8b0832d06509')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-594699f6-0d8b-4ca0-9530-700780a1a8ed')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1557,12 +1604,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-e26a7707-a1dd-4c0d-bf06-8b0832d06509 button.colab-df-convert');
+        document.querySelector('#df-594699f6-0d8b-4ca0-9530-700780a1a8ed button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e26a7707-a1dd-4c0d-bf06-8b0832d06509');
+        const element = document.querySelector('#df-594699f6-0d8b-4ca0-9530-700780a1a8ed');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1582,8 +1629,8 @@ document.write(`
   </div>
 
 
-<div id="df-89de02d8-4d58-4157-97aa-ec5e8e6d1fcb">
-  <button class="colab-df-quickchart" onclick="quickchart('df-89de02d8-4d58-4157-97aa-ec5e8e6d1fcb')"
+<div id="df-a25d70d2-a3e9-405a-b4bf-1fad8b843e8e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-a25d70d2-a3e9-405a-b4bf-1fad8b843e8e')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1702,14 +1749,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-89de02d8-4d58-4157-97aa-ec5e8e6d1fcb button');
+        document.querySelector('#df-a25d70d2-a3e9-405a-b4bf-1fad8b843e8e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_a5049fd0-b5f5-44cd-8daa-03294aaf5684">
+  <div id="id_9d6ac3f3-6a8c-4970-a116-ffc10007f5c5">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1753,7 +1800,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_a5049fd0-b5f5-44cd-8daa-03294aaf5684 button.colab-df-generate');
+        document.querySelector('#id_9d6ac3f3-6a8c-4970-a116-ffc10007f5c5 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1768,7 +1815,9 @@ document.write(`
   </div>
 </div></div>
 </div>
-<p><strong>3. Tokenization</strong></p>
+</section>
+<section id="tokenization">
+<h2><strong>3. Tokenization</strong><a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h2>
 <p>Tokenization adalah proses membagi teks menjadi unit-unit kata yang lebih kecil, yang disebut token. Dalam metode ini, setiap kata dalam sebuah teks diidentifikasi dan dipisahkan dari kata-kata lainnya.</p>
 <p>Misalnya, kalimat “kuncoro pergi ke kantor” di-tokenize menjadi [“kuncoro”, “pergi”, “ke”, “kantor”]. Proses ini memungkinkan analisis yang lebih terfokus pada kata-kata individu.</p>
 <p>berikut code untuk proses Tokenization:</p>
@@ -1797,7 +1846,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-11a1c06b-870b-4961-817d-a82823b5a73c" class="colab-df-container">
+  <div id="df-588c5339-576b-4ecb-910e-8d56cdf53a8f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1955,7 +2004,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-11a1c06b-870b-4961-817d-a82823b5a73c')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-588c5339-576b-4ecb-910e-8d56cdf53a8f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2007,12 +2056,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-11a1c06b-870b-4961-817d-a82823b5a73c button.colab-df-convert');
+        document.querySelector('#df-588c5339-576b-4ecb-910e-8d56cdf53a8f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-11a1c06b-870b-4961-817d-a82823b5a73c');
+        const element = document.querySelector('#df-588c5339-576b-4ecb-910e-8d56cdf53a8f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2032,8 +2081,8 @@ document.write(`
   </div>
 
 
-<div id="df-a44361f0-66b5-47f7-a5eb-56ead6f10186">
-  <button class="colab-df-quickchart" onclick="quickchart('df-a44361f0-66b5-47f7-a5eb-56ead6f10186')"
+<div id="df-710750fd-8570-4a84-8a08-dd745e0bf5a6">
+  <button class="colab-df-quickchart" onclick="quickchart('df-710750fd-8570-4a84-8a08-dd745e0bf5a6')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2152,14 +2201,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-a44361f0-66b5-47f7-a5eb-56ead6f10186 button');
+        document.querySelector('#df-710750fd-8570-4a84-8a08-dd745e0bf5a6 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_57967846-2ae8-4887-8236-916a741b7e05">
+  <div id="id_8786237c-e7b1-4ff8-a30a-ec8ac0e3a05b">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2203,7 +2252,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_57967846-2ae8-4887-8236-916a741b7e05 button.colab-df-generate');
+        document.querySelector('#id_8786237c-e7b1-4ff8-a30a-ec8ac0e3a05b button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -2218,7 +2267,9 @@ document.write(`
   </div>
 </div></div>
 </div>
-<p><strong>4. Stop Words</strong></p>
+</section>
+<section id="stop-words">
+<h2><strong>4. Stop Words</strong><a class="headerlink" href="#stop-words" title="Link to this heading">#</a></h2>
 <p>Stop word removal adalah proses menghilangkan kata-kata umum yang sering muncul dalam teks tetapi tidak memiliki makna yang signifikan dalam sebuah dokumen. Kata-kata seperti “dan,” “atau,” “adalah,” dan “di” merupakan contoh stop word dalam bahasa Indonesia. Karena kata-kata ini tidak menambah informasi penting dalam konteks analisis teks atau pencarian informasi, mereka sering diabaikan agar fokus bisa tertuju pada kata-kata yang lebih relevan.</p>
 <p>berikut code untuk proses Stop Words:</p>
 <ul class="simple">
@@ -2245,11 +2296,11 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data]   Unzipping corpora/stopwords.zip.
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-a764a236-e9be-44eb-a2cb-186bbb3f81e8" class="colab-df-container">
+  <div id="df-6e0bdc4f-9404-4ace-8317-4c1f1773747b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2419,7 +2470,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-a764a236-e9be-44eb-a2cb-186bbb3f81e8')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6e0bdc4f-9404-4ace-8317-4c1f1773747b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2471,12 +2522,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-a764a236-e9be-44eb-a2cb-186bbb3f81e8 button.colab-df-convert');
+        document.querySelector('#df-6e0bdc4f-9404-4ace-8317-4c1f1773747b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-a764a236-e9be-44eb-a2cb-186bbb3f81e8');
+        const element = document.querySelector('#df-6e0bdc4f-9404-4ace-8317-4c1f1773747b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2496,8 +2547,8 @@ document.write(`
   </div>
 
 
-<div id="df-9b0ccfb5-c648-42fc-82ca-8fd92e808655">
-  <button class="colab-df-quickchart" onclick="quickchart('df-9b0ccfb5-c648-42fc-82ca-8fd92e808655')"
+<div id="df-f72fe085-7820-4af6-b84c-d2d63ecb640c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-f72fe085-7820-4af6-b84c-d2d63ecb640c')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2616,14 +2667,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-9b0ccfb5-c648-42fc-82ca-8fd92e808655 button');
+        document.querySelector('#df-f72fe085-7820-4af6-b84c-d2d63ecb640c button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_4a3702b7-8bee-4271-9555-1f7c769e4314">
+  <div id="id_63339816-b257-4edd-8c24-8bf399b67222">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2667,7 +2718,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_4a3702b7-8bee-4271-9555-1f7c769e4314 button.colab-df-generate');
+        document.querySelector('#id_63339816-b257-4edd-8c24-8bf399b67222 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -2682,35 +2733,34 @@ document.write(`
   </div>
 </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/PPW/tugas/preprosesing-berita.csv&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="tf-idf">
-<h1>TF-IDF<a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h1>
-<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan untuk menentukan seberapa penting sebuah kata dalam suatu dokumen dibandingkan dengan dokumen-dokumen lainnya. Metode ini menggabungkan dua hal: <em>Term Frequency (TF), yaitu seberapa sering kata muncul di dalam sebuah dokumen, dan **Inverse Document Frequency (IDF)</em>, yang menunjukkan seberapa jarang kata tersebut muncul di seluruh kumpulan dokumen. Dengan begitu, kata yang sering muncul di dokumen tetapi jarang ada di dokumen lain dianggap lebih penting.</p>
-<p><em>Term Frequency</em> (TF) dihitung dengan melihat seberapa banyak kata muncul di dokumen, lalu dibandingkan dengan jumlah total kata di dokumen tersebut. Sementara itu, <em>Inverse Document Frequency</em> (IDF) dihitung berdasarkan seberapa jarang kata tersebut muncul di seluruh dokumen. Jika sebuah kata jarang muncul di dokumen lain, nilai IDF-nya tinggi, yang berarti kata itu lebih spesial atau memberikan informasi yang lebih bermakna dalam dokumen tersebut.</p>
-<div class="math notranslate nohighlight">
-\[
-\text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
-\]</div>
-<p>Dimana:</p>
-<div class="math notranslate nohighlight">
-\[
-\text{TF}(t, d) = \frac{\text{Jumlah kemunculan } t \text{ dalam dokumen } d}{\text{Total jumlah kata dalam dokumen } d}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\text{IDF}(t, D) = \log\left(\frac{N}{|\{d \in D : t \in d\}|}\right)
-\]</div>
-<p>Ketika TF dan IDF dikalikan, hasilnya adalah bobot untuk setiap kata. Kata-kata yang sering muncul di dokumen tertentu tetapi jarang ada di dokumen lain akan mendapatkan bobot yang lebih tinggi, sehingga dianggap lebih penting.</p>
+<section id="stemming">
+<h2>Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
+<p>Stemming adalah proses mengubah kata-kata yang memiliki berbagai bentuk turunan menjadi bentuk dasarnya. Tujuan utama stemming adalah untuk menyederhanakan teks dengan mengonversi kata-kata seperti “berlari”, “pelari”, dan “berlarian” menjadi “lari”. Dengan demikian, komputer dapat memahami bahwa semua bentuk kata tersebut memiliki makna yang sama.</p>
+<p>berikut code untuk stemming:</p>
+<ul class="simple">
+<li><p>membuat objek <code class="docutils literal notranslate"><span class="pre">factory</span></code> dari StemmerFactory. Kemudian kita menggunakan factory tersebut untuk membuat stemmer, yang akan digunakan untuk mengubah kata-kata ke bentuk dasar.</p></li>
+<li><p>fungsi <code class="docutils literal notranslate"><span class="pre">stemming</span></code> menerima input berupa teks (dalam bentuk list of words setelah tokenisasi). Setiap kata di dalam teks tersebut akan distem menggunakan metode stem() dari objek stemmer. Hasilnya adalah daftar kata-kata yang telah distem.</p></li>
+<li><p>setelah fungsi tersebut diterapkan stemming</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x.split()</span></code> digunakan untuk memecah kalimat menjadi list kata-kata.
+Fungsi stemming kemudian diterapkan pada list kata tersebut.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'.join(...)</span></code> digunakan untuk menggabungkan kembali kata-kata yang sudah distem menjadi satu string lagi.</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;preprosesing-berita.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi stemmer</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+<span class="c1"># Fungsi stemming</span>
+<span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
+
+<span class="c1"># Terapkan stemming setelah stopwords removal</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
 
 <span class="n">df</span>
 </pre></div>
@@ -2718,7 +2768,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c6606c3a-c4f5-451b-8883-9006b3db08fd" class="colab-df-container">
+  <div id="df-7e47934a-ae09-4147-bc57-0a021a73df9b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2746,6 +2796,7 @@ document.write(`
       <th>case_folding</th>
       <th>tokenize</th>
       <th>stopword_removal</th>
+      <th>stemming</th>
     </tr>
   </thead>
   <tbody>
@@ -2758,8 +2809,9 @@ document.write(`
       <td>Politik</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
-      <td>['timesindonesia', 'jakarta', 'di', 'bawah', '...</td>
+      <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
       <td>timesindonesia jakarta kepemimpinan presiden r...</td>
+      <td>timesindonesia jakarta pimpin presiden ri prab...</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2770,7 +2822,8 @@ document.write(`
       <td>Politik</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
-      <td>['timesindonesia', 'malang', 'bakal', 'cawabup...</td>
+      <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
+      <td>timesindonesia malang cawabup malang lathifah ...</td>
       <td>timesindonesia malang cawabup malang lathifah ...</td>
     </tr>
     <tr>
@@ -2782,7 +2835,8 @@ document.write(`
       <td>Politik</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
-      <td>['timesindonesia', 'bantul', 'rois', 'syuriah'...</td>
+      <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
+      <td>timesindonesia bantul rois syuriah pcnu bantul...</td>
       <td>timesindonesia bantul rois syuriah pcnu bantul...</td>
     </tr>
     <tr>
@@ -2794,8 +2848,9 @@ document.write(`
       <td>Politik</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
-      <td>['timesindonesia', 'mojokerto', 'ribuan', 'kad...</td>
+      <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
       <td>timesindonesia mojokerto ribuan kader pkb kabu...</td>
+      <td>timesindonesia mojokerto ribu kader pkb kabupa...</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2806,11 +2861,13 @@ document.write(`
       <td>Politik</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
-      <td>['timesindonesia', 'jakarta', 'partai', 'keban...</td>
+      <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
       <td>timesindonesia jakarta partai kebangkitan bang...</td>
+      <td>timesindonesia jakarta partai bangkit bangsa p...</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2830,8 +2887,9 @@ document.write(`
       <td>Gaya Hidup</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
-      <td>['timesindonesia', 'malang', 'azquira', 'scarf...</td>
+      <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
       <td>timesindonesia malang azquira scarf menggelar ...</td>
+      <td>timesindonesia malang azquira scarf gelar acar...</td>
     </tr>
     <tr>
       <th>96</th>
@@ -2842,7 +2900,8 @@ document.write(`
       <td>Gaya Hidup</td>
       <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
       <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>['timesindonesia', 'malang', 'pada', 'minggu',...</td>
+      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
+      <td>timesindonesia malang minggu komunitas oom ir ...</td>
       <td>timesindonesia malang minggu komunitas oom ir ...</td>
     </tr>
     <tr>
@@ -2854,8 +2913,9 @@ document.write(`
       <td>Gaya Hidup</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
-      <td>['timesindonesia', 'surabaya', 'memilih', 'wew...</td>
+      <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
       <td>timesindonesia surabaya memilih wewangian peng...</td>
+      <td>timesindonesia surabaya pilih wewangian harum ...</td>
     </tr>
     <tr>
       <th>98</th>
@@ -2866,8 +2926,9 @@ document.write(`
       <td>Gaya Hidup</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
-      <td>['timesindonesia', 'magelang', 'anda', 'ingin'...</td>
+      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
       <td>timesindonesia magelang mencicipi kenikmatan s...</td>
+      <td>timesindonesia magelang cicip nikmat deret kul...</td>
     </tr>
     <tr>
       <th>99</th>
@@ -2878,17 +2939,18 @@ document.write(`
       <td>Gaya Hidup</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
-      <td>['timesindonesia', 'jakarta', 'tauco', 'adalah...</td>
+      <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
+      <td>timesindonesia jakarta tauco salah bumbu tradi...</td>
       <td>timesindonesia jakarta tauco salah bumbu tradi...</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 9 columns</p>
+<p>100 rows × 10 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c6606c3a-c4f5-451b-8883-9006b3db08fd')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7e47934a-ae09-4147-bc57-0a021a73df9b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2940,12 +3002,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c6606c3a-c4f5-451b-8883-9006b3db08fd button.colab-df-convert');
+        document.querySelector('#df-7e47934a-ae09-4147-bc57-0a021a73df9b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c6606c3a-c4f5-451b-8883-9006b3db08fd');
+        const element = document.querySelector('#df-7e47934a-ae09-4147-bc57-0a021a73df9b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2965,8 +3027,8 @@ document.write(`
   </div>
 
 
-<div id="df-c9ce76ea-1326-4100-92ae-c3b361911f45">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c9ce76ea-1326-4100-92ae-c3b361911f45')"
+<div id="df-3ded78fa-755d-4cd9-8a6e-9c0045538f1b">
+  <button class="colab-df-quickchart" onclick="quickchart('df-3ded78fa-755d-4cd9-8a6e-9c0045538f1b')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3085,14 +3147,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c9ce76ea-1326-4100-92ae-c3b361911f45 button');
+        document.querySelector('#df-3ded78fa-755d-4cd9-8a6e-9c0045538f1b button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_fa57588b-63ba-4077-b0c5-487114c3aa71">
+  <div id="id_b089f7f8-356c-4eaa-a192-9aade7f16c7c">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -3136,7 +3198,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_fa57588b-63ba-4077-b0c5-487114c3aa71 button.colab-df-generate');
+        document.querySelector('#id_b089f7f8-356c-4eaa-a192-9aade7f16c7c button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -3150,6 +3212,40 @@ document.write(`
     </div>
   </div>
 </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/PPW/tugas/preprosesing-berita.csv&quot;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tf-idf">
+<h1>TF-IDF<a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h1>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan untuk menentukan seberapa penting sebuah kata dalam suatu dokumen dibandingkan dengan dokumen-dokumen lainnya. Metode ini menggabungkan dua hal: <em>Term Frequency (TF), yaitu seberapa sering kata muncul di dalam sebuah dokumen, dan **Inverse Document Frequency (IDF)</em>, yang menunjukkan seberapa jarang kata tersebut muncul di seluruh kumpulan dokumen. Dengan begitu, kata yang sering muncul di dokumen tetapi jarang ada di dokumen lain dianggap lebih penting.</p>
+<p><em>Term Frequency</em> (TF) dihitung dengan melihat seberapa banyak kata muncul di dokumen, lalu dibandingkan dengan jumlah total kata di dokumen tersebut. Sementara itu, <em>Inverse Document Frequency</em> (IDF) dihitung berdasarkan seberapa jarang kata tersebut muncul di seluruh dokumen. Jika sebuah kata jarang muncul di dokumen lain, nilai IDF-nya tinggi, yang berarti kata itu lebih spesial atau memberikan informasi yang lebih bermakna dalam dokumen tersebut.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
+\]</div>
+<p>Dimana:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{TF}(t, d) = \frac{\text{Jumlah kemunculan } t \text{ dalam dokumen } d}{\text{Total jumlah kata dalam dokumen } d}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{IDF}(t, D) = \log\left(\frac{N}{|\{d \in D : t \in d\}|}\right)
+\]</div>
+<p>Ketika TF dan IDF dikalikan, hasilnya adalah bobot untuk setiap kata. Kata-kata yang sering muncul di dokumen tertentu tetapi jarang ada di dokumen lain akan mendapatkan bobot yang lebih tinggi, sehingga dianggap lebih penting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;preprosesing-berita.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3173,7 +3269,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-536a8b83-cd03-48b9-9bf7-254b7a00f607" class="colab-df-container">
+  <div id="df-133c7e2d-c3df-4bb8-ae7e-c4fb05787208" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3487,7 +3583,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-536a8b83-cd03-48b9-9bf7-254b7a00f607')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-133c7e2d-c3df-4bb8-ae7e-c4fb05787208')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -3539,12 +3635,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-536a8b83-cd03-48b9-9bf7-254b7a00f607 button.colab-df-convert');
+        document.querySelector('#df-133c7e2d-c3df-4bb8-ae7e-c4fb05787208 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-536a8b83-cd03-48b9-9bf7-254b7a00f607');
+        const element = document.querySelector('#df-133c7e2d-c3df-4bb8-ae7e-c4fb05787208');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3564,8 +3660,8 @@ document.write(`
   </div>
 
 
-<div id="df-07db4de8-4c43-45cd-b3b2-983a5352cb4c">
-  <button class="colab-df-quickchart" onclick="quickchart('df-07db4de8-4c43-45cd-b3b2-983a5352cb4c')"
+<div id="df-b91e4afe-97f8-4747-b6d0-f69cff0d4668">
+  <button class="colab-df-quickchart" onclick="quickchart('df-b91e4afe-97f8-4747-b6d0-f69cff0d4668')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3684,14 +3780,14 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-07db4de8-4c43-45cd-b3b2-983a5352cb4c button');
+        document.querySelector('#df-b91e4afe-97f8-4747-b6d0-f69cff0d4668 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_4f4608c3-5c13-46d3-91ca-847f6acae49a">
+  <div id="id_97bb21b4-f860-4861-adc8-e77868328a9e">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -3735,7 +3831,7 @@ document.write(`
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_4f4608c3-5c13-46d3-91ca-847f6acae49a button.colab-df-generate');
+        document.querySelector('#id_97bb21b4-f860-4861-adc8-e77868328a9e button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -3782,6 +3878,15 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="berita-online.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -3798,7 +3903,17 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preprosesing dan TFIDF</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Vector Space Model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dan-import-library-yang-dibutuhkan">Install dan Import Library yang Dibutuhkan</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data">Menampilkan Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleansing"><strong>1. Cleansing</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>2. Case Folding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>3. Tokenization</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words"><strong>4. Stop Words</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
 </ul>
 
