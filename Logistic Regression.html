@@ -400,7 +400,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-menggunakan-data-tes">Pengujian menggunakan data tes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -3766,155 +3765,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 </section>
-<section id="implementasi">
-<h2><strong>Implementasi</strong><a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load TF-IDF dan model logistic regression</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">logistic_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the TF-IDF vectorizer from the saved file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">vect</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># Load the Logistic Regression model from the saved file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># Preprocessing functions</span>
-
-<span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cleans the input text by removing URLs, HTML tags, emojis, numbers, and symbols.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Remove URLs</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?://\S+|www\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove HTML tags</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove emojis</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>  <span class="c1"># emoticons</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>  <span class="c1"># symbols &amp; pictographs</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>  <span class="c1"># transport &amp; map symbols</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;</span>  <span class="c1"># flags (iOS)</span>
-        <span class="s2">&quot;]+&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove numbers</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove symbols and keep only letters and spaces</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">data_berita</span>
-
-<span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Converts text to lowercase for normalization.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splits text into individual tokens (words).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-<span class="c1"># Download stopwords for removing them</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Removes common stopwords from the tokenized text.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
-
-<span class="c1"># Initialize the Indonesian stemmer</span>
-<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
-<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reduces words to their root forms using stemming.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
-
-<span class="c1"># Function to preprocess the input text</span>
-<span class="k">def</span> <span class="nf">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Complete preprocessing pipeline for the input news text, including URL, emoji,</span>
-<span class="sd">    number removal, case folding, tokenization, stopwords removal, and stemming.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Menggabungkan semua langkah pembersihan dalam satu fungsi</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Mengubah teks menjadi huruf kecil (case folding)</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Tokenisasi (memisahkan kata-kata)</span>
-    <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Menghapus stopwords</span>
-    <span class="n">tokens</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
-
-    <span class="c1"># Stemming (mengembalikan kata ke bentuk dasarnya)</span>
-    <span class="n">stemmed_tokens</span> <span class="o">=</span> <span class="n">stemming</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
-
-    <span class="c1"># Menggabungkan kembali kata yang sudah diolah menjadi string</span>
-    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemmed_tokens</span><span class="p">)</span>
-
-<span class="c1"># Function to predict category (Gaya Hidup or Politik)</span>
-<span class="k">def</span> <span class="nf">predict_category</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Takes preprocessed user input, transforms it using the saved TF-IDF vectorizer,</span>
-<span class="sd">    and uses the trained Logistic Regression model to predict the category (0 for</span>
-<span class="sd">    Politik, 1 for Gaya Hidup).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Preprocess the input text</span>
-    <span class="n">preprocessed_text</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Transform the preprocessed text using the loaded TF-IDF vectorizer</span>
-    <span class="n">tfidf_text</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">preprocessed_text</span><span class="p">])</span>
-
-    <span class="c1"># Predict the category using the Logistic Regression model</span>
-    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_text</span><span class="p">)</span>
-
-    <span class="c1"># Map the prediction to the corresponding category</span>
-    <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;Politik&#39;</span> <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;Gaya Hidup&#39;</span>
-
-    <span class="k">return</span> <span class="n">category</span>
-
-<span class="c1"># Example of using the function with user input</span>
-<span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan isi berita: &quot;</span><span class="p">)</span>
-<span class="n">predicted_category</span> <span class="o">=</span> <span class="n">predict_category</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kategori berita: </span><span class="si">{</span><span class="n">predicted_category</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan isi berita: Ia menyatakan bahwa penyediaan layanan online tersebut, dilakukan untuk meningkatkan kualitas layanan perizinan di Kota Surabaya melalui penyederhanaan alur, persyaratan, dan waktu sehingga memudahkan pelaku usaha untuk mengurus perizinan.  &quot;Untuk memudahkan koordinasi semua petugas pemroses perizinan, Pemkot Surabaya juga telah melakukan digitalisasi proses perizinan dimana semua layanan perizinan dilaksanakan melalui aplikasi OSS RBA (Online Single Submission Risk Based Approach) dan SSW,&quot; ujarnya.  Di samping itu, Lasidi juga menyebutkan bahwa semua layanan perizinan dimonitor langsung oleh Wali Kota Surabaya melalui dashboard dan tidak boleh ada perizinan yang terlambat.  Selain kebijakan perizinan, Pemkot juga terus berupaya membuka destinasi wisata baru agar menarik investor membuka usaha baru di Kota Surabaya sesuai potensi wilayah.  &quot;Pemkot Surabaya terus bersinergi dengan berbagai daerah dan instansi agar peran Kota Pahlawan sebagai citihub  perdagangan dan jasa menjadikan Surabaya sebagai kota ramah Investasi,&quot; tegasnya.  Hal ini diperkuat dengan Peraturan Walikota (Perwali) Surabaya Nomor 24 Tahun 2024 tentang Perubahan Kedua atas Perwali Surabaya Nomor 52 Tahun 2024 tentang Perizinan dan Non Perizinan di Kota Surabaya. Dengan demikian, Pemkot Surabaya pun menambah layanan inovasi untuk menggenjot pelaksanaan investasi di Kota Pahlawan.  &quot;Seperti inovasi Pesona Buaya, mempermudah dan melakukan jemput bola pengurusan perizinan berusaha sampai dengan selesai bagi pelaku UMK di Surabaya,&quot; tuturnya.  Tidak hanya itu, keberadaan inovasi Klinik Investasi juga dimasifkan sebagai sarana dan fasilitas bagi investor dalam mendapatkan informasi investasi potensial di Kota Surabaya dan pendampingan persyaratan dasar serta perizinan berusaha. Ada pula, inovasi Takon Sobat, yakni tanya konsultasi terkait perizinan serta solusi jawaban melalui WhatsApp.  &quot;Kemudian, inovasi Lapis Lupis atau pemberian fasilitas penyelesaian masalah dan pendampingan/bimbingan teknis untuk mengatasi hambatan investasi serta penyampaian LKPM. Serta, inovasi Wani Ngurus Izin atau konten media sosial edukasi dan informasi tata cara pengurusan perizinan,&quot; imbuhnya.  Pada sisi lain, pemkot juga melakukan peningkatan kompetensi terhadap pegawai DPMPTSP Kota Surabaya. Seperti di antaranya, memiliki sertifikat Training of Trainers, sertifikat PTSP Tingkat Lanjut, dan sertifikat PTSP tingkat dasar. Selain itu, pemkot juga melakukan penguatan pengawasan perizinan dan meningkatkan kualitas digitalisasi perizinan.   &quot;Sarana dan prasarana lainnya juga terus dikembangkan, seperti dihadirkannya Sentra Pelayanan Publik (SPP) Joyoboyo, SPP Menur, SPP Nambangan, dan SPP Pakal,&quot; jelasnya.  Meski begitu, DPMPTSP Surabaya memiliki target pertumbuhan investasi per tahun sebesar 5-7 persen sesuai dengan RPJMD Kota Surabaya tahun 2021-2026. &quot;Dalam implementasinya, capaian pertumbuhan investasi di Kota Surabaya dari tahun 2022-2023 telah melampaui target, yaitu sebesar 7,11 persen,&quot; ungkapnya.  Sementara itu, Kepala Perwakilan Ombudsman RI Provinsi Jawa Timur, Agus Muttaqin mengapresiasi Pemkot Surabaya atas upaya dan kerja kerasnya dalam melakukan inovasi percepatan pelayanan investasi, sehingga berhasil memperoleh prestasi dari Kementerian Investasi RI sebagai Kota Predikat Terbaik Pertama.  “Apresiasi untuk Pemkot Surabaya karena terus berbenah dan terus melakukan inovasi. Sudah ada MPP, bahkan ada SPP yang tersebar di tiap wilayah di Surabaya untuk menjangkau lebih luas, jadi tidak terpusat di MPP saja,” kata Agus Muttaqin.  Sejauh ini, Agus Muttaqin menilai bahwa terobosan dan inovasi yang dilakukan DPMPTSP Kota Surabaya sudah sangat baik karena mempermudah para pelaku investasi. Ke depan, ia pun berharap percepatan layanan investasi juga bisa dilaksanakan di Balai RW.   “Maka perlu ada semacam upaya untuk menyelami dan mendalami terkait tingginya harapan masyarakat, dimana setiap tahun selalu meningkat. Maka perlu ada antisipasi dari DPMPTSP Kota Surabaya untuk terus beradaptasi sesuai dengan kebutuhan masyarakat,” ujar dia.  Sebab, dalam 5-10 tahun terakhir muncul berbagai inovasi pelayanan yang didekatkan kepada masyarakat. Seperti, MPP hingga pelayanan melalui aplikasi. Dengan demikian, harapan masyarakat itulah yang harus diadaptasi oleh penyelenggara layanan.   “Selain itu, perlu semakin membuka kanal-kanal pengaduan. Khususnya pelaku investasi yang kadangkala ingin mengadu tapi takut, sehingga perlu adanya kanal pengaduan yang menjamin identitas pengadu,” pungkasnya.
-Kategori berita: Gaya Hidup
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -4000,7 +3850,6 @@ Kategori berita: Gaya Hidup
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-menggunakan-data-tes">Pengujian menggunakan data tes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
 </ul>
   </nav></div>
 
