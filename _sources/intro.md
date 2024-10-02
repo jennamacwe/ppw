@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# Pencarian dan Penambangan WEB
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Pencarian web adalah proses mencari informasi di internet menggunakan mesin pencari seperti Google, yang membantu menemukan hasil yang relevan dengan memasukkan kata kunci. Sementara itu, penambangan web adalah teknik analisis data yang digunakan untuk ekstraksi informasi dari situs web, mencakup analisis konten, struktur, dan interaksi pengguna untuk menemukan pola atau wawasan tersembunyi. Pencarian web fokus pada menemukan data yang ada, sedangkan penambangan web fokus pada mengolah dan menganalisis data untuk mendapatkan informasi baru.
 
-Check out the content pages bundled with this sample book to see more.
+## Identitas
+
+> Jennatul Macwe // 210411100151
 
 ```{tableofcontents}
 ```
