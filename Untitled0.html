@@ -1,0 +1,3654 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Untitled0';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pencarian dan Penambangan WEB
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling 100 Berita Online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Preprocessing-dan-TFIDF.html"><strong>Vector Space Model</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasi-berita.html"><strong>Klasifikasi Berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringkasan-kalimat.html">Hubungan berita dengan berita</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUntitled0.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Untitled0.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>         <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">PPW</span><span class="o">/</span><span class="n">tugas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/PPW/tugas
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>networkx<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (3.3)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (3.7.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (1.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (4.54.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (1.4.7)
+Requirement already satisfied: numpy&gt;=1.20 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (1.26.4)
+Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (24.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (10.4.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (3.1.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+
+<span class="c1">#stemming</span>
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+
+<span class="kn">import</span> <span class="nn">nltk</span>
+
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Path ke file di Google Drive (ubah sesuai lokasimu)</span>
+<span class="c1"># # file_path = &#39;/content/drive/MyDrive/PPW/tugas/satu-berita.csv&#39;</span>
+
+<span class="c1"># file_path = &#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita-2-kategori.csv&#39;</span>
+
+
+<span class="c1"># # Baca file CSV</span>
+<span class="c1"># df = pd.read_csv(file_path)</span>
+
+<span class="c1"># # Tambahkan tag &lt;eos&gt; sebagai pelabelan akhir kalimat</span>
+<span class="c1"># def add_eos_tag(text):</span>
+<span class="c1">#     return re.sub(r&#39;\.\s+&#39;, &#39; &lt;eos&gt; &#39;, text)  # Ganti titik (.) dengan &lt;eos&gt;</span>
+
+<span class="c1"># df[[&#39;Judul Berita&#39;, &#39;Isi Berita&#39;, &#39;Tanggal Berita&#39;, &#39;Kategori Berita&#39;]].iloc[1]</span>
+
+<span class="c1"># # Terapkan pelabelan akhir kalimat</span>
+<span class="c1"># df_eos = df[&#39;Isi Berita EOS&#39;] = df[&#39;Isi Berita&#39;].apply(add_eos_tag)</span>
+
+<span class="c1"># Path ke file di Google Drive (ubah sesuai lokasimu)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita-2-kategori.csv&#39;</span>
+
+<span class="c1"># Baca file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tag &lt;eos&gt; sebagai pelabelan akhir kalimat</span>
+<span class="k">def</span> <span class="nf">add_eos_tag</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\.\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &lt;eos&gt; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Ganti titik (.) dengan &lt;eos&gt;</span>
+
+<span class="c1"># Terapkan pelabelan akhir kalimat</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">add_eos_tag</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tampilkan hasil setelah pelabelan EOS</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-7fb00f77-532b-4c7d-a371-9958a2538e85" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita</th>
+      <th>Isi Berita EOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
+      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
+      <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
+      <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
+      <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
+      <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
+      <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
+      <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
+      <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
+      <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 2 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7fb00f77-532b-4c7d-a371-9958a2538e85')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-7fb00f77-532b-4c7d-a371-9958a2538e85 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-7fb00f77-532b-4c7d-a371-9958a2538e85');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-93dd7432-49ce-4ef7-85cd-36623f33e6e0">
+  <button class="colab-df-quickchart" onclick="quickchart('df-93dd7432-49ce-4ef7-85cd-36623f33e6e0')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-93dd7432-49ce-4ef7-85cd-36623f33e6e0 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path ke file di Google Drive (ubah sesuai lokasimu)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita-2-kategori.csv&#39;</span>
+
+<span class="c1"># Baca file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Tambahkan tag &lt;eos&gt; sebagai pelabelan akhir kalimat</span>
+<span class="k">def</span> <span class="nf">add_eos_tag</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\.\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &lt;eos&gt; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Ganti titik (.) dengan &lt;eos&gt;</span>
+
+<span class="c1"># Terapkan pelabelan akhir kalimat</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">add_eos_tag</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan satu berita dari DataFrame (misalnya berita pertama)</span>
+<span class="n">berita_index</span> <span class="o">=</span> <span class="mi">90</span>  <span class="c1"># Ganti dengan indeks berita</span>
+<span class="n">berita_display</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Judul Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Tanggal Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_display</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-160c8bae-c497-44be-97ed-792b174bf1ea" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul Berita</th>
+      <th>Isi Berita</th>
+      <th>Tanggal Berita</th>
+      <th>Kategori Berita</th>
+      <th>Isi Berita EOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>04/09/2024 - 17:00</td>
+      <td>Gaya Hidup</td>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-160c8bae-c497-44be-97ed-792b174bf1ea')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-160c8bae-c497-44be-97ed-792b174bf1ea button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-160c8bae-c497-44be-97ed-792b174bf1ea');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_7f0e3741-2fe8-460e-9e1b-8190001b6aea">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_display')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_7f0e3741-2fe8-460e-9e1b-8190001b6aea button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_display');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_url</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?://\S+|www\.\S+&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">url</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_html</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;(?!eos).*?&gt;&#39;</span><span class="p">)</span>  <span class="c1"># Pertahankan &lt;eos&gt;</span>
+    <span class="k">return</span> <span class="n">html</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_emoji</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+    <span class="n">emoji_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
+        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>
+        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>
+        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>
+        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;]+&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">emoji_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_numbers</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_symbols_except_eos</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+    <span class="c1"># Pertahankan &lt;eos&gt; tapi hapus simbol lainnya</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s&lt;eos&gt;]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+
+<span class="c1"># Terapkan cleansing sambil mempertahankan tag &lt;eos&gt;</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_url</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_html</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_emoji</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_symbols_except_eos</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_numbers</span><span class="p">)</span>
+
+
+<span class="n">berita_clean</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_clean</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-0d7d38a1-04f8-45ff-9f2c-91fe15c24096" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita EOS</th>
+      <th>Isi Berita Clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0d7d38a1-04f8-45ff-9f2c-91fe15c24096')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-0d7d38a1-04f8-45ff-9f2c-91fe15c24096 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-0d7d38a1-04f8-45ff-9f2c-91fe15c24096');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_6b432d51-5e62-4909-b2e9-04550cc7308a">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_clean')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_6b432d51-5e62-4909-b2e9-04550cc7308a button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_clean');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;case folding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">case_folding</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil setelah case folding</span>
+<span class="c1"># df[[&#39;Isi Berita Clean&#39;, &#39;case folding&#39;]]</span>
+
+<span class="n">berita_CF</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;case folding&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_CF</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-9b7f7b83-f7ee-41b4-9031-77a1d194b033" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita EOS</th>
+      <th>Isi Berita Clean</th>
+      <th>case folding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9b7f7b83-f7ee-41b4-9031-77a1d194b033')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-9b7f7b83-f7ee-41b4-9031-77a1d194b033 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-9b7f7b83-f7ee-41b4-9031-77a1d194b033');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_58702c83-6a88-48a7-9d11-1b87cffe1f7c">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_CF')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_58702c83-6a88-48a7-9d11-1b87cffe1f7c button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_CF');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">tokens</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;case folding&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil setelah tokenisasi</span>
+<span class="c1"># df[[&#39;case folding&#39;, &#39;tokenize&#39;]]</span>
+
+<span class="n">berita_tkn</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;case folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_tkn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-1d124833-0eb8-4c21-abfb-251737e19b49" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita EOS</th>
+      <th>Isi Berita Clean</th>
+      <th>case folding</th>
+      <th>tokenize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1d124833-0eb8-4c21-abfb-251737e19b49')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-1d124833-0eb8-4c21-abfb-251737e19b49 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-1d124833-0eb8-4c21-abfb-251737e19b49');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_1875e576-683d-4d0e-bdf5-280ce62933c4">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_tkn')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_1875e576-683d-4d0e-bdf5-280ce62933c4 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_tkn');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword removal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil setelah stopword removal</span>
+<span class="c1"># df[[&#39;tokenize&#39;, &#39;stopword removal&#39;]]</span>
+
+<span class="n">berita_SR</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;case folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword removal&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_SR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-3ea72062-67fe-4331-8376-07d17ab308e8" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita EOS</th>
+      <th>Isi Berita Clean</th>
+      <th>case folding</th>
+      <th>tokenize</th>
+      <th>stopword removal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
+      <td>[timesindonesia, magelang, mencicipi, kenikmat...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-3ea72062-67fe-4331-8376-07d17ab308e8')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-3ea72062-67fe-4331-8376-07d17ab308e8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-3ea72062-67fe-4331-8376-07d17ab308e8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_52f84fa4-2557-4386-8433-e2e7b7e70342">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_SR')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_52f84fa4-2557-4386-8433-e2e7b7e70342 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_SR');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword removal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">stemming</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil setelah stemming</span>
+<span class="c1"># df[[&#39;stopword removal&#39;, &#39;stemming&#39;]]</span>
+
+<span class="n">berita_stem</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita EOS&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi Berita Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;case folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword removal&#39;</span><span class="p">,</span> <span class="s1">&#39;stemming&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">berita_index</span><span class="p">]]</span>
+
+<span class="c1"># Tampilkan DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">berita_stem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-1c388fa1-d9fb-4281-a6ed-996f5049a968" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita EOS</th>
+      <th>Isi Berita Clean</th>
+      <th>case folding</th>
+      <th>tokenize</th>
+      <th>stopword removal</th>
+      <th>stemming</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>90</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
+      <td>[timesindonesia, magelang, mencicipi, kenikmat...</td>
+      <td>[timesindonesia, magelang, cicip, nikmat, dere...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1c388fa1-d9fb-4281-a6ed-996f5049a968')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-1c388fa1-d9fb-4281-a6ed-996f5049a968 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-1c388fa1-d9fb-4281-a6ed-996f5049a968');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_0bc435d4-6699-4503-bef4-dc4281b2283b">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('berita_stem')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_0bc435d4-6699-4503-bef4-dc4281b2283b button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('berita_stem');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split_sentences</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; eos &#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;kalimat_terpecah&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">split_sentences</span><span class="p">)</span>
+
+<span class="c1"># Atau dalam bentuk tabel (jika menggunakan pandas)</span>
+<span class="n">df_kalimat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;no&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;kalimat_terpecah&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="s1">&#39;kalimat&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;kalimat_terpecah&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">df_kalimat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-73aa740a-2f47-42a5-bf1d-62322cdb4497" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>no</th>
+      <th>kalimat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>timesindonesia jakarta pimpin presiden ri prab...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>fokus mandiri pangan energi kuat ekonomi tega ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>prabowo harap bawa indonesia era kuat regional...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>dapat kait prospek perintah prabowo rabu muhli...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>lantik presiden republik indonesia oktober pra...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>oktober prabowo media darling simbol harap rakyat</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>nama harum popularitas alami lonjak perintah k...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>bangun demokrasi sehat muhlis nilai prabowo mi...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>bagai sempat prabowo demokrasi sehat kelola ku...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>apresiasi ungkap prabowo sebut haus kuasa gang...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>prabowo acu pandang demokrasi modern kuasa tan...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>salah agenda perintah prabowo profesionalisme ...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>acara tutup kongres pan prabowo tekan intelije...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>pakai alatalat caracara duludulu</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>adu domba ngintelngintelin orang</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>intel tuh rakyat bangsa ngintelin lawan politi...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>muhlis ali sebut nyata angin segar demokrasi i...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>mantan ketua pb hmi tekan bebas ekspres bebas ...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>era pimpin prabowo kriminalisasi oposisi pers ...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>perintah suara kritis ruang bungkam beda pandang</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>turut jaga bebas kunci bangun perintah buka tr...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>muhlis apresiasi upaya prabowo galang satu rek...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>turut kuat ajak imbang fungsi oposisi</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>demokrasi oposisi jaga check and balance</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>oposisi objektif beda dasar</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>mandiri pangan energi konteks ekonomi prabowo ...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>nyata prabowo sebut indonesia takut negara man...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>salah langkah konkret ambil perintah selesai u...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>langkah upaya nyata kurang gantung bahan bakar...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>muhlis sorot berani prabowo hadap presiden pra...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>terima kasih larang kelapa sawit masuk eropa</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>kelapa sawit penting rakyat swasembada energi ...</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>muhlis sikap patut apresiasi teguh prabowo tah...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>transparansi supremasi hukum muhlis ali tekan ...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>rakyat yakin perintah prabowo benarbenar penti...</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>prabowo jaga integritas perintah bersih bebas ...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>supremasi hukum sorot utama</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>muhlis tega hukum adil sulit perintah bangun c...</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>prabowo hukum tegak pandang bulu kunci jaga pe...</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>muhlis ali menggarisbawahi komitmen prabowo be...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>nyata prabowo sisih anggar khusus berantas kor...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>indonesia macan asia muhlis ali percaya alam l...</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>wujud visi muhlis kabinet solid orientasi ting...</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>dukung usaha mikro tengah umkm kuat akses muda...</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>kelola bijak fiskal efektif kurang pajak beri ...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>dinamika global prabowo demokrasi indonesia mi...</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>prabowo demokrasi ala barat demokrasi indonesi...</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>muhlis nilai pandang relevan standar ganda ter...</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>periode tentu indonesia</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>50</td>
+      <td>muhlis ali poros pemuda indonesia awal dukung ...</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>51</td>
+      <td>momen lompat maju</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>52</td>
+      <td>ppi awal dukung konstruktif perintah prabowo m...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-73aa740a-2f47-42a5-bf1d-62322cdb4497')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-73aa740a-2f47-42a5-bf1d-62322cdb4497 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-73aa740a-2f47-42a5-bf1d-62322cdb4497');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-665ed40c-a685-429c-80ac-05c292425d3e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-665ed40c-a685-429c-80ac-05c292425d3e')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-665ed40c-a685-429c-80ac-05c292425d3e button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+  <div id="id_5ef49ec9-dd92-4a76-bf1d-361cf8c6e998">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_kalimat')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_5ef49ec9-dd92-4a76-bf1d-361cf8c6e998 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_kalimat');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data kalimat terpecah, hasil dari proses sebelumnya</span>
+<span class="n">df_kalimat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;no&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;kalimat_terpecah&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="s1">&#39;kalimat&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;kalimat_terpecah&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># 1. Menggabungkan kalimat menjadi satu string per dokumen</span>
+<span class="c1"># Jika sudah ada dataframe df_kalimat berisi kalimat-kalimat, kita bisa ambil kolom kalimat</span>
+<span class="n">dokumen</span> <span class="o">=</span> <span class="n">df_kalimat</span><span class="p">[</span><span class="s1">&#39;kalimat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>  <span class="c1"># Mengambil kalimat-kalimat sebagai list</span>
+
+<span class="c1"># 2. Inisialisasi TfidfVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
+<span class="c1"># 3. Transformasikan kalimat ke dalam representasi TF-IDF</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dokumen</span><span class="p">)</span>
+
+<span class="c1"># 4. Konversi hasilnya ke dalam DataFrame untuk visualisasi yang lebih mudah</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+
+<span class="c1"># Tampilkan hasil TF-IDF</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil TF-IDF:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tfidf_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil TF-IDF:
+        acara       acu      adil  adu    agenda      ajak    akses     aktif  \
+0   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+1   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+2   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+3   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+4   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+5   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+6   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+7   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+8   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+9   0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+10  0.000000  0.342070  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+11  0.000000  0.000000  0.000000  0.0  0.451339  0.000000  0.00000  0.000000   
+12  0.343053  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+13  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+14  0.000000  0.000000  0.000000  0.5  0.000000  0.000000  0.00000  0.000000   
+15  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+16  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+17  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+18  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+19  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+20  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.289744   
+21  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+22  0.000000  0.000000  0.000000  0.0  0.000000  0.465676  0.00000  0.000000   
+23  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+24  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+25  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+26  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+27  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+28  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+29  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+30  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+31  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+32  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+33  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+34  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+35  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+36  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+37  0.000000  0.000000  0.367048  0.0  0.000000  0.000000  0.00000  0.000000   
+38  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+39  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+40  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+41  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+42  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+43  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.31851  0.000000   
+44  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+45  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+46  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+47  0.000000  0.280406  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+48  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+49  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+50  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+51  0.000000  0.000000  0.000000  0.0  0.000000  0.000000  0.00000  0.000000   
+
+    akuntabel  akuntabilitas  ...    ungkap       uni     upaya     usaha  \
+0    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+1    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+2    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+3    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+4    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+5    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+6    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+7    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+8    0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+9    0.000000       0.000000  ...  0.381845  0.000000  0.000000  0.000000   
+10   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+11   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+12   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+13   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+14   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+15   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+16   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+17   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+18   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+19   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+20   0.289744       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+21   0.000000       0.000000  ...  0.000000  0.000000  0.410218  0.000000   
+22   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+23   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+24   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+25   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+26   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+27   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+28   0.000000       0.000000  ...  0.000000  0.000000  0.302258  0.000000   
+29   0.000000       0.000000  ...  0.000000  0.277202  0.000000  0.250924   
+30   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+31   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+32   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+33   0.000000       0.353034  ...  0.000000  0.000000  0.000000  0.000000   
+34   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+35   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+36   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+37   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+38   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+39   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+40   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+41   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+42   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+43   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.288316   
+44   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+45   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+46   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+47   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+48   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+49   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+50   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+51   0.000000       0.000000  ...  0.000000  0.000000  0.000000  0.000000   
+
+       utama      visi     waris    wibawa     wujud     yakin  
+0   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+1   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+2   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+3   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+4   0.000000  0.000000  0.000000  0.000000  0.244112  0.000000  
+5   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+6   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+7   0.000000  0.361050  0.000000  0.000000  0.000000  0.000000  
+8   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+9   0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+10  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+11  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+12  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+13  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+14  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+15  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+16  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+17  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+18  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+19  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+20  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+21  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+22  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+23  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+24  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+25  0.244701  0.000000  0.000000  0.000000  0.000000  0.000000  
+26  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+27  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+28  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+29  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+30  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+31  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+32  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+33  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+34  0.000000  0.000000  0.000000  0.000000  0.000000  0.465756  
+35  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+36  0.521712  0.000000  0.000000  0.000000  0.000000  0.000000  
+37  0.000000  0.000000  0.000000  0.367048  0.000000  0.000000  
+38  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+39  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+40  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+41  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+42  0.000000  0.219267  0.000000  0.000000  0.219267  0.000000  
+43  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+44  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+45  0.000000  0.000000  0.271926  0.000000  0.000000  0.000000  
+46  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+47  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+48  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+49  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+50  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+51  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  
+
+[52 rows x 326 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>output dari tfidf_df adalah tabel di mana setiap baris mewakili sebuah kalimat, dan setiap kolom mewakili kata-kata unik (term) dalam kalimat-kalimat tersebut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+
+<span class="c1"># Menghitung cosine similarity dari matriks TF-IDF</span>
+<span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Konversi hasil ke dalam DataFrame untuk mempermudah pembacaan</span>
+<span class="n">cosine_sim_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_sim</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dokumen</span><span class="p">))],</span>
+                                <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Kalimat </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dokumen</span><span class="p">))])</span>
+
+<span class="c1"># Tampilkan hasil cosine similarity</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cosine Similarity Matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cosine_sim_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cosine Similarity Matrix:
+             Kalimat 1  Kalimat 2  Kalimat 3  Kalimat 4  Kalimat 5  Kalimat 6  \
+Kalimat 1    1.000000   0.000000   0.053440   0.043696   0.169208   0.017131   
+Kalimat 2    0.000000   1.000000   0.052300   0.000000   0.000000   0.000000   
+Kalimat 3    0.053440   0.052300   1.000000   0.095830   0.088503   0.120806   
+Kalimat 4    0.043696   0.000000   0.095830   1.000000   0.066781   0.022990   
+Kalimat 5    0.169208   0.000000   0.088503   0.066781   1.000000   0.166360   
+Kalimat 6    0.017131   0.000000   0.120806   0.022990   0.166360   1.000000   
+Kalimat 7    0.000000   0.000000   0.058162   0.065564   0.000000   0.000000   
+Kalimat 8    0.087316   0.072030   0.088721   0.054180   0.014476   0.023472   
+Kalimat 9    0.016298   0.000000   0.016214   0.021871   0.015098   0.024480   
+Kalimat 10   0.014960   0.000000   0.014883   0.020076   0.013859   0.022471   
+Kalimat 11   0.014805   0.000000   0.038054   0.051331   0.060269   0.097722   
+Kalimat 12   0.017682   0.000000   0.017592   0.079493   0.016381   0.026560   
+Kalimat 13   0.013440   0.000000   0.013371   0.018036   0.012451   0.020188   
+Kalimat 14   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 15   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 16   0.014091   0.000000   0.014019   0.018910   0.057362   0.093009   
+Kalimat 17   0.021868   0.000000   0.098715   0.054400   0.040517   0.000000   
+Kalimat 18   0.000000   0.000000   0.070681   0.000000   0.000000   0.000000   
+Kalimat 19   0.093647   0.000000   0.118187   0.159425   0.015526   0.025174   
+Kalimat 20   0.000000   0.000000   0.000000   0.052043   0.000000   0.000000   
+Kalimat 21   0.000000   0.000000   0.000000   0.035798   0.000000   0.000000   
+Kalimat 22   0.017754   0.000000   0.045635   0.061558   0.016448   0.026669   
+Kalimat 23   0.000000   0.084096   0.056690   0.000000   0.000000   0.000000   
+Kalimat 24   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 25   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 26   0.010591   0.450664   0.010536   0.014213   0.009811   0.015908   
+Kalimat 27   0.038406   0.243299   0.103248   0.072713   0.052700   0.029930   
+Kalimat 28   0.000000   0.000000   0.000000   0.034845   0.000000   0.000000   
+Kalimat 29   0.000000   0.079224   0.000000   0.000000   0.000000   0.000000   
+Kalimat 30   0.087664   0.000000   0.067998   0.153422   0.099875   0.016313   
+Kalimat 31   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 32   0.019344   0.117145   0.019244   0.025959   0.078746   0.127680   
+Kalimat 33   0.122521   0.063149   0.128348   0.081604   0.059776   0.020578   
+Kalimat 34   0.000000   0.083761   0.064768   0.073011   0.000000   0.000000   
+Kalimat 35   0.018247   0.000000   0.018154   0.082032   0.074282   0.120443   
+Kalimat 36   0.018983   0.000000   0.048793   0.125683   0.017586   0.028514   
+Kalimat 37   0.000000   0.136744   0.000000   0.000000   0.000000   0.000000   
+Kalimat 38   0.000000   0.216294   0.022655   0.075909   0.000000   0.000000   
+Kalimat 39   0.016058   0.097249   0.015976   0.021550   0.065372   0.105995   
+Kalimat 40   0.044357   0.000000   0.145556   0.092545   0.067791   0.023337   
+Kalimat 41   0.010472   0.000000   0.010418   0.014053   0.009701   0.015729   
+Kalimat 42   0.311252   0.035217   0.177394   0.074781   0.066672   0.022952   
+Kalimat 43   0.000000   0.057471   0.014951   0.020168   0.053526   0.000000   
+Kalimat 44   0.000000   0.057519   0.038775   0.000000   0.000000   0.000000   
+Kalimat 45   0.000000   0.049190   0.000000   0.000000   0.000000   0.000000   
+Kalimat 46   0.030415   0.000000   0.049920   0.040817   0.046484   0.016002   
+Kalimat 47   0.038346   0.000000   0.062936   0.051460   0.058605   0.020175   
+Kalimat 48   0.022512   0.000000   0.063914   0.056003   0.041711   0.000000   
+Kalimat 49   0.050523   0.000000   0.100529   0.067803   0.093610   0.000000   
+Kalimat 50   0.048914   0.000000   0.368062   0.156084   0.074756   0.025735   
+Kalimat 51   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000   
+Kalimat 52   0.029652   0.000000   0.160212   0.094619   0.045318   0.015601   
+
+            Kalimat 7  Kalimat 8  Kalimat 9  Kalimat 10  ...  Kalimat 43  \
+Kalimat 1    0.000000   0.087316   0.016298    0.014960  ...    0.000000   
+Kalimat 2    0.000000   0.072030   0.000000    0.000000  ...    0.057471   
+Kalimat 3    0.058162   0.088721   0.016214    0.014883  ...    0.014951   
+Kalimat 4    0.065564   0.054180   0.021871    0.020076  ...    0.020168   
+Kalimat 5    0.000000   0.014476   0.015098    0.013859  ...    0.053526   
+Kalimat 6    0.000000   0.023472   0.024480    0.022471  ...    0.000000   
+Kalimat 7    1.000000   0.026949   0.000000    0.000000  ...    0.016366   
+Kalimat 8    0.026949   1.000000   0.208580    0.114535  ...    0.099757   
+Kalimat 9    0.000000   0.208580   1.000000    0.132911  ...    0.000000   
+Kalimat 10   0.000000   0.114535   0.132911    1.000000  ...    0.000000   
+Kalimat 11   0.025533   0.115767   0.197615    0.120737  ...    0.019509   
+Kalimat 12   0.045253   0.024228   0.025269    0.023194  ...    0.000000   
+Kalimat 13   0.000000   0.102899   0.019206    0.098509  ...    0.000000   
+Kalimat 14   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 15   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 16   0.000000   0.107882   0.020136    0.103280  ...    0.000000   
+Kalimat 17   0.060430   0.126479   0.105235    0.080676  ...    0.015534   
+Kalimat 18   0.000000   0.133354   0.139083    0.000000  ...    0.000000   
+Kalimat 19   0.000000   0.128313   0.023950    0.021984  ...    0.000000   
+Kalimat 20   0.042234   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 21   0.029051   0.081145   0.000000    0.000000  ...    0.000000   
+Kalimat 22   0.030619   0.062850   0.025372    0.144791  ...    0.023395   
+Kalimat 23   0.000000   0.078076   0.000000    0.000000  ...    0.000000   
+Kalimat 24   0.000000   0.078819   0.082205    0.000000  ...    0.000000   
+Kalimat 25   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 26   0.000000   0.014511   0.015135    0.013892  ...    0.036163   
+Kalimat 27   0.017182   0.091554   0.028474    0.094316  ...    0.047146   
+Kalimat 28   0.028277   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 29   0.000000   0.000000   0.000000    0.000000  ...    0.066275   
+Kalimat 30   0.018729   0.038444   0.015519    0.014245  ...    0.014311   
+Kalimat 31   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 32   0.000000   0.026504   0.027643    0.025373  ...    0.000000   
+Kalimat 33   0.023627   0.107125   0.019577    0.111724  ...    0.018052   
+Kalimat 34   0.106295   0.030010   0.000000    0.000000  ...    0.018225   
+Kalimat 35   0.046698   0.025002   0.026076    0.023935  ...    0.000000   
+Kalimat 36   0.081320   0.067199   0.027127    0.024900  ...    0.025014   
+Kalimat 37   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 38   0.061601   0.133997   0.000000    0.000000  ...    0.018949   
+Kalimat 39   0.000000   0.022003   0.022948    0.021064  ...    0.000000   
+Kalimat 40   0.079642   0.054999   0.022202    0.020380  ...    0.020473   
+Kalimat 41   0.000000   0.014348   0.014964    0.013736  ...    0.000000   
+Kalimat 42   0.039164   0.118236   0.021836    0.020043  ...    0.010067   
+Kalimat 43   0.016366   0.099757   0.000000    0.000000  ...    1.000000   
+Kalimat 44   0.000000   0.053402   0.000000    0.000000  ...    0.000000   
+Kalimat 45   0.000000   0.000000   0.070669    0.000000  ...    0.068885   
+Kalimat 46   0.000000   0.194652   0.110324    0.013974  ...    0.000000   
+Kalimat 47   0.000000   0.190841   0.199039    0.017618  ...    0.000000   
+Kalimat 48   0.020930   0.127573   0.000000    0.000000  ...    0.015992   
+Kalimat 49   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 50   0.131671   0.060650   0.024483    0.022473  ...    0.022576   
+Kalimat 51   0.000000   0.000000   0.000000    0.000000  ...    0.000000   
+Kalimat 52   0.079820   0.036766   0.014842    0.013624  ...    0.013686   
+
+            Kalimat 44  Kalimat 45  Kalimat 46  Kalimat 47  Kalimat 48  \
+Kalimat 1     0.000000    0.000000    0.030415    0.038346    0.022512   
+Kalimat 2     0.057519    0.049190    0.000000    0.000000    0.000000   
+Kalimat 3     0.038775    0.000000    0.049920    0.062936    0.063914   
+Kalimat 4     0.000000    0.000000    0.040817    0.051460    0.056003   
+Kalimat 5     0.000000    0.000000    0.046484    0.058605    0.041711   
+Kalimat 6     0.000000    0.000000    0.016002    0.020175    0.000000   
+Kalimat 7     0.000000    0.000000    0.000000    0.000000    0.020930   
+Kalimat 8     0.053402    0.000000    0.194652    0.190841    0.127573   
+Kalimat 9     0.000000    0.070669    0.110324    0.199039    0.000000   
+Kalimat 10    0.000000    0.000000    0.013974    0.017618    0.000000   
+Kalimat 11    0.000000    0.000000    0.100219    0.180809    0.193145   
+Kalimat 12    0.000000    0.000000    0.016517    0.020824    0.000000   
+Kalimat 13    0.000000    0.000000    0.012555    0.015828    0.000000   
+Kalimat 14    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 15    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 16    0.000000    0.000000    0.013163    0.016595    0.000000   
+Kalimat 17    0.000000    0.000000    0.158006    0.285932    0.043136   
+Kalimat 18    0.000000    0.000000    0.068091    0.128769    0.000000   
+Kalimat 19    0.000000    0.000000    0.015655    0.019737    0.000000   
+Kalimat 20    0.000000    0.000000    0.000000    0.000000    0.080566   
+Kalimat 21    0.000000    0.033175    0.000000    0.000000    0.000000   
+Kalimat 22    0.000000    0.000000    0.016585    0.020909    0.029919   
+Kalimat 23    0.062348    0.000000    0.000000    0.000000    0.000000   
+Kalimat 24    0.000000    0.053826    0.107471    0.203240    0.000000   
+Kalimat 25    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 26    0.000000    0.070304    0.009893    0.012473    0.000000   
+Kalimat 27    0.034047    0.029116    0.035876    0.045230    0.036454   
+Kalimat 28    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 29    0.000000    0.048608    0.000000    0.000000    0.000000   
+Kalimat 30    0.072345    0.000000    0.028963    0.036515    0.039738   
+Kalimat 31    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 32    0.000000    0.000000    0.018069    0.022781    0.000000   
+Kalimat 33    0.046818    0.000000    0.036536    0.046063    0.050129   
+Kalimat 34    0.000000    0.000000    0.000000    0.000000    0.023307   
+Kalimat 35    0.000000    0.000000    0.017045    0.021490    0.000000   
+Kalimat 36    0.000000    0.055479    0.017733    0.022356    0.031989   
+Kalimat 37    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 38    0.000000    0.000000    0.000000    0.000000    0.024232   
+Kalimat 39    0.000000    0.046931    0.015000    0.018912    0.078397   
+Kalimat 40    0.000000    0.000000    0.041435    0.052239    0.056850   
+Kalimat 41    0.052564    0.000000    0.009782    0.012332    0.000000   
+Kalimat 42    0.026109    0.000000    0.040751    0.098319    0.085453   
+Kalimat 43    0.000000    0.068885    0.000000    0.000000    0.015992   
+Kalimat 44    1.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 45    0.000000    1.000000    0.000000    0.000000    0.000000   
+Kalimat 46    0.000000    0.000000    1.000000    0.423715    0.021029   
+Kalimat 47    0.000000    0.000000    0.423715    1.000000    0.101080   
+Kalimat 48    0.000000    0.000000    0.021029    0.101080    1.000000   
+Kalimat 49    0.000000    0.118102    0.047195    0.059501    0.053764   
+Kalimat 50    0.086002    0.000000    0.045692    0.057606    0.062691   
+Kalimat 51    0.000000    0.000000    0.000000    0.000000    0.000000   
+Kalimat 52    0.052135    0.000000    0.027699    0.034921    0.038004   
+
+            Kalimat 49  Kalimat 50  Kalimat 51  Kalimat 52  
+Kalimat 1     0.050523    0.048914         0.0    0.029652  
+Kalimat 2     0.000000    0.000000         0.0    0.000000  
+Kalimat 3     0.100529    0.368062         0.0    0.160212  
+Kalimat 4     0.067803    0.156084         0.0    0.094619  
+Kalimat 5     0.093610    0.074756         0.0    0.045318  
+Kalimat 6     0.000000    0.025735         0.0    0.015601  
+Kalimat 7     0.000000    0.131671         0.0    0.079820  
+Kalimat 8     0.000000    0.060650         0.0    0.036766  
+Kalimat 9     0.000000    0.024483         0.0    0.014842  
+Kalimat 10    0.000000    0.022473         0.0    0.013624  
+Kalimat 11    0.000000    0.057461         0.0    0.034833  
+Kalimat 12    0.000000    0.088986         0.0    0.053944  
+Kalimat 13    0.000000    0.020190         0.0    0.012240  
+Kalimat 14    0.000000    0.000000         0.0    0.000000  
+Kalimat 15    0.000000    0.000000         0.0    0.000000  
+Kalimat 16    0.000000    0.021168         0.0    0.012832  
+Kalimat 17    0.052225    0.116210         0.0    0.070447  
+Kalimat 18    0.000000    0.000000         0.0    0.000000  
+Kalimat 19    0.000000    0.025177         0.0    0.015262  
+Kalimat 20    0.000000    0.058258         0.0    0.035317  
+Kalimat 21    0.000000    0.040073         0.0    0.024293  
+Kalimat 22    0.000000    0.068909         0.0    0.041773  
+Kalimat 23    0.000000    0.000000         0.0    0.000000  
+Kalimat 24    0.000000    0.000000         0.0    0.000000  
+Kalimat 25    0.000000    0.000000         0.0    0.000000  
+Kalimat 26    0.000000    0.015910         0.0    0.009645  
+Kalimat 27    0.044135    0.081397         0.0    0.049343  
+Kalimat 28    0.000000    0.039006         0.0    0.023646  
+Kalimat 29    0.000000    0.000000         0.0    0.072533  
+Kalimat 30    0.048111    0.072414         0.0    0.043898  
+Kalimat 31    0.000000    0.000000         0.0    0.000000  
+Kalimat 32    0.000000    0.029059         0.0    0.017616  
+Kalimat 33    0.060691    0.091349         0.0    0.055376  
+Kalimat 34    0.000000    0.146627         0.0    0.088886  
+Kalimat 35    0.000000    0.091828         0.0    0.055667  
+Kalimat 36    0.000000    0.140692         0.0    0.085289  
+Kalimat 37    0.000000    0.000000         0.0    0.000000  
+Kalimat 38    0.000000    0.084974         0.0    0.051512  
+Kalimat 39    0.000000    0.024124         0.0    0.014624  
+Kalimat 40    0.068828    0.176496         0.0    0.106993  
+Kalimat 41    0.000000    0.087901         0.0    0.053287  
+Kalimat 42    0.067692    0.119559         0.0    0.072478  
+Kalimat 43    0.000000    0.022576         0.0    0.013686  
+Kalimat 44    0.000000    0.086002         0.0    0.052135  
+Kalimat 45    0.118102    0.000000         0.0    0.000000  
+Kalimat 46    0.047195    0.045692         0.0    0.027699  
+Kalimat 47    0.059501    0.057606         0.0    0.034921  
+Kalimat 48    0.053764    0.062691         0.0    0.038004  
+Kalimat 49    1.000000    0.075900         0.0    0.046011  
+Kalimat 50    0.075900    1.000000         0.0    0.416219  
+Kalimat 51    0.000000    0.000000         1.0    0.000000  
+Kalimat 52    0.046011    0.416219         0.0    1.000000  
+
+[52 rows x 52 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Output dari cosine_sim_df adalah matriks yang menunjukkan seberapa mirip setiap kalimat dengan kalimat lainnya. Misalnya, elemen di baris 1 dan kolom 2 menunjukkan cosine similarity antara Kalimat 1 dan Kalimat 2.</p>
+<p>Jika nilai cosine similarity antara dua kalimat lebih besar atau sama dengan 0.8, kita akan memberi nilai 1 pada posisi tersebut dalam matriks adjacency; jika tidak, nilainya 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ambang batas untuk adjacency</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="c1"># Buat matriks adjacency dengan ambang batas</span>
+<span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">cosine_sim_df</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan matriks adjacency</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks Adjacency (Threshold = 0.8):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">adjacency_matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks Adjacency (Threshold = 0.8):
+             Kalimat 1  Kalimat 2  Kalimat 3  Kalimat 4  Kalimat 5  Kalimat 6  \
+Kalimat 1           1          0          0          0          0          0   
+Kalimat 2           0          1          0          0          0          0   
+Kalimat 3           0          0          1          0          0          0   
+Kalimat 4           0          0          0          1          0          0   
+Kalimat 5           0          0          0          0          1          0   
+Kalimat 6           0          0          0          0          0          1   
+Kalimat 7           0          0          0          0          0          0   
+Kalimat 8           0          0          0          0          0          0   
+Kalimat 9           0          0          0          0          0          0   
+Kalimat 10          0          0          0          0          0          0   
+Kalimat 11          0          0          0          0          0          0   
+Kalimat 12          0          0          0          0          0          0   
+Kalimat 13          0          0          0          0          0          0   
+Kalimat 14          0          0          0          0          0          0   
+Kalimat 15          0          0          0          0          0          0   
+Kalimat 16          0          0          0          0          0          0   
+Kalimat 17          0          0          0          0          0          0   
+Kalimat 18          0          0          0          0          0          0   
+Kalimat 19          0          0          0          0          0          0   
+Kalimat 20          0          0          0          0          0          0   
+Kalimat 21          0          0          0          0          0          0   
+Kalimat 22          0          0          0          0          0          0   
+Kalimat 23          0          0          0          0          0          0   
+Kalimat 24          0          0          0          0          0          0   
+Kalimat 25          0          0          0          0          0          0   
+Kalimat 26          0          0          0          0          0          0   
+Kalimat 27          0          0          0          0          0          0   
+Kalimat 28          0          0          0          0          0          0   
+Kalimat 29          0          0          0          0          0          0   
+Kalimat 30          0          0          0          0          0          0   
+Kalimat 31          0          0          0          0          0          0   
+Kalimat 32          0          0          0          0          0          0   
+Kalimat 33          0          0          0          0          0          0   
+Kalimat 34          0          0          0          0          0          0   
+Kalimat 35          0          0          0          0          0          0   
+Kalimat 36          0          0          0          0          0          0   
+Kalimat 37          0          0          0          0          0          0   
+Kalimat 38          0          0          0          0          0          0   
+Kalimat 39          0          0          0          0          0          0   
+Kalimat 40          0          0          0          0          0          0   
+Kalimat 41          0          0          0          0          0          0   
+Kalimat 42          0          0          0          0          0          0   
+Kalimat 43          0          0          0          0          0          0   
+Kalimat 44          0          0          0          0          0          0   
+Kalimat 45          0          0          0          0          0          0   
+Kalimat 46          0          0          0          0          0          0   
+Kalimat 47          0          0          0          0          0          0   
+Kalimat 48          0          0          0          0          0          0   
+Kalimat 49          0          0          0          0          0          0   
+Kalimat 50          0          0          0          0          0          0   
+Kalimat 51          0          0          0          0          0          0   
+Kalimat 52          0          0          0          0          0          0   
+
+            Kalimat 7  Kalimat 8  Kalimat 9  Kalimat 10  ...  Kalimat 43  \
+Kalimat 1           0          0          0           0  ...           0   
+Kalimat 2           0          0          0           0  ...           0   
+Kalimat 3           0          0          0           0  ...           0   
+Kalimat 4           0          0          0           0  ...           0   
+Kalimat 5           0          0          0           0  ...           0   
+Kalimat 6           0          0          0           0  ...           0   
+Kalimat 7           1          0          0           0  ...           0   
+Kalimat 8           0          1          0           0  ...           0   
+Kalimat 9           0          0          1           0  ...           0   
+Kalimat 10          0          0          0           1  ...           0   
+Kalimat 11          0          0          0           0  ...           0   
+Kalimat 12          0          0          0           0  ...           0   
+Kalimat 13          0          0          0           0  ...           0   
+Kalimat 14          0          0          0           0  ...           0   
+Kalimat 15          0          0          0           0  ...           0   
+Kalimat 16          0          0          0           0  ...           0   
+Kalimat 17          0          0          0           0  ...           0   
+Kalimat 18          0          0          0           0  ...           0   
+Kalimat 19          0          0          0           0  ...           0   
+Kalimat 20          0          0          0           0  ...           0   
+Kalimat 21          0          0          0           0  ...           0   
+Kalimat 22          0          0          0           0  ...           0   
+Kalimat 23          0          0          0           0  ...           0   
+Kalimat 24          0          0          0           0  ...           0   
+Kalimat 25          0          0          0           0  ...           0   
+Kalimat 26          0          0          0           0  ...           0   
+Kalimat 27          0          0          0           0  ...           0   
+Kalimat 28          0          0          0           0  ...           0   
+Kalimat 29          0          0          0           0  ...           0   
+Kalimat 30          0          0          0           0  ...           0   
+Kalimat 31          0          0          0           0  ...           0   
+Kalimat 32          0          0          0           0  ...           0   
+Kalimat 33          0          0          0           0  ...           0   
+Kalimat 34          0          0          0           0  ...           0   
+Kalimat 35          0          0          0           0  ...           0   
+Kalimat 36          0          0          0           0  ...           0   
+Kalimat 37          0          0          0           0  ...           0   
+Kalimat 38          0          0          0           0  ...           0   
+Kalimat 39          0          0          0           0  ...           0   
+Kalimat 40          0          0          0           0  ...           0   
+Kalimat 41          0          0          0           0  ...           0   
+Kalimat 42          0          0          0           0  ...           0   
+Kalimat 43          0          0          0           0  ...           1   
+Kalimat 44          0          0          0           0  ...           0   
+Kalimat 45          0          0          0           0  ...           0   
+Kalimat 46          0          0          0           0  ...           0   
+Kalimat 47          0          0          0           0  ...           0   
+Kalimat 48          0          0          0           0  ...           0   
+Kalimat 49          0          0          0           0  ...           0   
+Kalimat 50          0          0          0           0  ...           0   
+Kalimat 51          0          0          0           0  ...           0   
+Kalimat 52          0          0          0           0  ...           0   
+
+            Kalimat 44  Kalimat 45  Kalimat 46  Kalimat 47  Kalimat 48  \
+Kalimat 1            0           0           0           0           0   
+Kalimat 2            0           0           0           0           0   
+Kalimat 3            0           0           0           0           0   
+Kalimat 4            0           0           0           0           0   
+Kalimat 5            0           0           0           0           0   
+Kalimat 6            0           0           0           0           0   
+Kalimat 7            0           0           0           0           0   
+Kalimat 8            0           0           0           0           0   
+Kalimat 9            0           0           0           0           0   
+Kalimat 10           0           0           0           0           0   
+Kalimat 11           0           0           0           0           0   
+Kalimat 12           0           0           0           0           0   
+Kalimat 13           0           0           0           0           0   
+Kalimat 14           0           0           0           0           0   
+Kalimat 15           0           0           0           0           0   
+Kalimat 16           0           0           0           0           0   
+Kalimat 17           0           0           0           0           0   
+Kalimat 18           0           0           0           0           0   
+Kalimat 19           0           0           0           0           0   
+Kalimat 20           0           0           0           0           0   
+Kalimat 21           0           0           0           0           0   
+Kalimat 22           0           0           0           0           0   
+Kalimat 23           0           0           0           0           0   
+Kalimat 24           0           0           0           0           0   
+Kalimat 25           0           0           0           0           0   
+Kalimat 26           0           0           0           0           0   
+Kalimat 27           0           0           0           0           0   
+Kalimat 28           0           0           0           0           0   
+Kalimat 29           0           0           0           0           0   
+Kalimat 30           0           0           0           0           0   
+Kalimat 31           0           0           0           0           0   
+Kalimat 32           0           0           0           0           0   
+Kalimat 33           0           0           0           0           0   
+Kalimat 34           0           0           0           0           0   
+Kalimat 35           0           0           0           0           0   
+Kalimat 36           0           0           0           0           0   
+Kalimat 37           0           0           0           0           0   
+Kalimat 38           0           0           0           0           0   
+Kalimat 39           0           0           0           0           0   
+Kalimat 40           0           0           0           0           0   
+Kalimat 41           0           0           0           0           0   
+Kalimat 42           0           0           0           0           0   
+Kalimat 43           0           0           0           0           0   
+Kalimat 44           1           0           0           0           0   
+Kalimat 45           0           1           0           0           0   
+Kalimat 46           0           0           1           0           0   
+Kalimat 47           0           0           0           1           0   
+Kalimat 48           0           0           0           0           1   
+Kalimat 49           0           0           0           0           0   
+Kalimat 50           0           0           0           0           0   
+Kalimat 51           0           0           0           0           0   
+Kalimat 52           0           0           0           0           0   
+
+            Kalimat 49  Kalimat 50  Kalimat 51  Kalimat 52  
+Kalimat 1            0           0           0           0  
+Kalimat 2            0           0           0           0  
+Kalimat 3            0           0           0           0  
+Kalimat 4            0           0           0           0  
+Kalimat 5            0           0           0           0  
+Kalimat 6            0           0           0           0  
+Kalimat 7            0           0           0           0  
+Kalimat 8            0           0           0           0  
+Kalimat 9            0           0           0           0  
+Kalimat 10           0           0           0           0  
+Kalimat 11           0           0           0           0  
+Kalimat 12           0           0           0           0  
+Kalimat 13           0           0           0           0  
+Kalimat 14           0           0           0           0  
+Kalimat 15           0           0           0           0  
+Kalimat 16           0           0           0           0  
+Kalimat 17           0           0           0           0  
+Kalimat 18           0           0           0           0  
+Kalimat 19           0           0           0           0  
+Kalimat 20           0           0           0           0  
+Kalimat 21           0           0           0           0  
+Kalimat 22           0           0           0           0  
+Kalimat 23           0           0           0           0  
+Kalimat 24           0           0           0           0  
+Kalimat 25           0           0           0           0  
+Kalimat 26           0           0           0           0  
+Kalimat 27           0           0           0           0  
+Kalimat 28           0           0           0           0  
+Kalimat 29           0           0           0           0  
+Kalimat 30           0           0           0           0  
+Kalimat 31           0           0           0           0  
+Kalimat 32           0           0           0           0  
+Kalimat 33           0           0           0           0  
+Kalimat 34           0           0           0           0  
+Kalimat 35           0           0           0           0  
+Kalimat 36           0           0           0           0  
+Kalimat 37           0           0           0           0  
+Kalimat 38           0           0           0           0  
+Kalimat 39           0           0           0           0  
+Kalimat 40           0           0           0           0  
+Kalimat 41           0           0           0           0  
+Kalimat 42           0           0           0           0  
+Kalimat 43           0           0           0           0  
+Kalimat 44           0           0           0           0  
+Kalimat 45           0           0           0           0  
+Kalimat 46           0           0           0           0  
+Kalimat 47           0           0           0           0  
+Kalimat 48           0           0           0           0  
+Kalimat 49           1           0           0           0  
+Kalimat 50           0           1           0           0  
+Kalimat 51           0           0           1           0  
+Kalimat 52           0           0           0           1  
+
+[52 rows x 52 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Buat graph dari matriks adjacency</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_adjacency</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">)</span>
+
+<span class="c1"># Gambar graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Posisi node</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Graph Berdasarkan Matriks Adjacency (Threshold = 0.8)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  <span class="c1"># Matikan sumbu</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/74ba7743505726174f4891a82be3220d4e7d44acbfb837359d75b0b23ded23b9.png" src="_images/74ba7743505726174f4891a82be3220d4e7d44acbfb837359d75b0b23ded23b9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hitung betweenness centrality</span>
+<span class="n">betweenness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Hitung degree centrality</span>
+<span class="n">degree_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Hitung closeness centrality</span>
+<span class="n">closeness_centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil centrality dalam urutan bobot tertinggi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Betweenness Centrality:&quot;</span><span class="p">)</span>
+<span class="n">sorted_betweenness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">betweenness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">kalimat</span><span class="p">,</span> <span class="n">nilai</span> <span class="ow">in</span> <span class="n">sorted_betweenness</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">kalimat</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">nilai</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Degree Centrality:&quot;</span><span class="p">)</span>
+<span class="n">sorted_degree</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">degree_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">kalimat</span><span class="p">,</span> <span class="n">nilai</span> <span class="ow">in</span> <span class="n">sorted_degree</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">kalimat</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">nilai</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Closeness Centrality:&quot;</span><span class="p">)</span>
+<span class="n">sorted_closeness</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">closeness_centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">kalimat</span><span class="p">,</span> <span class="n">nilai</span> <span class="ow">in</span> <span class="n">sorted_closeness</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kalimat </span><span class="si">{</span><span class="n">kalimat</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">nilai</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Betweenness Centrality:
+Kalimat Kalimat 1: 0.0000
+Kalimat Kalimat 2: 0.0000
+Kalimat Kalimat 3: 0.0000
+Kalimat Kalimat 4: 0.0000
+Kalimat Kalimat 5: 0.0000
+Kalimat Kalimat 6: 0.0000
+Kalimat Kalimat 7: 0.0000
+Kalimat Kalimat 8: 0.0000
+Kalimat Kalimat 9: 0.0000
+Kalimat Kalimat 10: 0.0000
+Kalimat Kalimat 11: 0.0000
+Kalimat Kalimat 12: 0.0000
+Kalimat Kalimat 13: 0.0000
+Kalimat Kalimat 14: 0.0000
+Kalimat Kalimat 15: 0.0000
+Kalimat Kalimat 16: 0.0000
+Kalimat Kalimat 17: 0.0000
+Kalimat Kalimat 18: 0.0000
+Kalimat Kalimat 19: 0.0000
+Kalimat Kalimat 20: 0.0000
+Kalimat Kalimat 21: 0.0000
+Kalimat Kalimat 22: 0.0000
+Kalimat Kalimat 23: 0.0000
+Kalimat Kalimat 24: 0.0000
+Kalimat Kalimat 25: 0.0000
+Kalimat Kalimat 26: 0.0000
+Kalimat Kalimat 27: 0.0000
+Kalimat Kalimat 28: 0.0000
+Kalimat Kalimat 29: 0.0000
+Kalimat Kalimat 30: 0.0000
+Kalimat Kalimat 31: 0.0000
+Kalimat Kalimat 32: 0.0000
+Kalimat Kalimat 33: 0.0000
+Kalimat Kalimat 34: 0.0000
+Kalimat Kalimat 35: 0.0000
+Kalimat Kalimat 36: 0.0000
+Kalimat Kalimat 37: 0.0000
+Kalimat Kalimat 38: 0.0000
+Kalimat Kalimat 39: 0.0000
+Kalimat Kalimat 40: 0.0000
+Kalimat Kalimat 41: 0.0000
+Kalimat Kalimat 42: 0.0000
+Kalimat Kalimat 43: 0.0000
+Kalimat Kalimat 44: 0.0000
+Kalimat Kalimat 45: 0.0000
+Kalimat Kalimat 46: 0.0000
+Kalimat Kalimat 47: 0.0000
+Kalimat Kalimat 48: 0.0000
+Kalimat Kalimat 49: 0.0000
+Kalimat Kalimat 50: 0.0000
+Kalimat Kalimat 51: 0.0000
+Kalimat Kalimat 52: 0.0000
+
+Degree Centrality:
+Kalimat Kalimat 1: 0.0392
+Kalimat Kalimat 2: 0.0392
+Kalimat Kalimat 3: 0.0392
+Kalimat Kalimat 4: 0.0392
+Kalimat Kalimat 5: 0.0392
+Kalimat Kalimat 6: 0.0392
+Kalimat Kalimat 7: 0.0392
+Kalimat Kalimat 8: 0.0392
+Kalimat Kalimat 9: 0.0392
+Kalimat Kalimat 10: 0.0392
+Kalimat Kalimat 11: 0.0392
+Kalimat Kalimat 12: 0.0392
+Kalimat Kalimat 13: 0.0392
+Kalimat Kalimat 14: 0.0392
+Kalimat Kalimat 15: 0.0392
+Kalimat Kalimat 16: 0.0392
+Kalimat Kalimat 17: 0.0392
+Kalimat Kalimat 18: 0.0392
+Kalimat Kalimat 19: 0.0392
+Kalimat Kalimat 20: 0.0392
+Kalimat Kalimat 21: 0.0392
+Kalimat Kalimat 22: 0.0392
+Kalimat Kalimat 23: 0.0392
+Kalimat Kalimat 24: 0.0392
+Kalimat Kalimat 25: 0.0392
+Kalimat Kalimat 26: 0.0392
+Kalimat Kalimat 27: 0.0392
+Kalimat Kalimat 28: 0.0392
+Kalimat Kalimat 29: 0.0392
+Kalimat Kalimat 30: 0.0392
+Kalimat Kalimat 31: 0.0392
+Kalimat Kalimat 32: 0.0392
+Kalimat Kalimat 33: 0.0392
+Kalimat Kalimat 34: 0.0392
+Kalimat Kalimat 35: 0.0392
+Kalimat Kalimat 36: 0.0392
+Kalimat Kalimat 37: 0.0392
+Kalimat Kalimat 38: 0.0392
+Kalimat Kalimat 39: 0.0392
+Kalimat Kalimat 40: 0.0392
+Kalimat Kalimat 41: 0.0392
+Kalimat Kalimat 42: 0.0392
+Kalimat Kalimat 43: 0.0392
+Kalimat Kalimat 44: 0.0392
+Kalimat Kalimat 45: 0.0392
+Kalimat Kalimat 46: 0.0392
+Kalimat Kalimat 47: 0.0392
+Kalimat Kalimat 48: 0.0392
+Kalimat Kalimat 49: 0.0392
+Kalimat Kalimat 50: 0.0392
+Kalimat Kalimat 51: 0.0392
+Kalimat Kalimat 52: 0.0392
+
+Closeness Centrality:
+Kalimat Kalimat 1: 0.0000
+Kalimat Kalimat 2: 0.0000
+Kalimat Kalimat 3: 0.0000
+Kalimat Kalimat 4: 0.0000
+Kalimat Kalimat 5: 0.0000
+Kalimat Kalimat 6: 0.0000
+Kalimat Kalimat 7: 0.0000
+Kalimat Kalimat 8: 0.0000
+Kalimat Kalimat 9: 0.0000
+Kalimat Kalimat 10: 0.0000
+Kalimat Kalimat 11: 0.0000
+Kalimat Kalimat 12: 0.0000
+Kalimat Kalimat 13: 0.0000
+Kalimat Kalimat 14: 0.0000
+Kalimat Kalimat 15: 0.0000
+Kalimat Kalimat 16: 0.0000
+Kalimat Kalimat 17: 0.0000
+Kalimat Kalimat 18: 0.0000
+Kalimat Kalimat 19: 0.0000
+Kalimat Kalimat 20: 0.0000
+Kalimat Kalimat 21: 0.0000
+Kalimat Kalimat 22: 0.0000
+Kalimat Kalimat 23: 0.0000
+Kalimat Kalimat 24: 0.0000
+Kalimat Kalimat 25: 0.0000
+Kalimat Kalimat 26: 0.0000
+Kalimat Kalimat 27: 0.0000
+Kalimat Kalimat 28: 0.0000
+Kalimat Kalimat 29: 0.0000
+Kalimat Kalimat 30: 0.0000
+Kalimat Kalimat 31: 0.0000
+Kalimat Kalimat 32: 0.0000
+Kalimat Kalimat 33: 0.0000
+Kalimat Kalimat 34: 0.0000
+Kalimat Kalimat 35: 0.0000
+Kalimat Kalimat 36: 0.0000
+Kalimat Kalimat 37: 0.0000
+Kalimat Kalimat 38: 0.0000
+Kalimat Kalimat 39: 0.0000
+Kalimat Kalimat 40: 0.0000
+Kalimat Kalimat 41: 0.0000
+Kalimat Kalimat 42: 0.0000
+Kalimat Kalimat 43: 0.0000
+Kalimat Kalimat 44: 0.0000
+Kalimat Kalimat 45: 0.0000
+Kalimat Kalimat 46: 0.0000
+Kalimat Kalimat 47: 0.0000
+Kalimat Kalimat 48: 0.0000
+Kalimat Kalimat 49: 0.0000
+Kalimat Kalimat 50: 0.0000
+Kalimat Kalimat 51: 0.0000
+Kalimat Kalimat 52: 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mencetak kalimat dengan bobot tertinggi dari setiap centrality</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kalimat dengan Bobot Tertinggi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Betweenness Centrality Tertinggi: Kalimat </span><span class="si">{</span><span class="n">sorted_betweenness</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> dengan nilai </span><span class="si">{</span><span class="n">sorted_betweenness</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degree Centrality Tertinggi: Kalimat </span><span class="si">{</span><span class="n">sorted_degree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> dengan nilai </span><span class="si">{</span><span class="n">sorted_degree</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Closeness Centrality Tertinggi: Kalimat </span><span class="si">{</span><span class="n">sorted_closeness</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> dengan nilai </span><span class="si">{</span><span class="n">sorted_closeness</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kalimat dengan Bobot Tertinggi:
+Betweenness Centrality Tertinggi: Kalimat Kalimat 1 dengan nilai 0.0000
+Degree Centrality Tertinggi: Kalimat Kalimat 1 dengan nilai 0.0392
+Closeness Centrality Tertinggi: Kalimat Kalimat 1 dengan nilai 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Preprocessing-dan-TFIDF';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Logistic Regression" href="Logistic%20Regression.html" />
-    <link rel="prev" title="Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia" href="berita-online.html" />
+    <link rel="next" title="Klasifikasi Berita" href="klasifikasi-berita.html" />
+    <link rel="prev" title="Crawling 100 Berita Online" href="berita-online.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,10 +182,11 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling 100 Berita Online</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Vector Space Model</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Logistic%20Regression.html"><strong>Logistic Regression</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Implementasi.html"><strong>Implementasi Klasifikasi kategori berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasi-berita.html"><strong>Klasifikasi Berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringkasan-kalimat.html">Hubungan berita dengan berita</a></li>
+
 </ul>
 
     </div>
@@ -392,10 +393,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cossine-similiarity"><strong>Cossine Similiarity</strong></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -480,8 +478,8 @@ document.write(`
   Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
 Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ <span class=" -Color -Color-Green">153.6/209.7 kB</span> <span class=" -Color -Color-Red">4.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ <span class=" -Color -Color-Green">153.6/209.7 kB</span> <span class=" -Color -Color-Red">4.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hInstalling collected packages: Sastrawi
 Successfully installed Sastrawi-1.0.1
 </pre></div>
@@ -532,7 +530,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-66c77782-c1b0-45b6-8bcc-7b193957394f" class="colab-df-container">
+  <div id="df-b80d69de-3f12-41f5-8914-ac964603a2fa" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -654,7 +652,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-66c77782-c1b0-45b6-8bcc-7b193957394f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b80d69de-3f12-41f5-8914-ac964603a2fa')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -706,12 +704,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-66c77782-c1b0-45b6-8bcc-7b193957394f button.colab-df-convert');
+        document.querySelector('#df-b80d69de-3f12-41f5-8914-ac964603a2fa button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-66c77782-c1b0-45b6-8bcc-7b193957394f');
+        const element = document.querySelector('#df-b80d69de-3f12-41f5-8914-ac964603a2fa');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -731,8 +729,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-0914b1ea-cd5f-4d6e-a1e0-ba54666418c2">
-  <button class="colab-df-quickchart" onclick="quickchart('df-0914b1ea-cd5f-4d6e-a1e0-ba54666418c2')"
+<div id="df-3f29d5bd-fcf8-429b-9fb5-619ca839c916">
+  <button class="colab-df-quickchart" onclick="quickchart('df-3f29d5bd-fcf8-429b-9fb5-619ca839c916')"
             title="Suggest charts"
             style="display:none;">
 
@@ -851,14 +849,14 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-0914b1ea-cd5f-4d6e-a1e0-ba54666418c2 button');
+        document.querySelector('#df-3f29d5bd-fcf8-429b-9fb5-619ca839c916 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_4dcfaac3-f614-4716-86c7-11224637fa25">
+  <div id="id_f4a0b8af-07fb-4630-afa7-d9d1c0aa0f4e">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -902,7 +900,7 @@ Successfully installed Sastrawi-1.0.1
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_4dcfaac3-f614-4716-86c7-11224637fa25 button.colab-df-generate');
+        document.querySelector('#id_f4a0b8af-07fb-4630-afa7-d9d1c0aa0f4e button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -933,7 +931,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6781ce9e-4890-4474-99c4-fa1c9a085784" class="colab-df-container">
+  <div id="df-2cf7f1ae-d641-4784-bd21-16376663e8c2" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1067,7 +1065,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-6781ce9e-4890-4474-99c4-fa1c9a085784')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2cf7f1ae-d641-4784-bd21-16376663e8c2')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1119,12 +1117,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-6781ce9e-4890-4474-99c4-fa1c9a085784 button.colab-df-convert');
+        document.querySelector('#df-2cf7f1ae-d641-4784-bd21-16376663e8c2 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-6781ce9e-4890-4474-99c4-fa1c9a085784');
+        const element = document.querySelector('#df-2cf7f1ae-d641-4784-bd21-16376663e8c2');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1144,8 +1142,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-ae57967b-d8dc-4322-8f2d-2906f8a8f0b4">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ae57967b-d8dc-4322-8f2d-2906f8a8f0b4')"
+<div id="df-fd89111d-0af7-4a2e-826d-752dea4c9483">
+  <button class="colab-df-quickchart" onclick="quickchart('df-fd89111d-0af7-4a2e-826d-752dea4c9483')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1264,14 +1262,14 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ae57967b-d8dc-4322-8f2d-2906f8a8f0b4 button');
+        document.querySelector('#df-fd89111d-0af7-4a2e-826d-752dea4c9483 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_25c4c38c-8fd9-4a14-9f08-80a547ad6a6a">
+  <div id="id_f0117f2f-e760-4e3f-b0d1-612c65cbfab2">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1315,7 +1313,7 @@ Successfully installed Sastrawi-1.0.1
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_25c4c38c-8fd9-4a14-9f08-80a547ad6a6a button.colab-df-generate');
+        document.querySelector('#id_f0117f2f-e760-4e3f-b0d1-612c65cbfab2 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1334,40 +1332,15 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="cleansing">
 <h3><strong>1. Cleansing</strong><a class="headerlink" href="#cleansing" title="Link to this heading">#</a></h3>
-<p>proses pembersihan data dari elemen-elemen yang tidak relevan atau mengganggu (seperti URL, HTML, emoji, simbol, angka, dan tanda baca) agar data menjadi lebih fokus dan siap dianalisis. Dalam konteks teks, cleansing menghapus elemen-elemen yang tidak mempengaruhi analisis (seperti sentimen) dan menggantinya dengan spasi, sehingga struktur teks tetap utuh, ini dilakukan untuk menjaga struktur kalimat agar tetap terjaga, sehingga teks tetap mudah dibaca dan dimengerti meskipun beberapa elemen telah dihapus.</p>
-<p>Tujuannya adalah mengurangi “noise” atau kebisingan dalam data, dengan menghapus “noise”, proses cleansing membantu memastikan bahwa analisis atau model yang digunakan hanya berfokus pada informasi yang benar-benar relevan. Ini sangat penting untuk meningkatkan akurasi hasil analisis, seperti analisis sentimen dalam dokumen review.</p>
+<p>proses pembersihan data dari elemen-elemen yang tidak relevan atau mengganggu, cleansing menghapus elemen-elemen yang tidak mempengaruhi analisis (seperti sentimen).</p>
 <p>berikut code untuk proses Cleansing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_url</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?://\S+|www\.S+&#39;</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">url</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_html</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">html</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.#?&gt;&#39;</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">html</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_emoji</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">emoji_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;&quot;]+&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">emoji_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_numbers</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span> <span class="c1">#menghapus karakter</span>
   <span class="k">return</span> <span class="n">data_berita</span>
 
-<span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">data_berita</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_url</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_html</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_emoji</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_symbols</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_symbols</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
 <span class="n">df</span>
 </pre></div>
@@ -1375,439 +1348,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3602b546-3bb7-4f82-8d12-e47dc51405c4" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
-      <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
-      <th>cleansing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
-      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
-      <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
-      <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
-      <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
-      <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
-      <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
-      <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
-      <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
-      <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
-      <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
-      <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
-      <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
-      <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
-      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
-      <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
-    </tr>
-  </tbody>
-</table>
-<p>100 rows × 7 columns</p>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-3602b546-3bb7-4f82-8d12-e47dc51405c4')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-3602b546-3bb7-4f82-8d12-e47dc51405c4 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-3602b546-3bb7-4f82-8d12-e47dc51405c4');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-bcbf638b-a1c4-4afe-8ec2-60e0aca33c02">
-  <button class="colab-df-quickchart" onclick="quickchart('df-bcbf638b-a1c4-4afe-8ec2-60e0aca33c02')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-bcbf638b-a1c4-4afe-8ec2-60e0aca33c02 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-
-  <div id="id_316ed590-a2a6-4457-b1ed-26d207008a4b">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_316ed590-a2a6-4457-b1ed-26d207008a4b button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
-
-    </div>
-  </div>
-</div></div>
-</div>
-</section>
-<section id="case-folding">
-<h3><strong>2. Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h3>
-<p>Case folding adalah proses dalam pemrosesan teks yang melibatkan konversi semua karakter dalam teks menjadi bentuk huruf kecil (lowercase). Tujuan utama dari case folding adalah untuk mengurangi variasi yang tidak perlu dalam teks yang bisa disebabkan oleh perbedaan huruf besar dan kecil.</p>
-<p>Misalnya, “Apple” dan “apple” dianggap sebagai kata yang sama setelah case folding.</p>
-<p>berikut code untuk proses Case Folding:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-      <span class="n">lowercase_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-      <span class="k">return</span> <span class="n">lowercase_text</span>
-    <span class="k">else</span> <span class="p">:</span>
-      <span class="k">return</span> <span class="n">text</span>
-
-<span class="n">df</span> <span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">case_folding</span><span class="p">)</span>
-
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-ed08f8f3-8972-4423-8403-34f6dd707e42" class="colab-df-container">
+  <div id="df-e856a51f-e445-42a5-8751-41520c47cf95" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1922,8 +1463,8 @@ Successfully installed Sastrawi-1.0.1
       <td>01/09/2024 - 22:16</td>
       <td>Gaya Hidup</td>
       <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
     </tr>
     <tr>
       <th>97</th>
@@ -1965,7 +1506,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ed08f8f3-8972-4423-8403-34f6dd707e42')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e856a51f-e445-42a5-8751-41520c47cf95')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2017,12 +1558,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ed08f8f3-8972-4423-8403-34f6dd707e42 button.colab-df-convert');
+        document.querySelector('#df-e856a51f-e445-42a5-8751-41520c47cf95 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ed08f8f3-8972-4423-8403-34f6dd707e42');
+        const element = document.querySelector('#df-e856a51f-e445-42a5-8751-41520c47cf95');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2042,8 +1583,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-416c88c3-5fd0-4077-bb38-206e710d5c4d">
-  <button class="colab-df-quickchart" onclick="quickchart('df-416c88c3-5fd0-4077-bb38-206e710d5c4d')"
+<div id="df-7d45745b-3a08-41c5-b310-1dacc80f852b">
+  <button class="colab-df-quickchart" onclick="quickchart('df-7d45745b-3a08-41c5-b310-1dacc80f852b')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2162,14 +1703,14 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-416c88c3-5fd0-4077-bb38-206e710d5c4d button');
+        document.querySelector('#df-7d45745b-3a08-41c5-b310-1dacc80f852b button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_0b028d3c-7f4c-45c6-b7ad-90882f1f9264">
+  <div id="id_bfa2f067-21dc-48f3-80d8-b127d65e5dde">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2213,7 +1754,7 @@ Successfully installed Sastrawi-1.0.1
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_0b028d3c-7f4c-45c6-b7ad-90882f1f9264 button.colab-df-generate');
+        document.querySelector('#id_bfa2f067-21dc-48f3-80d8-b127d65e5dde button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -2226,29 +1767,8 @@ Successfully installed Sastrawi-1.0.1
 
     </div>
   </div>
-</div></div>
-</div>
-</section>
-<section id="tokenization">
-<h3><strong>3. Tokenization</strong><a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
-<p>Tokenization adalah proses membagi teks menjadi unit-unit kata yang lebih kecil, yang disebut token. Dalam metode ini, setiap kata dalam sebuah teks diidentifikasi dan dipisahkan dari kata-kata lainnya.</p>
-<p>Misalnya, kalimat “kuncoro pergi ke kantor” di-tokenize menjadi [“kuncoro”, “pergi”, “ke”, “kantor”]. Proses ini memungkinkan analisis yang lebih terfokus pada kata-kata individu.</p>
-<p>berikut code untuk proses Tokenization:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">tokens</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">tokens</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
-
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-854600f4-d16c-4388-949a-ff13ab165d91" class="colab-df-container">
+</div><div class="output text_html">
+  <div id="df-390ea5be-0a2f-42db-9269-0ff1f598326d" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2275,7 +1795,6 @@ Successfully installed Sastrawi-1.0.1
       <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
-      <th>tokenize</th>
     </tr>
   </thead>
   <tbody>
@@ -2289,7 +1808,6 @@ Successfully installed Sastrawi-1.0.1
       <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
-      <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2301,7 +1819,6 @@ Successfully installed Sastrawi-1.0.1
       <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
-      <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
     </tr>
     <tr>
       <th>2</th>
@@ -2313,7 +1830,6 @@ Successfully installed Sastrawi-1.0.1
       <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
-      <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
     </tr>
     <tr>
       <th>3</th>
@@ -2325,7 +1841,6 @@ Successfully installed Sastrawi-1.0.1
       <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
-      <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
     </tr>
     <tr>
       <th>4</th>
@@ -2337,11 +1852,9 @@ Successfully installed Sastrawi-1.0.1
       <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
-      <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -2361,7 +1874,6 @@ Successfully installed Sastrawi-1.0.1
       <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
-      <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
     </tr>
     <tr>
       <th>96</th>
@@ -2371,9 +1883,8 @@ Successfully installed Sastrawi-1.0.1
       <td>01/09/2024 - 22:16</td>
       <td>Gaya Hidup</td>
       <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
     </tr>
     <tr>
       <th>97</th>
@@ -2385,7 +1896,6 @@ Successfully installed Sastrawi-1.0.1
       <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
-      <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
     </tr>
     <tr>
       <th>98</th>
@@ -2397,7 +1907,6 @@ Successfully installed Sastrawi-1.0.1
       <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
-      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
     </tr>
     <tr>
       <th>99</th>
@@ -2409,16 +1918,15 @@ Successfully installed Sastrawi-1.0.1
       <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
-      <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 9 columns</p>
+<p>100 rows × 8 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-854600f4-d16c-4388-949a-ff13ab165d91')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-390ea5be-0a2f-42db-9269-0ff1f598326d')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2470,12 +1978,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-854600f4-d16c-4388-949a-ff13ab165d91 button.colab-df-convert');
+        document.querySelector('#df-390ea5be-0a2f-42db-9269-0ff1f598326d button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-854600f4-d16c-4388-949a-ff13ab165d91');
+        const element = document.querySelector('#df-390ea5be-0a2f-42db-9269-0ff1f598326d');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2495,8 +2003,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-bc6f95cd-0d86-4983-a3cc-0a87462ab204">
-  <button class="colab-df-quickchart" onclick="quickchart('df-bc6f95cd-0d86-4983-a3cc-0a87462ab204')"
+<div id="df-bf973101-d8d9-4035-97bf-ae15a017dc22">
+  <button class="colab-df-quickchart" onclick="quickchart('df-bf973101-d8d9-4035-97bf-ae15a017dc22')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2615,14 +2123,14 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-bc6f95cd-0d86-4983-a3cc-0a87462ab204 button');
+        document.querySelector('#df-bf973101-d8d9-4035-97bf-ae15a017dc22 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_087c5124-9496-41c7-9167-7cfc6ea0efcb">
+  <div id="id_0dd2a83a-0c20-4175-aeac-ea0689fb4d28">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2666,7 +2174,7 @@ Successfully installed Sastrawi-1.0.1
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_087c5124-9496-41c7-9167-7cfc6ea0efcb button.colab-df-generate');
+        document.querySelector('#id_0dd2a83a-0c20-4175-aeac-ea0689fb4d28 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -2676,6 +2184,673 @@ Successfully installed Sastrawi-1.0.1
       })();
     </script>
   </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="case-folding">
+<h3><strong>2. Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h3>
+<p>Case folding adalah proses dalam pemrosesan teks yang melibatkan konversi semua karakter dalam teks menjadi bentuk huruf kecil (lowercase). Tujuan utama dari case folding adalah untuk mengurangi variasi yang tidak perlu dalam teks yang bisa disebabkan oleh perbedaan huruf besar dan kecil.</p>
+<p>Misalnya, “Apple” dan “apple” dianggap sebagai kata yang sama setelah case folding.</p>
+<p>berikut code untuk proses Case Folding:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+      <span class="n">lowercase_text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+      <span class="k">return</span> <span class="n">lowercase_text</span>
+    <span class="k">else</span> <span class="p">:</span>
+      <span class="k">return</span> <span class="n">text</span>
+
+<span class="n">df</span> <span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">case_folding</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-85eac715-bfdb-40cc-9059-a8449a093b6e" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita</th>
+      <th>cleansing</th>
+      <th>case_folding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
+      <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
+      <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
+      <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
+      <td>timesindonesia malang  bakal cawabup malang la...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
+      <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
+      <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
+      <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
+      <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
+      <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
+      <td>timesindonesia jakarta  partai kebangkitan ban...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
+      <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
+      <td>timesindonesia malang  azquira scarf menggelar...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
+      <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
+      <td>timesindonesia surabaya  memilih wewangian pen...</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
+      <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
+      <td>timesindonesia jakarta  tauco adalah salah sat...</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 3 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-85eac715-bfdb-40cc-9059-a8449a093b6e')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-85eac715-bfdb-40cc-9059-a8449a093b6e button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-85eac715-bfdb-40cc-9059-a8449a093b6e');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-1bb365f1-a05f-42f7-bba1-7001a42f8da8">
+  <button class="colab-df-quickchart" onclick="quickchart('df-1bb365f1-a05f-42f7-bba1-7001a42f8da8')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-1bb365f1-a05f-42f7-bba1-7001a42f8da8 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="tokenization">
+<h3><strong>3. Tokenization</strong><a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
+<p>Tokenization adalah proses membagi teks menjadi unit-unit kata yang lebih kecil, yang disebut token. Dalam metode ini, setiap kata dalam sebuah teks diidentifikasi dan dipisahkan dari kata-kata lainnya.</p>
+<p>Misalnya, kalimat “kuncoro pergi ke kantor” di-tokenize menjadi [“kuncoro”, “pergi”, “ke”, “kantor”]. Proses ini memungkinkan analisis yang lebih terfokus pada kata-kata individu.</p>
+<p>berikut code untuk proses Tokenization:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">tokens</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-b5462c37-c135-4f18-b6e3-c4e466ba513e" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Isi Berita</th>
+      <th>cleansing</th>
+      <th>case_folding</th>
+      <th>tokenize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
+      <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
+      <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
+      <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
+      <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
+      <td>timesindonesia malang  bakal cawabup malang la...</td>
+      <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
+      <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
+      <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
+      <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
+      <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
+      <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
+      <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
+      <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
+      <td>timesindonesia jakarta  partai kebangkitan ban...</td>
+      <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
+      <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
+      <td>timesindonesia malang  azquira scarf menggelar...</td>
+      <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
+      <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
+      <td>timesindonesia surabaya  memilih wewangian pen...</td>
+      <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
+      <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
+      <td>timesindonesia magelang  anda ingin mencicipi ...</td>
+      <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
+      <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
+      <td>timesindonesia jakarta  tauco adalah salah sat...</td>
+      <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
+    </tr>
+  </tbody>
+</table>
+<p>100 rows × 4 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b5462c37-c135-4f18-b6e3-c4e466ba513e')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b5462c37-c135-4f18-b6e3-c4e466ba513e button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b5462c37-c135-4f18-b6e3-c4e466ba513e');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-9788e923-5f13-445e-acb5-ff6539edcb1c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-9788e923-5f13-445e-acb5-ff6539edcb1c')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-9788e923-5f13-445e-acb5-ff6539edcb1c button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
 
     </div>
   </div>
@@ -2696,17 +2871,17 @@ Successfully installed Sastrawi-1.0.1
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
 
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword_removal&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data]   Package stopwords is already up-to-date!
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-00bc3ca0-b6de-4104-8c8a-e4dfd3d06e34" class="colab-df-container">
+  <div id="df-1356046d-4ca0-4b34-bb00-f2497e82f86c" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2725,12 +2900,7 @@ Successfully installed Sastrawi-1.0.1
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
       <th>tokenize</th>
@@ -2740,12 +2910,7 @@ Successfully installed Sastrawi-1.0.1
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
       <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
@@ -2753,12 +2918,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
       <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
@@ -2766,12 +2926,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
       <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
@@ -2779,12 +2934,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
       <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
@@ -2792,12 +2942,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
       <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
@@ -2810,20 +2955,10 @@ Successfully installed Sastrawi-1.0.1
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
       <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
@@ -2831,25 +2966,15 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
       <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
@@ -2857,12 +2982,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
       <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
@@ -2870,12 +2990,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
       <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
@@ -2883,12 +2998,12 @@ Successfully installed Sastrawi-1.0.1
     </tr>
   </tbody>
 </table>
-<p>100 rows × 10 columns</p>
+<p>100 rows × 5 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-00bc3ca0-b6de-4104-8c8a-e4dfd3d06e34')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1356046d-4ca0-4b34-bb00-f2497e82f86c')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2940,12 +3055,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-00bc3ca0-b6de-4104-8c8a-e4dfd3d06e34 button.colab-df-convert');
+        document.querySelector('#df-1356046d-4ca0-4b34-bb00-f2497e82f86c button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-00bc3ca0-b6de-4104-8c8a-e4dfd3d06e34');
+        const element = document.querySelector('#df-1356046d-4ca0-4b34-bb00-f2497e82f86c');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2965,8 +3080,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-07ccc0d2-c932-4409-9ca3-95598d2c5b13">
-  <button class="colab-df-quickchart" onclick="quickchart('df-07ccc0d2-c932-4409-9ca3-95598d2c5b13')"
+<div id="df-e5a68c45-1e19-4fd0-98e6-15e0d979a23f">
+  <button class="colab-df-quickchart" onclick="quickchart('df-e5a68c45-1e19-4fd0-98e6-15e0d979a23f')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3085,67 +3200,12 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-07ccc0d2-c932-4409-9ca3-95598d2c5b13 button');
+        document.querySelector('#df-e5a68c45-1e19-4fd0-98e6-15e0d979a23f button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-
-  <div id="id_244ac038-3b74-4eed-972f-5b6e627fead8">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_244ac038-3b74-4eed-972f-5b6e627fead8 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
 
     </div>
   </div>
@@ -3169,13 +3229,13 @@ Successfully installed Sastrawi-1.0.1
 <span class="c1"># Terapkan stemming setelah stopwords removal</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
 
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword_removal&#39;</span><span class="p">,</span> <span class="s1">&#39;stemming&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ac9f4759-834b-48c0-9a34-aa6799f672bb" class="colab-df-container">
+  <div id="df-e403fa49-97bf-4ae0-9679-2d22ec76d6c0" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -3194,12 +3254,7 @@ Successfully installed Sastrawi-1.0.1
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
       <th>tokenize</th>
@@ -3210,12 +3265,7 @@ Successfully installed Sastrawi-1.0.1
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
       <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
@@ -3224,12 +3274,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
       <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
@@ -3238,12 +3283,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
       <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
@@ -3252,12 +3292,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
       <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
@@ -3266,12 +3301,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
       <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
@@ -3286,20 +3316,10 @@ Successfully installed Sastrawi-1.0.1
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
       <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
@@ -3308,26 +3328,16 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
       <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
@@ -3336,12 +3346,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
       <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
@@ -3350,12 +3355,7 @@ Successfully installed Sastrawi-1.0.1
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
       <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
@@ -3364,12 +3364,12 @@ Successfully installed Sastrawi-1.0.1
     </tr>
   </tbody>
 </table>
-<p>100 rows × 11 columns</p>
+<p>100 rows × 6 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ac9f4759-834b-48c0-9a34-aa6799f672bb')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-e403fa49-97bf-4ae0-9679-2d22ec76d6c0')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -3421,12 +3421,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ac9f4759-834b-48c0-9a34-aa6799f672bb button.colab-df-convert');
+        document.querySelector('#df-e403fa49-97bf-4ae0-9679-2d22ec76d6c0 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ac9f4759-834b-48c0-9a34-aa6799f672bb');
+        const element = document.querySelector('#df-e403fa49-97bf-4ae0-9679-2d22ec76d6c0');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3446,8 +3446,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-91e66794-44ec-4b58-9d56-9d3cb6d39800">
-  <button class="colab-df-quickchart" onclick="quickchart('df-91e66794-44ec-4b58-9d56-9d3cb6d39800')"
+<div id="df-15f2b541-c21d-48bf-a7f3-bb5c52cd218f">
+  <button class="colab-df-quickchart" onclick="quickchart('df-15f2b541-c21d-48bf-a7f3-bb5c52cd218f')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3566,67 +3566,12 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-91e66794-44ec-4b58-9d56-9d3cb6d39800 button');
+        document.querySelector('#df-15f2b541-c21d-48bf-a7f3-bb5c52cd218f button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-
-  <div id="id_b8364180-df9f-48f1-94cb-21bd1dd149a7">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_b8364180-df9f-48f1-94cb-21bd1dd149a7 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
 
     </div>
   </div>
@@ -3684,9 +3629,9 @@ Successfully installed Sastrawi-1.0.1
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
 
-<span class="n">X_array</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">X_array</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3698,11 +3643,11 @@ Successfully installed Sastrawi-1.0.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.01151539 ... 0.         0.         0.        ]
- [0.         0.         0.02243902 ... 0.         0.         0.        ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.         ... 0.         0.         0.08404587]
+ [0.         0.         0.         ... 0.         0.         0.08404587]
  [0.         0.         0.         ... 0.         0.         0.        ]
  ...
- [0.         0.04407944 0.02344473 ... 0.04407944 0.08815889 0.        ]
+ [0.         0.         0.         ... 0.         0.         0.        ]
  [0.         0.         0.         ... 0.         0.         0.        ]
  [0.         0.         0.         ... 0.         0.         0.        ]]
 </pre></div>
@@ -3711,14 +3656,12 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fitur_kata</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah fitur kata :&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fitur_kata</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_array</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah fitur kata : 1538
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(80, 1584)
 </pre></div>
 </div>
 </div>
@@ -3749,59 +3692,6 @@ Successfully installed Sastrawi-1.0.1
 </div>
 </div>
 </div>
-<section id="cossine-similiarity">
-<h3><strong>Cossine Similiarity</strong><a class="headerlink" href="#cossine-similiarity" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-
-<span class="c1"># Menyusun DataFrame untuk menampilkan hasil cosine similarity</span>
-<span class="n">cosine_sim_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_sim</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">])</span>
-
-<span class="c1"># Menampilkan beberapa baris dari matriks cosine similarity</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cosine_sim_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kategori         0         0         0         0         0         0  \
-Kategori                                                               
-0         1.000000  0.026735  0.025461  0.016991  0.055839  0.029720   
-0         0.026735  1.000000  0.035268  0.097530  0.057645  0.054585   
-0         0.025461  0.035268  1.000000  0.110250  0.030491  0.029719   
-0         0.016991  0.097530  0.110250  1.000000  0.153834  0.053169   
-0         0.055839  0.057645  0.030491  0.153834  1.000000  0.028962   
-
-Kategori         0         0         0         0  ...         1         1  \
-Kategori                                          ...                       
-0         0.058248  0.034278  1.000000  0.026735  ...  0.016023  0.023589   
-0         0.043381  0.051277  0.026735  1.000000  ...  0.008548  0.005200   
-0         0.032022  0.036625  0.025461  0.035268  ...  0.004396  0.006149   
-0         0.133993  0.104701  0.016991  0.097530  ...  0.012054  0.009313   
-0         0.775145  0.109591  0.055839  0.057645  ...  0.010789  0.017488   
-
-Kategori         1         1         1         1         1         1  \
-Kategori                                                               
-0         0.055077  0.047004  0.013572  0.010737  0.027414  0.025486   
-0         0.016238  0.028930  0.009109  0.055234  0.089904  0.025841   
-0         0.008217  0.013176  0.002404  0.011526  0.011478  0.011741   
-0         0.017725  0.024205  0.002771  0.021826  0.006587  0.024717   
-0         0.015371  0.023648  0.010192  0.015453  0.011818  0.006903   
-
-Kategori         1         1  
-Kategori                      
-0         0.016023  0.023589  
-0         0.008548  0.005200  
-0         0.004396  0.006149  
-0         0.012054  0.009313  
-0         0.010789  0.017488  
-
-[5 rows x 100 columns]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -3841,15 +3731,15 @@ Kategori
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Crawling 100 Berita Online (50 politik &amp; 50 Gaya Hidup) dari Times Indonesia</p>
+        <p class="prev-next-title">Crawling 100 Berita Online</p>
       </div>
     </a>
     <a class="right-next"
-       href="Logistic%20Regression.html"
+       href="klasifikasi-berita.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Logistic Regression</strong></p>
+        <p class="prev-next-title"><strong>Klasifikasi Berita</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -3880,10 +3770,7 @@ Kategori
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cossine-similiarity"><strong>Cossine Similiarity</strong></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a></li>
 </ul>
   </nav></div>
 
