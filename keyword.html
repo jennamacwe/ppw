@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Library &#8212; My sample book</title>
+    <title>&lt;no title&gt; &#8212; My sample book</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Graph-Tugas-input-user';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'keyword';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -256,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGraph-Tugas-input-user.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fkeyword.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +286,7 @@
       
       
       
-      <li><a href="_sources/Graph-Tugas-input-user.ipynb" target="_blank"
+      <li><a href="_sources/keyword.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Library</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,27 +379,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Library</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memecah-kalimat">Memecah Kalimat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing">Preprosesing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-adjacency">Matriks Adjacency</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-kalimat">Ekstraksi Kalimat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprossesing-kalimat-kalimat-yang-telah-di-ekstrak">Preprossesing kalimat-kalimat yang telah di ekstrak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TF-IDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-cosine-similarity">Menghitung Cosine Similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matriks Adjacency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-graph">Menampilkan Graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Centrality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ringkasan</a></li>
-</ul>
-</li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
             </nav>
@@ -412,8 +392,63 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="library">
-<h1>Library<a class="headerlink" href="#library" title="Link to this heading">#</a></h1>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>         <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">PPW</span><span class="o">/</span><span class="n">tugas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/PPW/tugas
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
@@ -424,16 +459,9 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
   Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
 Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━ <span class=" -Color -Color-Green">153.6/209.7 kB</span> <span class=" -Color -Color-Red">4.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">3.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed Sastrawi-1.0.1
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
 </pre></div>
 </div>
 </div>
@@ -452,6 +480,9 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 <span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
 
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
 <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
 </pre></div>
@@ -460,9 +491,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
 [nltk_data]   Unzipping tokenizers/punkt.zip.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data] Downloading package stopwords to /root/nltk_data...
 [nltk_data]   Unzipping corpora/stopwords.zip.
 </pre></div>
 </div>
@@ -471,177 +500,25 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 </div>
 </div>
 </div>
-</section>
-<section id="memecah-kalimat">
-<h1>Memecah Kalimat<a class="headerlink" href="#memecah-kalimat" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Path ke file di Google Drive (ubah sesuai lokasimu)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/PPW/tugas/Tugas-Crawling-Data-Berita-2-kategori.csv&#39;</span>
 
-<span class="k">def</span> <span class="nf">sentence_extraction</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="n">sentences</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">sentences</span>
+<span class="c1"># Baca file CSV</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="preprosesing">
-<h1>Preprosesing<a class="headerlink" href="#preprosesing" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat objek stemmer</span>
-<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
-<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c1"># Mendapatkan daftar stopwords bahasa Indonesia</span>
-<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+<span class="c1"># Ekstraksi kalimat</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">preprocess_sentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
-    <span class="n">sentence_cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z\s.]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>  <span class="c1"># Hanya biarkan alfabet dan titik</span>
-    <span class="n">sentence_cleaned</span> <span class="o">=</span> <span class="n">sentence_cleaned</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Ubah ke huruf kecil</span>
-    <span class="n">stemmed</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">sentence_cleaned</span><span class="p">)</span>  <span class="c1"># Stemming</span>
-    <span class="n">final_sentence</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">stemmed</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># Menghapus spasi ganda</span>
-
-    <span class="c1"># Menghapus stopwords</span>
-    <span class="n">final_sentence</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">final_sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">])</span>
-
-    <span class="k">return</span> <span class="n">final_sentence</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="tf-idf">
-<h1>TF-IDF<a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_tfidf</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">sentences</span><span class="p">:</span>  <span class="c1"># Validasi input kosong</span>
-        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[]</span>
-    <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
-    <span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="cosine-similarity">
-<h1>Cosine Similarity<a class="headerlink" href="#cosine-similarity" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">):</span>
-    <span class="c1"># Menghitung Cosine Similarity antar kalimat</span>
-    <span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">tfidf_matrix</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">cosine_sim</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="matriks-adjacency">
-<h1>Matriks Adjacency<a class="headerlink" href="#matriks-adjacency" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_adjacency_matrix</span><span class="p">(</span><span class="n">cosine_sim_matrix</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
-    <span class="c1"># Membentuk matriks adjacency berdasarkan cosine similarity dan threshold</span>
-    <span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">cosine_sim_matrix</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Mengisi diagonal dengan 0 agar tidak ada self-loop</span>
-    <span class="k">return</span> <span class="n">adjacency_matrix</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="graph">
-<h1>Graph<a class="headerlink" href="#graph" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_graph</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">):</span>
-    <span class="c1"># Mengubah variabel dan parameter visualisasi</span>
-    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">)</span>
-    <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Graf Representasi Kalimat&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="centrality">
-<h1>centrality<a class="headerlink" href="#centrality" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_centrality</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="c1"># Konversi adjacency_matrix menjadi graph</span>
-    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">)</span>
-
-    <span class="c1"># Tentukan centrality berdasarkan method yang dipilih</span>
-    <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree_centrality</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">centrality</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ringkasan">
-<h1>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_summary</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">centrality_scores</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">top_n</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">):</span>  <span class="c1"># Validasi top_n agar tidak melebihi jumlah kalimat</span>
-        <span class="n">top_n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
-
-    <span class="n">ranked_sentences</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(((</span><span class="n">score</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">centrality_scores</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">summary</span> <span class="o">=</span> <span class="p">[</span><span class="n">sentences</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">ranked_sentences</span><span class="p">[:</span><span class="n">top_n</span><span class="p">]]</span>
-    <span class="k">return</span> <span class="n">summary</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="implementasi">
-<h1>Implementasi<a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Input dari user: berita</span>
-<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan berita: &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-11-d0237ff1dde7&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Input dari user: berita</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan berita: &quot;</span><span class="p">)</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
-</div>
-<section id="ekstraksi-kalimat">
-<h2>Ekstraksi Kalimat<a class="headerlink" href="#ekstraksi-kalimat" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentences</span> <span class="o">=</span> <span class="n">sentence_extraction</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
+<span class="c1"># Membuat DataFrame dari kalimat</span>
 <span class="n">df_sentences</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kalimat&quot;</span><span class="p">])</span>
 <span class="n">df_sentences</span>
 </pre></div>
@@ -649,7 +526,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-5ed13ef1-8ac4-40c8-abf0-aa8869bac8da" class="colab-df-container">
+  <div id="df-c150e516-006f-4c18-9d30-a9095ff94ab1" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -674,59 +551,215 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   <tbody>
     <tr>
       <th>0</th>
-      <td>Jakarta, CNN Indonesia -- Netizen memperdebatk...</td>
+      <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Ada dua opsi yang diyakini bakal jadi pilihan ...</td>
+      <td>Hal itu dengan fokus pada kemandirian pangan d...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Keduanya sama-sama punya jiwa kepemimpinan yan...</td>
+      <td>Prabowo diharapkan mampu membawa Indonesia men...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>Beberapa warganet memilih Jay Idzes untuk memi...</td>
+      <td>ketika dimintai pendapatnya terkait prospek pe...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Sebab dalam dua laga terakhir, Jay ditunjuk ja...</td>
+      <td>Setelah dilantik sebagai Presiden Republik Ind...</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>"Jordi Amat pantas jadi kapten, dia kaya penga...</td>
+      <td>"Setelah 20 Oktober, Prabowo akan menjadi "med...</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>Terlepas dari perdebatan netizen, baik Jay Idz...</td>
+      <td>Namanya akan harum dan popularitasnya mengalam...</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>Keduanya diharapkan bisa tampil maksimal lawan...</td>
+      <td>Membangun Demokrasi yang Sehat\nMuhlis menilai...</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>Sebab Indonesia akan menghadapi dua laga penti...</td>
+      <td>Diberbagai kesempatan, Prabowo menegaskan pent...</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>Besar harapan skuad Garuda bisa memetik poin p...</td>
+      <td>Dia mengapresiasi ungkapan Prabowo yang menyeb...</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>Timnas Indonesia akan melawan Bahrain di Stadi...</td>
+      <td>"Itu berarti Prabowo mengacu pada pandangan de...</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>Selanjutnya, Thom Haye dan kawan-kawan bakal b...</td>
+      <td>Salah satu agenda penting dalam pemerintahan P...</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>Saat ini, Indonesia tengah berada di peringkat...</td>
+      <td>Di acara penutupan Kongres PAN, Prabowo meneka...</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>Ini berkat dua hasil imbang melawan Arab Saudi...</td>
+      <td>"Jangan pakai alat-alat, cara-cara yang dulu-d...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Adu domba, ngintel-ngintelin orang.</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Intel tuh rakyat untuk bangsa, jangan nginteli...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Muhlis Ali menyebut pernyataan ini sebagai ang...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Mantan Ketua PB HMI ini juga menekankan pentin...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ia mengingatkan bahwa dalam era kepemimpinan P...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Pemerintah harus memastikan bahwa suara kritis...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Menurutnya, menjaga kebebasan ini adalah kunci...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Muhlis juga mengapresiasi upaya Prabowo dalam ...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Menurutnya, meskipun semua kekuatan diajak bek...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>"Demokrasi harus ada oposisi untuk menjaga che...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Namun, sebagai pihak oposisi, harus objektif d...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Kemandirian Pangan dan Energi\nDalam konteks e...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Pernyataan Prabowo yang menyebut Indonesia tid...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Salah satu langkah konkret yang bisa diambil o...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Langkah ini merupakan upaya nyata untuk mengur...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Muhlis juga menyoroti keberanian Prabowo saat ...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>"Terima kasih kalian melarang kelapa sawit kam...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Kami akan gunakan kelapa sawit kami untuk kepe...</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Bagi Muhlis, sikap ini patut diapresiasi karen...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Transparansi dan Supremasi Hukum\nSelain itu, ...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Rakyat perlu diyakinkan bahwa pemerintahan Pra...</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>"Prabowo harus bisa menjaga integritas pemerin...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Supremasi hukum juga menjadi sorotan utama.</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>Muhlis mengingatkan bahwa tanpa penegakan huku...</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Prabowo harus memastikan hukum ditegakkan tanp...</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Muhlis Ali juga menggarisbawahi komitmen Prabo...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>"Pernyataan Prabowo yang akan menyisihkan angg...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>Indonesia Menuju Macan Asia\nMuhlis Ali percay...</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Namun, untuk mewujudkan visi ini, Muhlis meneg...</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>Selain itu, dukungan bagi Usaha Mikro, Kecil, ...</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>Pengelolaan kebijakan fiskal yang efektif, ter...</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>Di tengah dinamika global, Prabowo menegaskan ...</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>Bagi Prabowo, demokrasi tidak harus ala Barat,...</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Muhlis menilai pandangan ini sangat relevan, t...</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>Lima tahun ke depan adalah periode menentukan ...</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>Muhlis Ali menegaskan bahwa Poros Pemuda Indon...</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>"Ini adalah momen di mana kita bisa melakukan ...</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Kami di PPI akan terus mengawal dan memberikan...</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>(*)**) Ikuti berita terbaru TIMES Indonesia di...</td>
     </tr>
   </tbody>
 </table>
@@ -734,7 +767,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-5ed13ef1-8ac4-40c8-abf0-aa8869bac8da')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-c150e516-006f-4c18-9d30-a9095ff94ab1')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -786,12 +819,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 
     <script>
       const buttonEl =
-        document.querySelector('#df-5ed13ef1-8ac4-40c8-abf0-aa8869bac8da button.colab-df-convert');
+        document.querySelector('#df-c150e516-006f-4c18-9d30-a9095ff94ab1 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-5ed13ef1-8ac4-40c8-abf0-aa8869bac8da');
+        const element = document.querySelector('#df-c150e516-006f-4c18-9d30-a9095ff94ab1');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -811,8 +844,8 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 
 
-<div id="df-d736ea7f-80b8-4423-bb94-f8fdec0a4f07">
-  <button class="colab-df-quickchart" onclick="quickchart('df-d736ea7f-80b8-4423-bb94-f8fdec0a4f07')"
+<div id="df-224609e7-729f-49ff-acad-0f23d4a144b9">
+  <button class="colab-df-quickchart" onclick="quickchart('df-224609e7-729f-49ff-acad-0f23d4a144b9')"
             title="Suggest charts"
             style="display:none;">
 
@@ -931,14 +964,14 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-d736ea7f-80b8-4423-bb94-f8fdec0a4f07 button');
+        document.querySelector('#df-224609e7-729f-49ff-acad-0f23d4a144b9 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_07e3b0f1-73d2-4b5f-bd68-d8a8e31a7d5b">
+  <div id="id_85bad51b-6cd7-4fbf-9a6c-d53fda2ac920">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -982,7 +1015,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_07e3b0f1-73d2-4b5f-bd68-d8a8e31a7d5b button.colab-df-generate');
+        document.querySelector('#id_85bad51b-6cd7-4fbf-9a6c-d53fda2ac920 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -997,21 +1030,48 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 </div></div>
 </div>
-</section>
-<section id="preprossesing-kalimat-kalimat-yang-telah-di-ekstrak">
-<h2>Preprossesing kalimat-kalimat yang telah di ekstrak<a class="headerlink" href="#preprossesing-kalimat-kalimat-yang-telah-di-ekstrak" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preprocessed_sentences</span> <span class="o">=</span> <span class="p">[</span><span class="n">preprocess_sentence</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span> <span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">]</span>
-<span class="n">df_preprocessed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">preprocessed_sentences</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;kalimat_clean&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat objek stemmer</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
 
-<span class="n">df_preprocessed</span>
+<span class="c1"># Mendapatkan daftar stopwords bahasa Indonesia</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">preprocess_sentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">sentence_cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z\s.]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>  <span class="c1"># Hanya biarkan alfabet dan titik</span>
+    <span class="n">sentence_cleaned</span> <span class="o">=</span> <span class="n">sentence_cleaned</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Ubah ke huruf kecil</span>
+
+    <span class="c1"># Tokenisasi</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sentence_cleaned</span><span class="p">)</span>  <span class="c1"># Memecah teks menjadi kata-kata</span>
+
+    <span class="c1"># Stemming setiap kata</span>
+    <span class="n">stemmed_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+
+    <span class="c1"># Menghapus stopwords</span>
+    <span class="n">words_without_stopwords</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stemmed_words</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">words_without_stopwords</span>
+
+<span class="c1"># Preprocessing kalimat menjadi daftar kata</span>
+<span class="n">preprocessed_words</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">preprocess_sentence</span><span class="p">(</span><span class="n">sentence</span><span class="p">)]</span>
+
+<span class="c1"># Membuat DataFrame dari kata-kata yang sudah dipreproses</span>
+<span class="n">df_preprocessed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">preprocessed_words</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;kata_clean&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_preprocessed</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-796d2b94-1a6f-4b64-a8b9-09aedceaf600" class="colab-df-container">
+  <div id="df-9bbf2ba4-19a6-489d-bcdf-4b54eba05b26" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1030,73 +1090,62 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kalimat_clean</th>
+      <th>kata_clean</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>jakarta cnn indonesia netizen debat main yang ...</td>
+      <td>timesindonesia</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>ada dua opsi yang yakin bakal jadi pilih shin ...</td>
+      <td>jakarta</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>dua samasama punya jiwa pimpin yang tinggi di ...</td>
+      <td>pimpin</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>beberapa warganet pilih jay idzes untuk pimpin...</td>
+      <td>presiden</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>sebab dalam dua laga akhir jay tunjuk jadi kap...</td>
+      <td>ri</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>jordi amat pantas jadi kapten dia kaya alam uj...</td>
+      <th>...</th>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>lepas dari debat netizen baik jay idzes maupun...</td>
+      <th>602</th>
+      <td>klik</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>dua harap bisa tampil maksimal lawan bahrain a...</td>
+      <th>603</th>
+      <td>link</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>sebab indonesia akan hadap dua laga penting pa...</td>
+      <th>604</th>
+      <td>lupa</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>besar harap skuad garuda bisa petik poin penuh...</td>
+      <th>605</th>
+      <td>follow</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>timnas indonesia akan lawan bahrain di stadion...</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>lanjut thom haye dan kawankawan bakal sua chin...</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>saat ini indonesia tengah ada di peringkat emp...</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>ini berkat dua hasil imbang lawan arab saudi d...</td>
+      <th>606</th>
+      <td></td>
     </tr>
   </tbody>
 </table>
+<p>607 rows × 1 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-796d2b94-1a6f-4b64-a8b9-09aedceaf600')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9bbf2ba4-19a6-489d-bcdf-4b54eba05b26')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1148,12 +1197,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 
     <script>
       const buttonEl =
-        document.querySelector('#df-796d2b94-1a6f-4b64-a8b9-09aedceaf600 button.colab-df-convert');
+        document.querySelector('#df-9bbf2ba4-19a6-489d-bcdf-4b54eba05b26 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-796d2b94-1a6f-4b64-a8b9-09aedceaf600');
+        const element = document.querySelector('#df-9bbf2ba4-19a6-489d-bcdf-4b54eba05b26');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1173,8 +1222,8 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 
 
-<div id="df-04303045-5959-4576-a269-da098a4f2a18">
-  <button class="colab-df-quickchart" onclick="quickchart('df-04303045-5959-4576-a269-da098a4f2a18')"
+<div id="df-863bea89-620a-4e35-8398-6d838912311b">
+  <button class="colab-df-quickchart" onclick="quickchart('df-863bea89-620a-4e35-8398-6d838912311b')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1293,14 +1342,14 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-04303045-5959-4576-a269-da098a4f2a18 button');
+        document.querySelector('#df-863bea89-620a-4e35-8398-6d838912311b button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_f39112a9-cb23-48e9-b2ea-91cd8231914e">
+  <div id="id_07709556-057d-4900-9053-4b089494591f">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1344,7 +1393,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_f39112a9-cb23-48e9-b2ea-91cd8231914e button.colab-df-generate');
+        document.querySelector('#id_07709556-057d-4900-9053-4b089494591f button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -1359,44 +1408,31 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 </div></div>
 </div>
-</section>
-<section id="id1">
-<h2>TF-IDF<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tfidf_matrix</span><span class="p">,</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">calculate_tfidf</span><span class="p">(</span><span class="n">preprocessed_sentences</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat vectorizer TF-IDF</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.         ... 0.         0.18348819 0.        ]
- [0.         0.22738974 0.         ... 0.26272249 0.18287575 0.22738974]
- [0.         0.         0.         ... 0.         0.24594811 0.        ]
- ...
- [0.         0.         0.         ... 0.         0.         0.        ]
- [0.         0.26276205 0.         ... 0.         0.         0.        ]
- [0.         0.         0.         ... 0.         0.         0.        ]]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="menghitung-cosine-similarity">
-<h2>Menghitung Cosine Similarity<a class="headerlink" href="#menghitung-cosine-similarity" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cosine_sim_matrix</span> <span class="o">=</span> <span class="n">calculate_cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="p">)</span>
-<span class="n">df_cosine_similarity</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_sim_matrix</span><span class="p">)</span>
+<span class="c1"># Mengonversi kata yang sudah dipreproses menjadi string untuk keperluan TF-IDF</span>
+<span class="n">preprocessed_text</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">preprocessed_words</span><span class="p">)]</span>
 
-<span class="n">df_cosine_similarity</span>
+<span class="c1"># Menghitung TF-IDF</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">preprocessed_text</span><span class="p">)</span>
+
+<span class="c1"># Mendapatkan daftar kata fitur</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Mengonversi TF-IDF matrix ke DataFrame</span>
+<span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tfidf&quot;</span><span class="p">])</span>
+<span class="n">df_tfidf</span> <span class="o">=</span> <span class="n">df_tfidf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tfidf&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">df_tfidf</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ce6f97fd-8bc7-4246-a2c1-3dbfd35271b6" class="colab-df-container">
+  <div id="df-034a84d9-9245-4d3e-a4b4-04114d0d7b31" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1415,268 +1451,62 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
+      <th>tfidf</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1.000000</td>
-      <td>0.297236</td>
-      <td>0.090257</td>
-      <td>0.102792</td>
-      <td>0.145524</td>
-      <td>0.133378</td>
-      <td>0.266781</td>
-      <td>0.038499</td>
-      <td>0.238738</td>
-      <td>0.052629</td>
-      <td>0.229370</td>
-      <td>0.050935</td>
-      <td>0.093452</td>
-      <td>0.000000</td>
+      <th>prabowo</th>
+      <td>0.562059</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>0.297236</td>
-      <td>1.000000</td>
-      <td>0.072065</td>
-      <td>0.230053</td>
-      <td>0.329711</td>
-      <td>0.206164</td>
-      <td>0.238456</td>
-      <td>0.201076</td>
-      <td>0.051429</td>
-      <td>0.000000</td>
-      <td>0.072047</td>
-      <td>0.092241</td>
-      <td>0.110271</td>
-      <td>0.073286</td>
+      <th>muhlis</th>
+      <td>0.344488</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0.090257</td>
-      <td>0.072065</td>
-      <td>1.000000</td>
-      <td>0.095785</td>
-      <td>0.027811</td>
-      <td>0.000000</td>
-      <td>0.046283</td>
-      <td>0.031078</td>
-      <td>0.031863</td>
-      <td>0.000000</td>
-      <td>0.056829</td>
-      <td>0.000000</td>
-      <td>0.083276</td>
-      <td>0.037047</td>
+      <th>indonesia</th>
+      <td>0.344488</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>0.102792</td>
-      <td>0.230053</td>
-      <td>0.095785</td>
-      <td>1.000000</td>
-      <td>0.047296</td>
-      <td>0.000000</td>
-      <td>0.105422</td>
-      <td>0.105703</td>
-      <td>0.000000</td>
-      <td>0.182528</td>
-      <td>0.174610</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.063003</td>
+      <th>perintah</th>
+      <td>0.217571</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>0.145524</td>
-      <td>0.329711</td>
-      <td>0.027811</td>
-      <td>0.047296</td>
-      <td>1.000000</td>
-      <td>0.211671</td>
-      <td>0.106000</td>
-      <td>0.023725</td>
-      <td>0.149220</td>
-      <td>0.053854</td>
-      <td>0.000000</td>
-      <td>0.042584</td>
-      <td>0.023896</td>
-      <td>0.075244</td>
+      <th>demokrasi</th>
+      <td>0.217571</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>0.133378</td>
-      <td>0.206164</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.211671</td>
-      <td>1.000000</td>
-      <td>0.136791</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
+      <th>...</th>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>0.266781</td>
-      <td>0.238456</td>
-      <td>0.046283</td>
-      <td>0.105422</td>
-      <td>0.106000</td>
-      <td>0.136791</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.028542</td>
-      <td>0.044099</td>
-      <td>0.074138</td>
-      <td>0.000000</td>
-      <td>0.129289</td>
-      <td>0.047067</td>
+      <th>kasih</th>
+      <td>0.018131</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>0.038499</td>
-      <td>0.201076</td>
-      <td>0.031078</td>
-      <td>0.105703</td>
-      <td>0.023725</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.027182</td>
-      <td>0.152035</td>
-      <td>0.145439</td>
-      <td>0.000000</td>
-      <td>0.026703</td>
-      <td>0.084082</td>
+      <th>kejar</th>
+      <td>0.018131</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>0.238738</td>
-      <td>0.051429</td>
-      <td>0.031863</td>
-      <td>0.000000</td>
-      <td>0.149220</td>
-      <td>0.000000</td>
-      <td>0.028542</td>
-      <td>0.027182</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.172731</td>
-      <td>0.135147</td>
-      <td>0.059429</td>
-      <td>0.032403</td>
+      <th>kelompok</th>
+      <td>0.018131</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>0.052629</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.182528</td>
-      <td>0.053854</td>
-      <td>0.000000</td>
-      <td>0.044099</td>
-      <td>0.152035</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.126086</td>
-      <td>0.058612</td>
+      <th>kerap</th>
+      <td>0.018131</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>0.229370</td>
-      <td>0.072047</td>
-      <td>0.056829</td>
-      <td>0.174610</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.074138</td>
-      <td>0.145439</td>
-      <td>0.172731</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.064141</td>
-      <td>0.083255</td>
-      <td>0.057791</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.050935</td>
-      <td>0.092241</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.042584</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.135147</td>
-      <td>0.000000</td>
-      <td>0.064141</td>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.056725</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0.093452</td>
-      <td>0.110271</td>
-      <td>0.083276</td>
-      <td>0.000000</td>
-      <td>0.023896</td>
-      <td>0.000000</td>
-      <td>0.129289</td>
-      <td>0.026703</td>
-      <td>0.059429</td>
-      <td>0.126086</td>
-      <td>0.083255</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-      <td>0.084686</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0.000000</td>
-      <td>0.073286</td>
-      <td>0.037047</td>
-      <td>0.063003</td>
-      <td>0.075244</td>
-      <td>0.000000</td>
-      <td>0.047067</td>
-      <td>0.084082</td>
-      <td>0.032403</td>
-      <td>0.058612</td>
-      <td>0.057791</td>
-      <td>0.056725</td>
-      <td>0.084686</td>
-      <td>1.000000</td>
+      <th>lari</th>
+      <td>0.018131</td>
     </tr>
   </tbody>
 </table>
+<p>305 rows × 1 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ce6f97fd-8bc7-4246-a2c1-3dbfd35271b6')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-034a84d9-9245-4d3e-a4b4-04114d0d7b31')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1728,12 +1558,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ce6f97fd-8bc7-4246-a2c1-3dbfd35271b6 button.colab-df-convert');
+        document.querySelector('#df-034a84d9-9245-4d3e-a4b4-04114d0d7b31 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ce6f97fd-8bc7-4246-a2c1-3dbfd35271b6');
+        const element = document.querySelector('#df-034a84d9-9245-4d3e-a4b4-04114d0d7b31');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1753,8 +1583,8 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 
 
-<div id="df-70d2c365-3b57-4182-9aec-3072fa2d69e6">
-  <button class="colab-df-quickchart" onclick="quickchart('df-70d2c365-3b57-4182-9aec-3072fa2d69e6')"
+<div id="df-98e85e8d-87a2-4f9f-a37e-04acee0c6fa1">
+  <button class="colab-df-quickchart" onclick="quickchart('df-98e85e8d-87a2-4f9f-a37e-04acee0c6fa1')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1873,14 +1703,14 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-70d2c365-3b57-4182-9aec-3072fa2d69e6 button');
+        document.querySelector('#df-98e85e8d-87a2-4f9f-a37e-04acee0c6fa1 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_5b7139e0-1837-4b37-a6b9-81463916998d">
+  <div id="id_23600966-90f4-44fe-b10d-3eb36eed10a5">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -1912,7 +1742,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
         fill: #FFFFFF;
       }
     </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df_cosine_similarity')"
+    <button class="colab-df-generate" onclick="generateWithVariable('df_tfidf')"
             title="Generate code using this dataframe."
             style="display:none;">
 
@@ -1924,12 +1754,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_5b7139e0-1837-4b37-a6b9-81463916998d button.colab-df-generate');
+        document.querySelector('#id_23600966-90f4-44fe-b10d-3eb36eed10a5 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df_cosine_similarity');
+        google.colab.notebook.generateWithVariable('df_tfidf');
       }
       })();
     </script>
@@ -1939,21 +1769,20 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 </div></div>
 </div>
-</section>
-<section id="id2">
-<h2>Matriks Adjacency<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">create_adjacency_matrix</span><span class="p">(</span><span class="n">cosine_sim_matrix</span><span class="p">)</span>
-<span class="n">df_adjacency_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung cosine similarity</span>
+<span class="n">cosine_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
 
-<span class="n">df_adjacency_matrix</span>
+<span class="c1"># Mengonversi hasil cosine similarity menjadi DataFrame</span>
+<span class="n">df_cosine_sim</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cosine_sim</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">df_cosine_sim</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-da429d09-91c6-433a-8095-1c0be2ece74b" class="colab-df-container">
+  <div id="df-8811e25a-52a5-464c-aed6-5f0c9d460a92" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1972,268 +1801,302 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
+      <th>acara</th>
+      <th>acu</th>
+      <th>adil</th>
+      <th>adu</th>
+      <th>advertisement</th>
+      <th>agenda</th>
+      <th>ajak</th>
+      <th>akses</th>
+      <th>aktif</th>
+      <th>akuntabel</th>
+      <th>...</th>
+      <th>umkm</th>
+      <th>unggul</th>
+      <th>uni</th>
+      <th>upaya</th>
+      <th>usaha</th>
+      <th>utama</th>
+      <th>visi</th>
+      <th>waris</th>
+      <th>wibawa</th>
+      <th>wujud</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>acara</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>acu</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>adil</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>adu</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>advertisement</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>utama</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>visi</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>waris</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>wibawa</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <th>wujud</th>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
     </tr>
   </tbody>
 </table>
+<p>305 rows × 305 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-da429d09-91c6-433a-8095-1c0be2ece74b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8811e25a-52a5-464c-aed6-5f0c9d460a92')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2285,12 +2148,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
 
     <script>
       const buttonEl =
-        document.querySelector('#df-da429d09-91c6-433a-8095-1c0be2ece74b button.colab-df-convert');
+        document.querySelector('#df-8811e25a-52a5-464c-aed6-5f0c9d460a92 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-da429d09-91c6-433a-8095-1c0be2ece74b');
+        const element = document.querySelector('#df-8811e25a-52a5-464c-aed6-5f0c9d460a92');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2310,8 +2173,8 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 
 
-<div id="df-b7dee941-52f9-4a7f-adc5-ebcc5002a16a">
-  <button class="colab-df-quickchart" onclick="quickchart('df-b7dee941-52f9-4a7f-adc5-ebcc5002a16a')"
+<div id="df-f7dd040b-7b03-412c-acdc-47476ef690b3">
+  <button class="colab-df-quickchart" onclick="quickchart('df-f7dd040b-7b03-412c-acdc-47476ef690b3')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2430,14 +2293,14 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-b7dee941-52f9-4a7f-adc5-ebcc5002a16a button');
+        document.querySelector('#df-f7dd040b-7b03-412c-acdc-47476ef690b3 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_3b811ab0-1a2a-4c6f-8b1b-d9730fe2958f">
+  <div id="id_13504b1a-9f30-454f-b539-46b048ce9c90">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -2469,7 +2332,7 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
         fill: #FFFFFF;
       }
     </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df_adjacency_matrix')"
+    <button class="colab-df-generate" onclick="generateWithVariable('df_cosine_sim')"
             title="Generate code using this dataframe."
             style="display:none;">
 
@@ -2481,12 +2344,12 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_3b811ab0-1a2a-4c6f-8b1b-d9730fe2958f button.colab-df-generate');
+        document.querySelector('#id_13504b1a-9f30-454f-b539-46b048ce9c90 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df_adjacency_matrix');
+        google.colab.notebook.generateWithVariable('df_cosine_sim');
       }
       })();
     </script>
@@ -2496,85 +2359,618 @@ Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
   </div>
 </div></div>
 </div>
-</section>
-<section id="menampilkan-graph">
-<h2>Menampilkan Graph<a class="headerlink" href="#menampilkan-graph" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tahap 6: Tampilkan Graf</span>
-<span class="n">draw_graph</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tahap 6: Tampilkan Graf
-</pre></div>
-</div>
-<img alt="_images/18e809a391a4b7b7d21b5beea7a13563d722b11c38c4e5c86880e90dc8895cf6.png" src="_images/18e809a391a4b7b7d21b5beea7a13563d722b11c38c4e5c86880e90dc8895cf6.png" />
-</div>
-</div>
-</section>
-<section id="id3">
-<h2>Centrality<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chosen_method</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tahap 7: Pilih metode centrality </span><span class="se">\n</span><span class="s2">1. degree </span><span class="se">\n</span><span class="s2">2. closeness </span><span class="se">\n</span><span class="s2">3. betweenness: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>  <span class="c1"># Mengubah input menjadi integer</span>
-<span class="n">centrality_scores</span> <span class="o">=</span> <span class="n">compute_centrality</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">,</span> <span class="n">chosen_method</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Threshold untuk adjacency matrix</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.2</span>
 
-<span class="n">df_centrality</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">centrality_scores</span><span class="o">.</span><span class="n">items</span><span class="p">()),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Node&quot;</span><span class="p">,</span> <span class="s2">&quot;Centrality Score&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tahap 7: Hasil </span><span class="si">{</span><span class="p">[</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Closeness&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Betweenness&#39;</span><span class="p">][</span><span class="n">chosen_method</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> Centrality&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_centrality</span><span class="p">)</span>
+<span class="c1"># Membentuk adjacency matrix berdasarkan threshold</span>
+<span class="n">adjacency_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">cosine_sim</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Mengisi diagonal dengan 0 agar tidak ada self-loop</span>
+<span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Konversi adjacency matrix ke DataFrame</span>
+<span class="n">df_adjacency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">adjacency_matrix</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">df_adjacency</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tahap 7: Pilih metode centrality 
-1. degree 
-2. closeness 
-3. betweenness: 
-1
+<div class="output text_html">
+  <div id="df-238c4974-7c6b-4777-a46d-b4c67407ab86" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-Tahap 7: Hasil Degree Centrality
-    Node  Centrality Score
-0      0          0.307692
-1      1          0.461538
-2      2          0.000000
-3      3          0.076923
-4      4          0.153846
-5      5          0.153846
-6      6          0.153846
-7      7          0.076923
-8      8          0.076923
-9      9          0.000000
-10    10          0.076923
-11    11          0.000000
-12    12          0.000000
-13    13          0.000000
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>acara</th>
+      <th>acu</th>
+      <th>adil</th>
+      <th>adu</th>
+      <th>advertisement</th>
+      <th>agenda</th>
+      <th>ajak</th>
+      <th>akses</th>
+      <th>aktif</th>
+      <th>akuntabel</th>
+      <th>...</th>
+      <th>umkm</th>
+      <th>unggul</th>
+      <th>uni</th>
+      <th>upaya</th>
+      <th>usaha</th>
+      <th>utama</th>
+      <th>visi</th>
+      <th>waris</th>
+      <th>wibawa</th>
+      <th>wujud</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>acara</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>acu</th>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>adil</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>adu</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>advertisement</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>utama</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>visi</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>waris</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>wibawa</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>wujud</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>305 rows × 305 columns</p>
 </div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-238c4974-7c6b-4777-a46d-b4c67407ab86')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-238c4974-7c6b-4777-a46d-b4c67407ab86 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-238c4974-7c6b-4777-a46d-b4c67407ab86');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-7b262030-1392-47e7-b288-eb53b6f51a33">
+  <button class="colab-df-quickchart" onclick="quickchart('df-7b262030-1392-47e7-b288-eb53b6f51a33')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-7b262030-1392-47e7-b288-eb53b6f51a33 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
 </div>
+
+  <div id="id_71a839de-07c8-4651-8b7d-d92adc63c2d1">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('df_adjacency')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_71a839de-07c8-4651-8b7d-d92adc63c2d1 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('df_adjacency');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
 </div>
-</section>
-<section id="id4">
-<h2>Ringkasan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tahap 8: Menampilkan Ringkasan</span>
-<span class="n">summary</span> <span class="o">=</span> <span class="n">generate_summary</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">centrality_scores</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ringkasan Berita&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat graph dari adjacency matrix</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_adjacency</span><span class="p">(</span><span class="n">df_adjacency</span><span class="p">)</span>
+
+<span class="c1"># Plot graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ringkasan Berita
-[&#39;Ada dua opsi yang diyakini bakal jadi pilihan Shin Tae Yong untuk jadi kapten Timnas Indonesia yakni Jordi Amat dan Jay Idzes.&#39;, &#39;Jakarta, CNN Indonesia -- Netizen memperdebatkan pemain yang bakal dipilih jadi kapten dalam pertandingan Timnas Indonesia vs Bahrain di Kualifikasi Piala Dunia 2026.&#39;, &#39;Terlepas dari perdebatan netizen, baik Jay Idzes maupun Jordi Amat adalah pemain berkualitas yang dimiliki Timnas Indonesia saat ini.&#39;]
-</pre></div>
+<img alt="_images/22bf580ee19aa320c169248ebcdab7e743958201ca436c9f6c76f58d27fa2ba2.png" src="_images/22bf580ee19aa320c169248ebcdab7e743958201ca436c9f6c76f58d27fa2ba2.png" />
 </div>
 </div>
-</div>
-</section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2621,27 +3017,7 @@ Tahap 7: Hasil Degree Centrality
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Library</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memecah-kalimat">Memecah Kalimat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing">Preprosesing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf">TF-IDF</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-adjacency">Matriks Adjacency</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality">centrality</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-kalimat">Ekstraksi Kalimat</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprossesing-kalimat-kalimat-yang-telah-di-ekstrak">Preprossesing kalimat-kalimat yang telah di ekstrak</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">TF-IDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-cosine-similarity">Menghitung Cosine Similarity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Matriks Adjacency</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-graph">Menampilkan Graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Centrality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ringkasan</a></li>
-</ul>
-</li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
 
   </nav></div>
