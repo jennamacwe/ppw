@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'coba svd';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pencarian dan Penambangan WEB
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="berita-online.html">Crawling 100 Berita Online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Preprocessing-dan-TFIDF.html"><strong>Vector Space Model</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasi-berita.html"><strong>Klasifikasi Berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringkasan-kalimat.html"><strong>Ringkasan berita</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="keyword-bismillah.html"><strong>Keyword Ekstraction</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcoba svd.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/coba svd.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-d5df0069828e&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>         <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">176</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">96</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">PPW</span><span class="o">/</span><span class="n">tugas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/PPW/tugas
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">svd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/PPW/tugas/preprosesing-berita.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Fungsi membersihkan angka</span>
+<span class="k">def</span> <span class="nf">remove_numbers</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b\d+\b&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># Terapkan fungsi pada kolom teks yang diproses</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">Xtrain</span><span class="p">,</span> <span class="n">Xtest</span><span class="p">,</span><span class="n">Ytrain</span><span class="p">,</span><span class="n">Ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
+
+<span class="n">X_array</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
+
+<span class="n">X_array</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.0855273 ],
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.0855273 ],
+       [0.        , 0.0309078 , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       ...,
+       [0.        , 0.        , 0.02381859, ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_array</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(80, 1546)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Misalkan ini adalah hasil dari TF-IDF</span>
+<span class="n">X_array</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="c1"># Menggunakan SVD dari SciPy</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">X_array</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks U:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks Sigma (diagonal):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks V^T:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks U:
+[[-0.1145705  -0.01620273 -0.01742587 ... -0.20942476  0.26326105
+  -0.30205781]
+ [-0.1145705  -0.01620273 -0.01742587 ...  0.11805281 -0.21240252
+   0.12618596]
+ [-0.02970658  0.03671417  0.01184012 ... -0.00409269 -0.09326571
+   0.15185628]
+ ...
+ [-0.06768585  0.09809556 -0.05607829 ...  0.18288395  0.1210307
+  -0.0353708 ]
+ [-0.10741115 -0.02430151  0.00056776 ... -0.10604646  0.25524068
+   0.06743087]
+ [-0.05068004  0.01092239  0.00597605 ...  0.08377814  0.23423134
+   0.36503413]]
+
+Matriks Sigma (diagonal):
+[2.98919634e+00 2.70814692e+00 2.63613190e+00 2.48242145e+00
+ 2.43719403e+00 2.31240642e+00 2.27587438e+00 2.23826734e+00
+ 2.19057412e+00 2.17206082e+00 2.06670969e+00 2.01165908e+00
+ 1.94446734e+00 1.89002663e+00 1.71350129e+00 1.00930162e+00
+ 1.08231717e-15 7.82276593e-16 7.02730166e-16 6.37494959e-16
+ 5.92725243e-16 5.19215902e-16 4.57290159e-16 3.50644871e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.21702832e-16 2.16934702e-16 8.79222622e-17]
+
+Matriks V^T:
+[[-0.00434113 -0.00201533 -0.00471577 ... -0.00518273 -0.01036545
+  -0.01288531]
+ [ 0.00461124  0.00096028  0.02385516 ...  0.01219535  0.0243907
+  -0.00201137]
+ [-0.00096731 -0.00080157  0.0216014  ...  0.00044772  0.00089545
+  -0.00222231]
+ ...
+ [ 0.00084497 -0.01573602 -0.04360053 ... -0.00237044 -0.00474088
+   0.0030244 ]
+ [-0.25278157  0.00908915 -0.3061507  ... -0.00300027 -0.00600055
+   0.00442804]
+ [ 0.11591093 -0.01463551  0.11153834 ...  0.00235078  0.00470155
+   0.01511194]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vt</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(80, 80)
+(80,)
+(80, 1584)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Jika ingin melakukan SVD terbatas untuk pengurangan dimensi, Anda bisa menggunakan TruncatedSVD seperti berikut:</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+
+<span class="c1"># Menggunakan Truncated SVD</span>
+<span class="n">svd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># Ubah jumlah komponen sesuai kebutuhan</span>
+<span class="n">X_svd</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_array</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks U yang tereduksi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_svd</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks Sigma:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">svd</span><span class="o">.</span><span class="n">singular_values_</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks V^T yang tereduksi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">svd</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks U yang tereduksi:
+[[ 3.42473707e-01 -4.38793837e-02  4.59368918e-02 ... -6.07153217e-18
+  -3.46944695e-18 -3.12250226e-17]
+ [ 3.42473707e-01 -4.38793837e-02  4.59368918e-02 ... -6.07153217e-18
+  -3.46944695e-18 -3.12250226e-17]
+ [ 8.87988071e-02  9.94273760e-02 -3.12121088e-02 ... -8.67361738e-19
+   7.37257477e-18  3.46944695e-17]
+ ...
+ [ 2.02326284e-01  2.65657192e-01  1.47829759e-01 ... -2.03830008e-17
+   2.41234983e-18  3.85975973e-17]
+ [ 3.21073022e-01 -6.58120517e-02 -1.49669559e-03 ...  5.63785130e-18
+   7.80625564e-18 -5.24753851e-17]
+ [ 1.51492600e-01  2.95794331e-02 -1.57536624e-02 ...  3.38271078e-17
+   2.34187669e-17 -3.35018471e-17]]
+
+Matriks Sigma:
+[2.98919634e+00 2.70814692e+00 2.63613190e+00 2.48242145e+00
+ 2.43719403e+00 2.31240642e+00 2.27587438e+00 2.23826734e+00
+ 2.19057412e+00 2.17206082e+00 2.06670969e+00 2.01165908e+00
+ 1.94446734e+00 1.89002663e+00 1.71350129e+00 1.00930162e+00
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 2.64576558e-16
+ 2.64576558e-16 2.64576558e-16 2.64576558e-16 8.64337072e-29]
+
+Matriks V^T yang tereduksi:
+[[ 4.34112954e-03  2.01533073e-03  4.71576796e-03 ...  5.18272600e-03
+   1.03654520e-02  1.28853055e-02]
+ [ 4.61124258e-03  9.60275130e-04  2.38551599e-02 ...  1.21953520e-02
+   2.43907040e-02 -2.01137220e-03]
+ [ 9.67307660e-04  8.01569381e-04 -2.16013971e-02 ... -4.47723293e-04
+  -8.95446586e-04  2.22230520e-03]
+ ...
+ [-4.19700102e-02  2.17379731e-02  3.96153527e-02 ...  6.75602894e-03
+   1.26243535e-02  7.39794155e-04]
+ [ 1.43342183e-02 -5.12068594e-03 -4.96113166e-03 ... -2.18396141e-03
+  -5.46329248e-03 -1.18380598e-03]
+ [ 6.25446881e-01 -6.64306708e-02  1.86456810e-02 ... -1.71706547e-02
+  -3.43896203e-02  7.62517982e-03]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+
+<span class="c1"># Asumsikan data Xtrain sudah ada dari sebelumnya</span>
+<span class="c1"># Misalnya Xtrain adalah corpus yang sudah di-preprocessing</span>
+
+<span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>  <span class="c1"># Menghasilkan TF-IDF</span>
+<span class="n">X_array</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>  <span class="c1"># Mengubah sparse matrix ke numpy array</span>
+
+<span class="c1"># Menggunakan numpy.linalg.svd pada data TF-IDF</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">X_array</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil SVD</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks U:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Nilai Sigma (diagonal):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks V^T:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Vt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks U:
+[[-0.1145705  -0.01620273 -0.01742587 ... -0.01706466 -0.22695109
+   0.04966712]
+ [-0.1145705  -0.01620273 -0.01742587 ... -0.09723356  0.11493548
+   0.09390375]
+ [-0.02970658  0.03671417  0.01184012 ... -0.14000571 -0.27983903
+   0.08810739]
+ ...
+ [-0.06768585  0.09809556 -0.05607829 ... -0.0155243  -0.01761336
+  -0.03452286]
+ [-0.10741115 -0.02430151  0.00056776 ... -0.03139416  0.01893124
+   0.009521  ]
+ [-0.05068004  0.01092239  0.00597605 ...  0.0024299   0.01458759
+   0.00603096]]
+
+Nilai Sigma (diagonal):
+[2.98919634e+00 2.70814692e+00 2.63613190e+00 2.48242145e+00
+ 2.43719403e+00 2.31240642e+00 2.27587438e+00 2.23826734e+00
+ 2.19057412e+00 2.17206082e+00 2.06670969e+00 2.01165908e+00
+ 1.94446734e+00 1.89002663e+00 1.71350129e+00 1.00930162e+00
+ 2.96328178e-15 1.78847271e-15 1.23464272e-15 8.19478335e-16
+ 6.98755990e-16 6.77252866e-16 6.35327890e-16 5.21446719e-16
+ 4.45633642e-16 3.35457349e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.68389578e-16 2.68389578e-16 2.68389578e-16
+ 2.68389578e-16 2.46509958e-16 1.33522657e-16 8.58821388e-17]
+
+Matriks V^T:
+[[-4.34112954e-03 -2.01533073e-03 -4.71576796e-03 ... -5.18272600e-03
+  -1.03654520e-02 -1.28853055e-02]
+ [ 4.61124258e-03  9.60275130e-04  2.38551599e-02 ...  1.21953520e-02
+   2.43907040e-02 -2.01137220e-03]
+ [-9.67307660e-04 -8.01569381e-04  2.16013971e-02 ...  4.47723293e-04
+   8.95446586e-04 -2.22230520e-03]
+ ...
+ [-1.46529593e-02  3.53431417e-02  2.02508863e-01 ... -1.03671791e-02
+  -2.07343581e-02 -5.82528280e-04]
+ [ 3.45501382e-01 -3.30063837e-02  6.39803183e-01 ...  5.75532742e-03
+   1.15106548e-02 -2.52809974e-02]
+ [ 5.23438712e-02  1.26804236e-01  1.27542917e-02 ...  2.03505990e-03
+   4.07011981e-03  3.90904785e-03]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>coba-coba:</p>
+<p><a class="reference external" href="https://machinelearningmastery.com/singular-value-decomposition-for-machine-learning/">ini ya</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reconstruct SVD</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">diag</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">dot</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">zeros</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">svd</span>
+
+<span class="c1"># define a matrix</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Singular-value decomposition</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># create m x n Sigma matrix</span>
+<span class="n">Sigma</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># populate Sigma with n x n diagonal matrix</span>
+<span class="n">Sigma</span><span class="p">[:</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">:</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1"># reconstruct matrix</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Sigma</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">VT</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2]
+ [3 4]
+ [5 6]]
+[[1. 2.]
+ [3. 4.]
+ [5. 6.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span><span class="p">,</span> <span class="n">diag</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">zeros</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">svd</span>
+
+<span class="c1"># Mendefinisikan matriks asli A</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks asli A:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Melakukan dekomposisi SVD pada matriks A</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">VT</span> <span class="o">=</span> <span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Membuat matriks Sigma dengan ukuran yang sama dengan A, diisi dengan nol</span>
+<span class="n">Sigma</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># Mengisi Sigma dengan hanya satu nilai singular terbesar (yaitu, mengurangi fitur)</span>
+<span class="n">Sigma</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Menyimpan hanya nilai singular terbesar</span>
+
+<span class="c1"># Merekonstruksi matriks yang telah direduksi fiturnya</span>
+<span class="n">B_reduced</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Sigma</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">VT</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks hasil rekonstruksi dengan fitur yang direduksi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B_reduced</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks asli A:
+[[1 2]
+ [3 4]
+ [5 6]]
+
+Matriks hasil rekonstruksi dengan fitur yang direduksi:
+[[1.35662819 1.71846235]
+ [3.09719707 3.92326845]
+ [4.83776596 6.12807454]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>coba lagi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+
+<span class="c1"># Contoh matriks sederhana</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="c1"># Menghitung SVD secara manual</span>
+<span class="n">U</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">Vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil SVD</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matriks U:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks Sigma:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">sigma</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks V^t:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Vt</span><span class="p">)</span>
+
+<span class="c1"># Mereduksi matriks A menggunakan TruncatedSVD</span>
+<span class="c1"># Pilih jumlah komponen yang ingin dipertahankan, misalnya 2</span>
+<span class="n">svd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A_reduced</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan matriks tereduksi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matriks A setelah reduksi:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">A_reduced</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriks U:
+ [[-0.21483724  0.88723069  0.40824829]
+ [-0.52058739  0.24964395 -0.81649658]
+ [-0.82633754 -0.38794278  0.40824829]]
+
+Matriks Sigma:
+ [[1.68481034e+01 0.00000000e+00 0.00000000e+00]
+ [0.00000000e+00 1.06836951e+00 0.00000000e+00]
+ [0.00000000e+00 0.00000000e+00 4.41842475e-16]]
+
+Matriks V^t:
+ [[-0.47967118 -0.57236779 -0.66506441]
+ [-0.77669099 -0.07568647  0.62531805]
+ [-0.40824829  0.81649658 -0.40824829]]
+
+Matriks A setelah reduksi:
+ [[ 3.6196     -0.94789022]
+ [ 8.77091014 -0.26671199]
+ [13.92222029  0.41446624]]
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

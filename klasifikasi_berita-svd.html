@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Logistic Regression &#8212; My sample book</title>
+    <title>Dataset &#8212; My sample book</title>
   
   
   
@@ -60,9 +60,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Copy of copy Logistic Regression';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'klasifikasi_berita-svd';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -247,7 +245,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FCopy of copy Logistic Regression.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fklasifikasi_berita-svd.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +275,7 @@
       
       
       
-      <li><a href="_sources/Copy of copy Logistic Regression.ipynb" target="_blank"
+      <li><a href="_sources/klasifikasi_berita-svd.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +351,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Logistic Regression</h1>
+    <h1>Dataset</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,27 +361,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-logistic-regression"><strong>persamaan Logistic Regression</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-sigmoid"><strong>fungsi sigmoid</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library"><strong>Library</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load Data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing"><strong>Preprosesing</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-kolom-kategori-menjadi-bentuk-biner"><strong>1. Mengubah kolom kategori menjadi bentuk biner</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleansing"><strong>2. Cleansing</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>3. Case folding</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>4. Tokenization</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words"><strong>5. Stop Words</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>6. Stemming</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Logistic Regression</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-menggunakan-data-tes">Pengujian menggunakan data tes</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -394,32 +387,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
-<h1><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h1>
-<p>Logistic Regression adalah metode statistik yang digunakan untuk memprediksi hasil dari variabel dependen biner (dua kelas) berdasarkan satu atau lebih variabel independen. Tujuan dari logistic regression adalah untuk memodelkan probabilitas suatu peristiwa terjadi dengan memetakan input linier dari variabel-variabel independen menjadi rentang antara 0 dan 1 menggunakan fungsi logistik (sigmoid).</p>
-<p>Dalam logistic regression, kurva yang dihasilkan bukanlah garis lurus, melainkan kurva berbentuk S (sigmoid). Model ini memperkirakan probabilitas suatu kelas, di mana probabilitas lebih besar dari 0,5 biasanya dikategorikan sebagai satu kelas, dan kurang dari 0,5 sebagai kelas lainnya. Logistic regression sering digunakan dalam kasus seperti prediksi.</p>
-<section id="persamaan-logistic-regression">
-<h2><strong>persamaan Logistic Regression</strong><a class="headerlink" href="#persamaan-logistic-regression" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[ P(Y = 1 | X) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n)}} \]</div>
-<p>Di mana:</p>
-<ul class="simple">
-<li><p>( P(Y = 1 | X) ) adalah probabilitas bahwa kelas output ( Y ) adalah 1, diberikan fitur ( X ).</p></li>
-<li><p>( \beta_0 ) adalah intercept (bias), dan ( \beta_1, \beta_2, \dots, \beta_n ) adalah koefisien atau bobot fitur ( X_1, X_2, \dots, X_n ).</p></li>
-<li><p>( e ) adalah bilangan Euler, dan fungsi logistik memastikan bahwa output berada dalam rentang 0 hingga 1.</p></li>
-</ul>
-</section>
-<section id="fungsi-sigmoid">
-<h2><strong>fungsi sigmoid</strong><a class="headerlink" href="#fungsi-sigmoid" title="Link to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[
-\sigma(z) = \frac{1}{1 + e^{-z}}
-\]</div>
-<p>Di mana <span class="math notranslate nohighlight">\( \sigma(z) \)</span> adalah fungsi sigmoid, dan <span class="math notranslate nohighlight">\(z\)</span> adalah input linier yang dihasilkan dari variabel independen model.</p>
-</section>
-<section id="library">
-<h2><strong>Library</strong><a class="headerlink" href="#library" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
 </pre></div>
@@ -436,27 +404,18 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
 <span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="c1">#stopwords</span>
 <span class="kn">import</span> <span class="nn">nltk</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-
-<span class="c1">#stemming</span>
 <span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
-
-<span class="c1">#spit data</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="load-data">
-<h2><strong>Load Data</strong><a class="headerlink" href="#load-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -514,16 +473,19 @@
 </div>
 </div>
 </div>
+<section id="dataset">
+<h1><strong>Dataset</strong><a class="headerlink" href="#dataset" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Tugas-Crawling-Data-Berita-2-kategori.csv&quot;</span><span class="p">)</span>
+
 <span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-beedc4b8-0732-4c49-8d7e-8509631b2841" class="colab-df-container">
+  <div id="df-37548692-fccc-407e-afe1-67137900884b" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -645,7 +607,7 @@
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-beedc4b8-0732-4c49-8d7e-8509631b2841')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-37548692-fccc-407e-afe1-67137900884b')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -697,12 +659,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-beedc4b8-0732-4c49-8d7e-8509631b2841 button.colab-df-convert');
+        document.querySelector('#df-37548692-fccc-407e-afe1-67137900884b button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-beedc4b8-0732-4c49-8d7e-8509631b2841');
+        const element = document.querySelector('#df-37548692-fccc-407e-afe1-67137900884b');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -722,8 +684,8 @@
   </div>
 
 
-<div id="df-dec057d8-5fd5-41cf-a263-8989e937b569">
-  <button class="colab-df-quickchart" onclick="quickchart('df-dec057d8-5fd5-41cf-a263-8989e937b569')"
+<div id="df-33608127-55b9-4557-b071-b517cf681612">
+  <button class="colab-df-quickchart" onclick="quickchart('df-33608127-55b9-4557-b071-b517cf681612')"
             title="Suggest charts"
             style="display:none;">
 
@@ -842,14 +804,14 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-dec057d8-5fd5-41cf-a263-8989e937b569 button');
+        document.querySelector('#df-33608127-55b9-4557-b071-b517cf681612 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_53bf47fc-80d3-48b2-a39c-3499c5964c3c">
+  <div id="id_f692aab0-9ac1-411b-b205-6dca72fe563f">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -893,7 +855,7 @@
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_53bf47fc-80d3-48b2-a39c-3499c5964c3c button.colab-df-generate');
+        document.querySelector('#id_f692aab0-9ac1-411b-b205-6dca72fe563f button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -909,10 +871,10 @@
 </div></div>
 </div>
 </section>
-<section id="preprosesing">
-<h2><strong>Preprosesing</strong><a class="headerlink" href="#preprosesing" title="Link to this heading">#</a></h2>
-<section id="mengubah-kolom-kategori-menjadi-bentuk-biner">
-<h3><strong>1. Mengubah kolom kategori menjadi bentuk biner</strong><a class="headerlink" href="#mengubah-kolom-kategori-menjadi-bentuk-biner" title="Link to this heading">#</a></h3>
+<section id="preprocessing">
+<h1><strong>Preprocessing</strong><a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h1>
+<section id="label-encoder">
+<h2><strong>Label Encoder</strong><a class="headerlink" href="#label-encoder" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;Politik&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -921,47 +883,23 @@
 </div>
 </div>
 </section>
-<section id="cleansing">
-<h3><strong>2. Cleansing</strong><a class="headerlink" href="#cleansing" title="Link to this heading">#</a></h3>
+<section id="cleaning">
+<h2><strong>Cleaning</strong><a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_url</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?://\S+|www\.S+&#39;</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">url</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_html</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">html</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.#?&gt;&#39;</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">html</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_emoji</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">emoji_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>
-      <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;&quot;]+&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">emoji_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_numbers</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
+  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span> <span class="c1">#menghapus karakter</span>
   <span class="k">return</span> <span class="n">data_berita</span>
 
-<span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-  <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z0-9\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">data_berita</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_symbols</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_url</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_html</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_emoji</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_symbols</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_numbers</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-459d0adb-1366-407e-b624-2098c43d1d6e" class="colab-df-container">
+  <div id="df-1f1438bd-278d-4bfa-9051-4486b8efd6f2" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -980,134 +918,74 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 7 columns</p>
+<p>100 rows × 2 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-459d0adb-1366-407e-b624-2098c43d1d6e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1f1438bd-278d-4bfa-9051-4486b8efd6f2')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1159,12 +1037,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-459d0adb-1366-407e-b624-2098c43d1d6e button.colab-df-convert');
+        document.querySelector('#df-1f1438bd-278d-4bfa-9051-4486b8efd6f2 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-459d0adb-1366-407e-b624-2098c43d1d6e');
+        const element = document.querySelector('#df-1f1438bd-278d-4bfa-9051-4486b8efd6f2');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1184,8 +1062,8 @@
   </div>
 
 
-<div id="df-b0063662-d683-44ac-828e-57c4e74d3a5d">
-  <button class="colab-df-quickchart" onclick="quickchart('df-b0063662-d683-44ac-828e-57c4e74d3a5d')"
+<div id="df-0c2bb165-4316-460c-97d9-dce9ef764f1e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-0c2bb165-4316-460c-97d9-dce9ef764f1e')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1304,67 +1182,12 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-b0063662-d683-44ac-828e-57c4e74d3a5d button');
+        document.querySelector('#df-0c2bb165-4316-460c-97d9-dce9ef764f1e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-
-  <div id="id_3b612a81-7149-4d5a-b3be-f989af987fb5">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_3b612a81-7149-4d5a-b3be-f989af987fb5 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
 
     </div>
   </div>
@@ -1372,7 +1195,7 @@
 </div>
 </section>
 <section id="case-folding">
-<h3><strong>3. Case folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h3>
+<h2><strong>Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1384,13 +1207,13 @@
 
 <span class="n">df</span> <span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cleansing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">case_folding</span><span class="p">)</span>
 
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7acb7fff-9909-4d85-8faf-6e0a658ddd17" class="colab-df-container">
+  <div id="df-548abe87-d1e6-491b-89c7-a313e4dbec7f" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1409,12 +1232,7 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
     </tr>
@@ -1422,56 +1240,31 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
     </tr>
@@ -1480,75 +1273,45 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 8 columns</p>
+<p>100 rows × 3 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-7acb7fff-9909-4d85-8faf-6e0a658ddd17')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-548abe87-d1e6-491b-89c7-a313e4dbec7f')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1600,12 +1363,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-7acb7fff-9909-4d85-8faf-6e0a658ddd17 button.colab-df-convert');
+        document.querySelector('#df-548abe87-d1e6-491b-89c7-a313e4dbec7f button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-7acb7fff-9909-4d85-8faf-6e0a658ddd17');
+        const element = document.querySelector('#df-548abe87-d1e6-491b-89c7-a313e4dbec7f');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1625,8 +1388,8 @@
   </div>
 
 
-<div id="df-37fa626a-3e4d-4886-9901-43c67d537453">
-  <button class="colab-df-quickchart" onclick="quickchart('df-37fa626a-3e4d-4886-9901-43c67d537453')"
+<div id="df-747b0f52-c153-4a13-a918-caec310d8769">
+  <button class="colab-df-quickchart" onclick="quickchart('df-747b0f52-c153-4a13-a918-caec310d8769')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1745,75 +1508,20 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-37fa626a-3e4d-4886-9901-43c67d537453 button');
+        document.querySelector('#df-747b0f52-c153-4a13-a918-caec310d8769 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_765f0383-7363-4a82-b930-03ffbd0bcf43">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_765f0383-7363-4a82-b930-03ffbd0bcf43 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
-
     </div>
   </div>
 </div></div>
 </div>
 </section>
-<section id="tokenization">
-<h3><strong>4. Tokenization</strong><a class="headerlink" href="#tokenization" title="Link to this heading">#</a></h3>
+<section id="tokenize">
+<h2><strong>Tokenize</strong><a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1822,13 +1530,13 @@
 
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;case_folding&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenize</span><span class="p">)</span>
 
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-90b103e8-a059-4435-b866-3eb87a9cc517" class="colab-df-container">
+  <div id="df-df240bf3-324f-42d0-b258-0446617b9512" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1847,12 +1555,7 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
       <th>tokenize</th>
@@ -1861,60 +1564,35 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
       <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
       <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
       <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
       <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
       <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
@@ -1925,80 +1603,50 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
       <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
       <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
       <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
       <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
     </tr>
   </tbody>
 </table>
-<p>100 rows × 9 columns</p>
+<p>100 rows × 4 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-90b103e8-a059-4435-b866-3eb87a9cc517')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-df240bf3-324f-42d0-b258-0446617b9512')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2050,12 +1698,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-90b103e8-a059-4435-b866-3eb87a9cc517 button.colab-df-convert');
+        document.querySelector('#df-df240bf3-324f-42d0-b258-0446617b9512 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-90b103e8-a059-4435-b866-3eb87a9cc517');
+        const element = document.querySelector('#df-df240bf3-324f-42d0-b258-0446617b9512');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2075,8 +1723,8 @@
   </div>
 
 
-<div id="df-d1d0c025-b43e-4591-8717-a2cd7eb9504a">
-  <button class="colab-df-quickchart" onclick="quickchart('df-d1d0c025-b43e-4591-8717-a2cd7eb9504a')"
+<div id="df-4d244dc9-b72d-414e-a929-24588ae04c34">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4d244dc9-b72d-414e-a929-24588ae04c34')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2195,86 +1843,24 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-d1d0c025-b43e-4591-8717-a2cd7eb9504a button');
+        document.querySelector('#df-4d244dc9-b72d-414e-a929-24588ae04c34 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_3e69f73c-a4ba-4caa-a00e-41076048c6a7">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_3e69f73c-a4ba-4caa-a00e-41076048c6a7 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
-
     </div>
   </div>
 </div></div>
 </div>
 </section>
-<section id="stop-words">
-<h3><strong>5. Stop Words</strong><a class="headerlink" href="#stop-words" title="Link to this heading">#</a></h3>
+<section id="stop-word-removal">
+<h2><strong>Stop Word Removal</strong><a class="headerlink" href="#stop-word-removal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
 <span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
-
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
-
-<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -2283,8 +1869,22 @@
 [nltk_data]   Unzipping corpora/stopwords.zip.
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remove_stopwords</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword_removal&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c0312b13-3eb8-455c-8d83-f0a7b3921cf5" class="colab-df-container">
+  <div id="df-a09d5608-8d29-45d1-95fd-7fefcb3cc137" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2303,12 +1903,7 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
       <th>tokenize</th>
@@ -2318,12 +1913,7 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
       <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
@@ -2331,12 +1921,7 @@
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
       <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
@@ -2344,12 +1929,7 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
       <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
@@ -2357,12 +1937,7 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
       <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
@@ -2370,12 +1945,7 @@
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
       <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
@@ -2388,20 +1958,10 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
       <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
@@ -2409,25 +1969,15 @@
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
       <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
@@ -2435,12 +1985,7 @@
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
       <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
@@ -2448,12 +1993,7 @@
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
       <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
@@ -2461,12 +2001,12 @@
     </tr>
   </tbody>
 </table>
-<p>100 rows × 10 columns</p>
+<p>100 rows × 5 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c0312b13-3eb8-455c-8d83-f0a7b3921cf5')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a09d5608-8d29-45d1-95fd-7fefcb3cc137')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2518,12 +2058,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c0312b13-3eb8-455c-8d83-f0a7b3921cf5 button.colab-df-convert');
+        document.querySelector('#df-a09d5608-8d29-45d1-95fd-7fefcb3cc137 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c0312b13-3eb8-455c-8d83-f0a7b3921cf5');
+        const element = document.querySelector('#df-a09d5608-8d29-45d1-95fd-7fefcb3cc137');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2543,8 +2083,8 @@
   </div>
 
 
-<div id="df-56f6639c-e2be-4210-982c-b1650d5d5c7f">
-  <button class="colab-df-quickchart" onclick="quickchart('df-56f6639c-e2be-4210-982c-b1650d5d5c7f')"
+<div id="df-13699464-acc4-4e20-8661-1d1ce765a3ce">
+  <button class="colab-df-quickchart" onclick="quickchart('df-13699464-acc4-4e20-8661-1d1ce765a3ce')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2663,67 +2203,12 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-56f6639c-e2be-4210-982c-b1650d5d5c7f button');
+        document.querySelector('#df-13699464-acc4-4e20-8661-1d1ce765a3ce button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-
-  <div id="id_b9f6d8a8-ed99-4bd7-b042-f822b42e87e1">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_b9f6d8a8-ed99-4bd7-b042-f822b42e87e1 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
 
     </div>
   </div>
@@ -2731,7 +2216,7 @@
 </div>
 </section>
 <section id="stemming">
-<h3><strong>6. Stemming</strong><a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
+<h2><strong>Stemming</strong><a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi stemmer</span>
@@ -2745,13 +2230,13 @@
 <span class="c1"># Terapkan stemming setelah stopwords removal</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stopword_removal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
 
-<span class="n">df</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Isi Berita&#39;</span><span class="p">,</span> <span class="s1">&#39;cleansing&#39;</span><span class="p">,</span> <span class="s1">&#39;case_folding&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword_removal&#39;</span><span class="p">,</span> <span class="s1">&#39;stemming&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e60168d5-6ccf-4f17-8e35-0d4d598e5cf5" class="colab-df-container">
+  <div id="df-9ab53fb7-7c89-4156-bf3c-11565fc5b293" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2770,12 +2255,7 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>NO</th>
-      <th>Judul Berita</th>
       <th>Isi Berita</th>
-      <th>Tanggal Berita</th>
-      <th>Kategori Berita</th>
-      <th>Kategori</th>
       <th>cleansing</th>
       <th>case_folding</th>
       <th>tokenize</th>
@@ -2786,12 +2266,7 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Analisis PPI: Di Tangan Presiden Prabowo, Indo...</td>
       <td>TIMESINDONESIA, JAKARTA – Di bawah kepemimpina...</td>
-      <td>04/09/2024 - 23:35</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Di bawah kepemimpinan ...</td>
       <td>timesindonesia jakarta  di bawah kepemimpinan ...</td>
       <td>[timesindonesia, jakarta, di, bawah, kepemimpi...</td>
@@ -2800,12 +2275,7 @@
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Bacawabup Lathifah Solidkan Seribu Relawan, Si...</td>
       <td>TIMESINDONESIA, MALANG – Bakal cawabup Malang,...</td>
-      <td>04/09/2024 - 22:02</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MALANG  Bakal cawabup Malang La...</td>
       <td>timesindonesia malang  bakal cawabup malang la...</td>
       <td>[timesindonesia, malang, bakal, cawabup, malan...</td>
@@ -2814,12 +2284,7 @@
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Rois Syuriah Sebut Visi Misi Untoro-Wahyudi Se...</td>
       <td>TIMESINDONESIA, BANTUL – Rois Syuriah PCNU Ban...</td>
-      <td>04/09/2024 - 20:54</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA BANTUL  Rois Syuriah PCNU Bantu...</td>
       <td>timesindonesia bantul  rois syuriah pcnu bantu...</td>
       <td>[timesindonesia, bantul, rois, syuriah, pcnu, ...</td>
@@ -2828,12 +2293,7 @@
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>Ribuan Kader PKB Kabupaten Mojokerto Panasi Me...</td>
       <td>TIMESINDONESIA, MOJOKERTO – Ribuan kader PKB K...</td>
-      <td>04/09/2024 - 19:23</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA MOJOKERTO  Ribuan kader PKB Kab...</td>
       <td>timesindonesia mojokerto  ribuan kader pkb kab...</td>
       <td>[timesindonesia, mojokerto, ribuan, kader, pkb...</td>
@@ -2842,12 +2302,7 @@
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>Wajah Pengurus Inti DPP PKB Tidak Berubah, Ini...</td>
       <td>TIMESINDONESIA, JAKARTA – Partai Kebangkitan B...</td>
-      <td>04/09/2024 - 16:43</td>
-      <td>Politik</td>
-      <td>0</td>
       <td>TIMESINDONESIA JAKARTA  Partai Kebangkitan Ban...</td>
       <td>timesindonesia jakarta  partai kebangkitan ban...</td>
       <td>[timesindonesia, jakarta, partai, kebangkitan,...</td>
@@ -2862,20 +2317,10 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
       <th>95</th>
-      <td>96</td>
-      <td>Azquira Scarf Luncurkan Hijab Autentik dengan ...</td>
       <td>TIMESINDONESIA, MALANG – Azquira Scarf menggel...</td>
-      <td>01/09/2024 - 22:42</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MALANG  Azquira Scarf menggelar...</td>
       <td>timesindonesia malang  azquira scarf menggelar...</td>
       <td>[timesindonesia, malang, azquira, scarf, mengg...</td>
@@ -2884,26 +2329,16 @@
     </tr>
     <tr>
       <th>96</th>
-      <td>97</td>
-      <td>Mengulik Sejarah Bangunan Heritage Kota Malang...</td>
       <td>TIMESINDONESIA, MALANG – Pada Minggu (1/9/2024...</td>
-      <td>01/09/2024 - 22:16</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
-      <td>TIMESINDONESIA MALANG  Pada Minggu  komunitas ...</td>
-      <td>timesindonesia malang  pada minggu  komunitas ...</td>
-      <td>[timesindonesia, malang, pada, minggu, komunit...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
-      <td>timesindonesia malang minggu komunitas oom ir ...</td>
+      <td>TIMESINDONESIA MALANG  Pada Minggu 192024 komu...</td>
+      <td>timesindonesia malang  pada minggu 192024 komu...</td>
+      <td>[timesindonesia, malang, pada, minggu, 192024,...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
+      <td>timesindonesia malang minggu 192024 komunitas ...</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>98</td>
-      <td>Ritual Wewangian, Parfum Lokal Jadi Pilihan In...</td>
       <td>TIMESINDONESIA, SURABAYA – Memilih wewangian p...</td>
-      <td>31/08/2024 - 20:04</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA SURABAYA  Memilih wewangian pen...</td>
       <td>timesindonesia surabaya  memilih wewangian pen...</td>
       <td>[timesindonesia, surabaya, memilih, wewangian,...</td>
@@ -2912,12 +2347,7 @@
     </tr>
     <tr>
       <th>98</th>
-      <td>99</td>
-      <td>Berkeliling Nusantara Melalui Suguhan Kuliner ...</td>
       <td>TIMESINDONESIA, MAGELANG – Anda ingin mencicip...</td>
-      <td>04/09/2024 - 17:00</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA MAGELANG  Anda ingin mencicipi ...</td>
       <td>timesindonesia magelang  anda ingin mencicipi ...</td>
       <td>[timesindonesia, magelang, anda, ingin, mencic...</td>
@@ -2926,12 +2356,7 @@
     </tr>
     <tr>
       <th>99</th>
-      <td>100</td>
-      <td>Mengenal Tauco: Bumbu Fermentasi Kaya Rasa dan...</td>
       <td>TIMESINDONESIA, JAKARTA – Tauco adalah salah s...</td>
-      <td>04/09/2024 - 02:03</td>
-      <td>Gaya Hidup</td>
-      <td>1</td>
       <td>TIMESINDONESIA JAKARTA  Tauco adalah salah sat...</td>
       <td>timesindonesia jakarta  tauco adalah salah sat...</td>
       <td>[timesindonesia, jakarta, tauco, adalah, salah...</td>
@@ -2940,12 +2365,12 @@
     </tr>
   </tbody>
 </table>
-<p>100 rows × 11 columns</p>
+<p>100 rows × 6 columns</p>
 </div>
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e60168d5-6ccf-4f17-8e35-0d4d598e5cf5')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-9ab53fb7-7c89-4156-bf3c-11565fc5b293')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2997,12 +2422,12 @@
 
     <script>
       const buttonEl =
-        document.querySelector('#df-e60168d5-6ccf-4f17-8e35-0d4d598e5cf5 button.colab-df-convert');
+        document.querySelector('#df-9ab53fb7-7c89-4156-bf3c-11565fc5b293 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e60168d5-6ccf-4f17-8e35-0d4d598e5cf5');
+        const element = document.querySelector('#df-9ab53fb7-7c89-4156-bf3c-11565fc5b293');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -3022,8 +2447,8 @@
   </div>
 
 
-<div id="df-77bfbc59-c81c-4733-becd-eb1983bfd06b">
-  <button class="colab-df-quickchart" onclick="quickchart('df-77bfbc59-c81c-4733-becd-eb1983bfd06b')"
+<div id="df-d8832552-b7a6-4b19-bee2-724d33bc4711">
+  <button class="colab-df-quickchart" onclick="quickchart('df-d8832552-b7a6-4b19-bee2-724d33bc4711')"
             title="Suggest charts"
             style="display:none;">
 
@@ -3142,67 +2567,12 @@
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-77bfbc59-c81c-4733-becd-eb1983bfd06b button');
+        document.querySelector('#df-d8832552-b7a6-4b19-bee2-724d33bc4711 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
-
-  <div id="id_71e46971-ba65-452a-ae10-fc9d025f37a4">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_71e46971-ba65-452a-ae10-fc9d025f37a4 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df');
-      }
-      })();
-    </script>
-  </div>
 
     </div>
   </div>
@@ -3210,7 +2580,7 @@
 </div>
 </section>
 <section id="split-data">
-<h3><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h3>
+<h2><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -3227,671 +2597,151 @@
 </div>
 </div>
 </section>
-</section>
-<section id="tf-idf">
-<h2><strong>TF-IDF</strong><a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h2>
+<section id="tfidf">
+<h2><strong>TFIDF</strong><a class="headerlink" href="#tfidf" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TF-IDF vectorizer</span>
+<span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X_tfidf</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
 
-<span class="n">X_array</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>
-
-<span class="n">X_array</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
-        0.0855273 ],
-       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
-        0.0855273 ],
-       [0.09296982, 0.        , 0.        , ..., 0.        , 0.        ,
-        0.        ],
-       ...,
-       [0.        , 0.        , 0.11666782, ..., 0.        , 0.        ,
-        0.        ],
-       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
-        0.        ],
-       [0.        , 0.        , 0.010861  , ..., 0.        , 0.        ,
-        0.        ]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="c1"># Simpan TF-IDF ke file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer(svd).pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id1">
-<h2><strong>Logistic Regression</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="svd">
+<h2><strong>SVD</strong><a class="headerlink" href="#svd" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat model Logistic Regression</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dimensi untuk SVD</span>
+<span class="n">dimensions</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Latih model untuk setiap dimensi</span>
+<span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training model dengan </span><span class="si">{</span><span class="n">dim</span><span class="si">}</span><span class="s2"> dimensi...&quot;</span><span class="p">)</span>
+    <span class="n">svd</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">X_train_svd</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_tfidf</span><span class="p">)</span>
 
-<span class="c1"># Melatih model dengan data pelatihan</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Ytrain</span><span class="p">)</span>
+    <span class="c1"># Simpan model SVD ke file</span>
+    <span class="n">svd_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;svd_model_</span><span class="si">{</span><span class="n">dim</span><span class="si">}</span><span class="s1">.pkl&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">svd_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">svd</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># Logistic Regression Model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_svd</span><span class="p">,</span> <span class="n">Ytrain</span><span class="p">)</span>
+
+    <span class="c1"># Simpan Logistic Regression model ke file</span>
+    <span class="n">model_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;logistic_model_</span><span class="si">{</span><span class="n">dim</span><span class="si">}</span><span class="s1">.pkl&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">model_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="c1"># Evaluasi model</span>
+    <span class="n">X_test_tfidf</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
+    <span class="n">X_test_svd</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_tfidf</span><span class="p">)</span>
+    <span class="n">prediksi</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_svd</span><span class="p">)</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Ytest</span><span class="p">,</span> <span class="n">prediksi</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi untuk </span><span class="si">{</span><span class="n">dim</span><span class="si">}</span><span class="s2"> dimensi: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    <span class="n">models</span><span class="p">[</span><span class="n">dim</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy</span>
+
+<span class="c1"># Menampilkan hasil akhir</span>
+<span class="k">for</span> <span class="n">dim</span><span class="p">,</span> <span class="n">acc</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi model dengan </span><span class="si">{</span><span class="n">dim</span><span class="si">}</span><span class="s2"> dimensi: </span><span class="si">{</span><span class="n">acc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>#sk-container-id-1 {
-  /* Definition of color scheme common for light and dark mode */
-  --sklearn-color-text: black;
-  --sklearn-color-line: gray;
-  /* Definition of color scheme for unfitted estimators */
-  --sklearn-color-unfitted-level-0: #fff5e6;
-  --sklearn-color-unfitted-level-1: #f6e4d2;
-  --sklearn-color-unfitted-level-2: #ffe0b3;
-  --sklearn-color-unfitted-level-3: chocolate;
-  /* Definition of color scheme for fitted estimators */
-  --sklearn-color-fitted-level-0: #f0f8ff;
-  --sklearn-color-fitted-level-1: #d4ebff;
-  --sklearn-color-fitted-level-2: #b3dbfd;
-  --sklearn-color-fitted-level-3: cornflowerblue;
-
-  /* Specific color for light theme */
-  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
-  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
-  --sklearn-color-icon: #696969;
-
-  @media (prefers-color-scheme: dark) {
-    /* Redefinition of color scheme for dark theme */
-    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
-    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
-    --sklearn-color-icon: #878787;
-  }
-}
-
-#sk-container-id-1 {
-  color: var(--sklearn-color-text);
-}
-
-#sk-container-id-1 pre {
-  padding: 0;
-}
-
-#sk-container-id-1 input.sk-hidden--visually {
-  border: 0;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-#sk-container-id-1 div.sk-dashed-wrapped {
-  border: 1px dashed var(--sklearn-color-line);
-  margin: 0 0.4em 0.5em 0.4em;
-  box-sizing: border-box;
-  padding-bottom: 0.4em;
-  background-color: var(--sklearn-color-background);
-}
-
-#sk-container-id-1 div.sk-container {
-  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
-     but bootstrap.min.css set `[hidden] { display: none !important; }`
-     so we also need the `!important` here to be able to override the
-     default hidden behavior on the sphinx rendered scikit-learn.org.
-     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
-  display: inline-block !important;
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-text-repr-fallback {
-  display: none;
-}
-
-div.sk-parallel-item,
-div.sk-serial,
-div.sk-item {
-  /* draw centered vertical line to link estimators */
-  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
-  background-size: 2px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-/* Parallel-specific style estimator block */
-
-#sk-container-id-1 div.sk-parallel-item::after {
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
-  flex-grow: 1;
-}
-
-#sk-container-id-1 div.sk-parallel {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background-color: var(--sklearn-color-background);
-  position: relative;
-}
-
-#sk-container-id-1 div.sk-parallel-item {
-  display: flex;
-  flex-direction: column;
-}
-
-#sk-container-id-1 div.sk-parallel-item:first-child::after {
-  align-self: flex-end;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:last-child::after {
-  align-self: flex-start;
-  width: 50%;
-}
-
-#sk-container-id-1 div.sk-parallel-item:only-child::after {
-  width: 0;
-}
-
-/* Serial-specific style estimator block */
-
-#sk-container-id-1 div.sk-serial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--sklearn-color-background);
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-
-/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
-clickable and can be expanded/collapsed.
-- Pipeline and ColumnTransformer use this feature and define the default style
-- Estimators will overwrite some part of the style using the `sk-estimator` class
-*/
-
-/* Pipeline and ColumnTransformer style (default) */
-
-#sk-container-id-1 div.sk-toggleable {
-  /* Default theme specific background. It is overwritten whether we have a
-  specific estimator or a Pipeline/ColumnTransformer */
-  background-color: var(--sklearn-color-background);
-}
-
-/* Toggleable label */
-#sk-container-id-1 label.sk-toggleable__label {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:before {
-  /* Arrow on the left of the label */
-  content: "▸";
-  float: left;
-  margin-right: 0.25em;
-  color: var(--sklearn-color-icon);
-}
-
-#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
-  color: var(--sklearn-color-text);
-}
-
-/* Toggleable content - dropdown */
-
-#sk-container-id-1 div.sk-toggleable__content {
-  max-height: 0;
-  max-width: 0;
-  overflow: hidden;
-  text-align: left;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content pre {
-  margin: 0.2em;
-  border-radius: 0.25em;
-  color: var(--sklearn-color-text);
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-toggleable__content.fitted pre {
-  /* unfitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
-  /* Expand drop-down */
-  max-height: 200px;
-  max-width: 100%;
-  overflow: auto;
-}
-
-#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
-  content: "▾";
-}
-
-/* Pipeline/ColumnTransformer-specific style */
-
-#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator-specific style */
-
-/* Colorize estimator box */
-#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-#sk-container-id-1 div.sk-label label.sk-toggleable__label,
-#sk-container-id-1 div.sk-label label {
-  /* The background is the default theme color */
-  color: var(--sklearn-color-text-on-default-background);
-}
-
-/* On hover, darken the color of the background */
-#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-/* Label box, darken color on hover, fitted */
-#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
-  color: var(--sklearn-color-text);
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Estimator label */
-
-#sk-container-id-1 div.sk-label label {
-  font-family: monospace;
-  font-weight: bold;
-  display: inline-block;
-  line-height: 1.2em;
-}
-
-#sk-container-id-1 div.sk-label-container {
-  text-align: center;
-}
-
-/* Estimator-specific */
-#sk-container-id-1 div.sk-estimator {
-  font-family: monospace;
-  border: 1px dotted var(--sklearn-color-border-box);
-  border-radius: 0.25em;
-  box-sizing: border-box;
-  margin-bottom: 0.5em;
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-0);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-0);
-}
-
-/* on hover */
-#sk-container-id-1 div.sk-estimator:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-2);
-}
-
-#sk-container-id-1 div.sk-estimator.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-2);
-}
-
-/* Specification for estimator info (e.g. "i" and "?") */
-
-/* Common style for "i" and "?" */
-
-.sk-estimator-doc-link,
-a:link.sk-estimator-doc-link,
-a:visited.sk-estimator-doc-link {
-  float: right;
-  font-size: smaller;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1em;
-  height: 1em;
-  width: 1em;
-  text-decoration: none !important;
-  margin-left: 1ex;
-  /* unfitted */
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-  color: var(--sklearn-color-unfitted-level-1);
-}
-
-.sk-estimator-doc-link.fitted,
-a:link.sk-estimator-doc-link.fitted,
-a:visited.sk-estimator-doc-link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-div.sk-estimator:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover,
-div.sk-label-container:hover .sk-estimator-doc-link:hover,
-.sk-estimator-doc-link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover,
-div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
-.sk-estimator-doc-link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-/* Span, style for the box shown on hovering the info icon */
-.sk-estimator-doc-link span {
-  display: none;
-  z-index: 9999;
-  position: relative;
-  font-weight: normal;
-  right: .2ex;
-  padding: .5ex;
-  margin: .5ex;
-  width: min-content;
-  min-width: 20ex;
-  max-width: 50ex;
-  color: var(--sklearn-color-text);
-  box-shadow: 2pt 2pt 4pt #999;
-  /* unfitted */
-  background: var(--sklearn-color-unfitted-level-0);
-  border: .5pt solid var(--sklearn-color-unfitted-level-3);
-}
-
-.sk-estimator-doc-link.fitted span {
-  /* fitted */
-  background: var(--sklearn-color-fitted-level-0);
-  border: var(--sklearn-color-fitted-level-3);
-}
-
-.sk-estimator-doc-link:hover span {
-  display: block;
-}
-
-/* "?"-specific style due to the `<a>` HTML tag */
-
-#sk-container-id-1 a.estimator_doc_link {
-  float: right;
-  font-size: 1rem;
-  line-height: 1em;
-  font-family: monospace;
-  background-color: var(--sklearn-color-background);
-  border-radius: 1rem;
-  height: 1rem;
-  width: 1rem;
-  text-decoration: none;
-  /* unfitted */
-  color: var(--sklearn-color-unfitted-level-1);
-  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted {
-  /* fitted */
-  border: var(--sklearn-color-fitted-level-1) 1pt solid;
-  color: var(--sklearn-color-fitted-level-1);
-}
-
-/* On hover */
-#sk-container-id-1 a.estimator_doc_link:hover {
-  /* unfitted */
-  background-color: var(--sklearn-color-unfitted-level-3);
-  color: var(--sklearn-color-background);
-  text-decoration: none;
-}
-
-#sk-container-id-1 a.estimator_doc_link.fitted:hover {
-  /* fitted */
-  background-color: var(--sklearn-color-fitted-level-3);
-}
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;LogisticRegression<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.LogisticRegression.html">?<span>Documentation for LogisticRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>LogisticRegression()</pre></div> </div></div></div></div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Meyimpan model</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="pengujian-menggunakan-data-tes">
-<h3>Pengujian menggunakan data tes<a class="headerlink" href="#pengujian-menggunakan-data-tes" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load TF-IDF dan model logistic regression dari file pickle</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;tfidf_vectorizer.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;logistic_model&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformasi data baru dengan TF-IDF yang sudah dilatih</span>
-<span class="n">X_new</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">Xtest</span><span class="p">)</span>
-
-<span class="c1"># Lakukan prediksi dengan model logistic regression</span>
-<span class="n">prediksi</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediksi:&quot;</span><span class="p">,</span> <span class="n">prediksi</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prediksi: [1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Ytest</span><span class="p">,</span> <span class="n">prediksi</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Akurasi: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 100.00%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training model dengan 50 dimensi...
+Akurasi untuk 50 dimensi: 100.00%
+Training model dengan 75 dimensi...
+Akurasi untuk 75 dimensi: 100.00%
+Training model dengan 95 dimensi...
+Akurasi untuk 95 dimensi: 100.00%
+Akurasi model dengan 50 dimensi: 100.00%
+Akurasi model dengan 75 dimensi: 100.00%
+Akurasi model dengan 95 dimensi: 100.00%
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="implementasi">
-<h2><strong>Implementasi</strong><a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h2>
+<section id="implementasi-user">
+<h2><strong>Implementasi User</strong><a class="headerlink" href="#implementasi-user" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load TF-IDF dan model logistic regression</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">logistic_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the TF-IDF vectorizer from the saved file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">vect</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># Load the Logistic Regression model from the saved file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logistic_model&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-<span class="c1"># Preprocessing functions</span>
-
-<span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Cleans the input text by removing URLs, HTML tags, emojis, numbers, and symbols.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Remove URLs</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;https?://\S+|www\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove HTML tags</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove emojis</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span>  <span class="c1"># emoticons</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>  <span class="c1"># symbols &amp; pictographs</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>  <span class="c1"># transport &amp; map symbols</span>
-        <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;</span>  <span class="c1"># flags (iOS)</span>
-        <span class="s2">&quot;]+&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove numbers</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="c1"># Remove symbols and keep only letters and spaces</span>
-    <span class="n">data_berita</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z\s]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">data_berita</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">data_berita</span>
-
-<span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Converts text to lowercase for normalization.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splits text into individual tokens (words).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-<span class="c1"># Download stopwords for removing them</span>
-<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-<span class="n">stop_words</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Removes common stopwords from the tokenized text.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
-
-<span class="c1"># Initialize the Indonesian stemmer</span>
-<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
-<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reduces words to their root forms using stemming.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span>
-
-<span class="c1"># Function to preprocess the input text</span>
-<span class="k">def</span> <span class="nf">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Complete preprocessing pipeline for the input news text, including URL, emoji,</span>
-<span class="sd">    number removal, case folding, tokenization, stopwords removal, and stemming.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Menggabungkan semua langkah pembersihan dalam satu fungsi</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Mengubah teks menjadi huruf kecil (case folding)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">remove_symbols</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Tokenisasi (memisahkan kata-kata)</span>
     <span class="n">tokens</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-
-    <span class="c1"># Menghapus stopwords</span>
     <span class="n">tokens</span> <span class="o">=</span> <span class="n">remove_stopwords</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">stemming</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
 
-    <span class="c1"># Stemming (mengembalikan kata ke bentuk dasarnya)</span>
-    <span class="n">stemmed_tokens</span> <span class="o">=</span> <span class="n">stemming</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<span class="c1"># Fungsi untuk memprediksi kategori</span>
+<span class="k">def</span> <span class="nf">predict_category</span><span class="p">(</span><span class="n">user_input</span><span class="p">,</span> <span class="n">dimension</span><span class="p">):</span>
+    <span class="c1"># Load TF-IDF vectorizer</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">tfidf_vectorizer</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-    <span class="c1"># Menggabungkan kembali kata yang sudah diolah menjadi string</span>
-    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">stemmed_tokens</span><span class="p">)</span>
+    <span class="c1"># Load SVD model</span>
+    <span class="n">svd_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;svd_model_</span><span class="si">{</span><span class="n">dimension</span><span class="si">}</span><span class="s1">.pkl&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">svd_filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">svd_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="c1"># Function to predict category (Gaya Hidup or Politik)</span>
-<span class="k">def</span> <span class="nf">predict_category</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Takes preprocessed user input, transforms it using the saved TF-IDF vectorizer,</span>
-<span class="sd">    and uses the trained Logistic Regression model to predict the category (0 for</span>
-<span class="sd">    Politik, 1 for Gaya Hidup).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Preprocess the input text</span>
-    <span class="n">preprocessed_text</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="c1"># Load Logistic Regression model</span>
+    <span class="n">model_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;logistic_model_</span><span class="si">{</span><span class="n">dimension</span><span class="si">}</span><span class="s1">.pkl&#39;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">model_filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">logistic_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-    <span class="c1"># Transform the preprocessed text using the loaded TF-IDF vectorizer</span>
-    <span class="n">tfidf_text</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">preprocessed_text</span><span class="p">])</span>
+    <span class="c1"># Preprocess user input</span>
+    <span class="n">preprocessed_input</span> <span class="o">=</span> <span class="n">preprocess_input</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
 
-    <span class="c1"># Predict the category using the Logistic Regression model</span>
-    <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_text</span><span class="p">)</span>
+    <span class="c1"># Transform input</span>
+    <span class="n">input_tfidf</span> <span class="o">=</span> <span class="n">tfidf_vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">preprocessed_input</span><span class="p">])</span>
+    <span class="n">input_svd</span> <span class="o">=</span> <span class="n">svd_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">input_tfidf</span><span class="p">)</span>
 
-    <span class="c1"># Map the prediction to the corresponding category</span>
-    <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;Politik&#39;</span> <span class="k">if</span> <span class="n">prediction</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;Gaya Hidup&#39;</span>
+    <span class="c1"># Predict</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">logistic_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_svd</span><span class="p">)</span>
+    <span class="n">category_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Politik&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">category_map</span><span class="p">[</span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
 
-    <span class="k">return</span> <span class="n">category</span>
-
-<span class="c1"># Example of using the function with user input</span>
+<span class="c1"># Input pengguna</span>
 <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan isi berita: &quot;</span><span class="p">)</span>
-<span class="n">predicted_category</span> <span class="o">=</span> <span class="n">predict_category</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kategori berita: </span><span class="si">{</span><span class="n">predicted_category</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pilih dimensi untuk reduksi SVD:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. 50 dimensi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. 75 dimensi&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. 95 dimensi&quot;</span><span class="p">)</span>
+
+<span class="n">dimension_choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan pilihan (1/2/3): &quot;</span><span class="p">))</span>
+<span class="n">dimension_map</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">95</span><span class="p">}</span>
+
+<span class="k">if</span> <span class="n">dimension_choice</span> <span class="ow">in</span> <span class="n">dimension_map</span><span class="p">:</span>
+    <span class="n">selected_dimension</span> <span class="o">=</span> <span class="n">dimension_map</span><span class="p">[</span><span class="n">dimension_choice</span><span class="p">]</span>
+    <span class="n">predicted_category</span> <span class="o">=</span> <span class="n">predict_category</span><span class="p">(</span><span class="n">user_input</span><span class="p">,</span> <span class="n">selected_dimension</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kategori berita: </span><span class="si">{</span><span class="n">predicted_category</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pilihan tidak valid. Silakan pilih 1, 2, atau 3.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan isi berita: Ia menyatakan bahwa penyediaan layanan online tersebut, dilakukan untuk meningkatkan kualitas layanan perizinan di Kota Surabaya melalui penyederhanaan alur, persyaratan, dan waktu sehingga memudahkan pelaku usaha untuk mengurus perizinan.  &quot;Untuk memudahkan koordinasi semua petugas pemroses perizinan, Pemkot Surabaya juga telah melakukan digitalisasi proses perizinan dimana semua layanan perizinan dilaksanakan melalui aplikasi OSS RBA (Online Single Submission Risk Based Approach) dan SSW,&quot; ujarnya.  Di samping itu, Lasidi juga menyebutkan bahwa semua layanan perizinan dimonitor langsung oleh Wali Kota Surabaya melalui dashboard dan tidak boleh ada perizinan yang terlambat.  Selain kebijakan perizinan, Pemkot juga terus berupaya membuka destinasi wisata baru agar menarik investor membuka usaha baru di Kota Surabaya sesuai potensi wilayah.  &quot;Pemkot Surabaya terus bersinergi dengan berbagai daerah dan instansi agar peran Kota Pahlawan sebagai citihub  perdagangan dan jasa menjadikan Surabaya sebagai kota ramah Investasi,&quot; tegasnya.  Hal ini diperkuat dengan Peraturan Walikota (Perwali) Surabaya Nomor 24 Tahun 2024 tentang Perubahan Kedua atas Perwali Surabaya Nomor 52 Tahun 2024 tentang Perizinan dan Non Perizinan di Kota Surabaya. Dengan demikian, Pemkot Surabaya pun menambah layanan inovasi untuk menggenjot pelaksanaan investasi di Kota Pahlawan.  &quot;Seperti inovasi Pesona Buaya, mempermudah dan melakukan jemput bola pengurusan perizinan berusaha sampai dengan selesai bagi pelaku UMK di Surabaya,&quot; tuturnya.  Tidak hanya itu, keberadaan inovasi Klinik Investasi juga dimasifkan sebagai sarana dan fasilitas bagi investor dalam mendapatkan informasi investasi potensial di Kota Surabaya dan pendampingan persyaratan dasar serta perizinan berusaha. Ada pula, inovasi Takon Sobat, yakni tanya konsultasi terkait perizinan serta solusi jawaban melalui WhatsApp.  &quot;Kemudian, inovasi Lapis Lupis atau pemberian fasilitas penyelesaian masalah dan pendampingan/bimbingan teknis untuk mengatasi hambatan investasi serta penyampaian LKPM. Serta, inovasi Wani Ngurus Izin atau konten media sosial edukasi dan informasi tata cara pengurusan perizinan,&quot; imbuhnya.  Pada sisi lain, pemkot juga melakukan peningkatan kompetensi terhadap pegawai DPMPTSP Kota Surabaya. Seperti di antaranya, memiliki sertifikat Training of Trainers, sertifikat PTSP Tingkat Lanjut, dan sertifikat PTSP tingkat dasar. Selain itu, pemkot juga melakukan penguatan pengawasan perizinan dan meningkatkan kualitas digitalisasi perizinan.   &quot;Sarana dan prasarana lainnya juga terus dikembangkan, seperti dihadirkannya Sentra Pelayanan Publik (SPP) Joyoboyo, SPP Menur, SPP Nambangan, dan SPP Pakal,&quot; jelasnya.  Meski begitu, DPMPTSP Surabaya memiliki target pertumbuhan investasi per tahun sebesar 5-7 persen sesuai dengan RPJMD Kota Surabaya tahun 2021-2026. &quot;Dalam implementasinya, capaian pertumbuhan investasi di Kota Surabaya dari tahun 2022-2023 telah melampaui target, yaitu sebesar 7,11 persen,&quot; ungkapnya.  Sementara itu, Kepala Perwakilan Ombudsman RI Provinsi Jawa Timur, Agus Muttaqin mengapresiasi Pemkot Surabaya atas upaya dan kerja kerasnya dalam melakukan inovasi percepatan pelayanan investasi, sehingga berhasil memperoleh prestasi dari Kementerian Investasi RI sebagai Kota Predikat Terbaik Pertama.  “Apresiasi untuk Pemkot Surabaya karena terus berbenah dan terus melakukan inovasi. Sudah ada MPP, bahkan ada SPP yang tersebar di tiap wilayah di Surabaya untuk menjangkau lebih luas, jadi tidak terpusat di MPP saja,” kata Agus Muttaqin.  Sejauh ini, Agus Muttaqin menilai bahwa terobosan dan inovasi yang dilakukan DPMPTSP Kota Surabaya sudah sangat baik karena mempermudah para pelaku investasi. Ke depan, ia pun berharap percepatan layanan investasi juga bisa dilaksanakan di Balai RW.   “Maka perlu ada semacam upaya untuk menyelami dan mendalami terkait tingginya harapan masyarakat, dimana setiap tahun selalu meningkat. Maka perlu ada antisipasi dari DPMPTSP Kota Surabaya untuk terus beradaptasi sesuai dengan kebutuhan masyarakat,” ujar dia.  Sebab, dalam 5-10 tahun terakhir muncul berbagai inovasi pelayanan yang didekatkan kepada masyarakat. Seperti, MPP hingga pelayanan melalui aplikasi. Dengan demikian, harapan masyarakat itulah yang harus diadaptasi oleh penyelenggara layanan.   “Selain itu, perlu semakin membuka kanal-kanal pengaduan. Khususnya pelaku investasi yang kadangkala ingin mengadu tapi takut, sehingga perlu adanya kanal pengaduan yang menjamin identitas pengadu,” pungkasnya.
-Kategori berita: Gaya Hidup
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan isi berita: TIMESINDONESIA, KEDIRI – Sukses pemilihan kepala daerah serentak 2024 atau Pilkada 2024 tidak bisa lepas dari partisipasi masyarakat. Mendorong kesadaran masyarakat serta pemahaman akan  pentingnya partisipasi dalam Pilkada Serentak 2024, KPU Provinsi Jawa Timur (KPU Jatim) berkolaborasi dengan Komunitas Film dan Seni Budaya Kali Brantas Sinema (Kalibrasi) menggelar sosialisasi dan pendidikan pemilih bagi para pegiat seni dan budaya di wilayah Kediri Raya.   Ketua Kalibrasi Bayu Pradityo menuturkan melalui sosialisasi tersebut diharapkan bisa meningkatkan kesadaran masyarakat sehingga masyarakat memahami pentingnya partisipasi dalam pemilihan gubernur dan wakil gubernur Jawa Timur 2024. &quot;Kegiatan ini diikuti sekitar 100 orang pegiat seni dan budaya di Kota dan Kabupaten Kediri,&quot; ujarnya, Sabtu (16/11/2024).   Kegiatan itu sendiri mengusung tema “Seni dan Budaya menyatu dalam Semangat Demokrasi.&quot; Tema tersebut, ditambahkan Bayu, merupakan bentuk penghargaan terhadap Keberagaman.   Seperti seni dan budaya yang menjadi simbol keberagaman, demokrasi juga menghormati perbedaan dan memberikan ruang bagi setiap suara untuk didengar.  &quot;Seni dan budaya memiliki kekuatan untuk menyampaikan pesan-pesan demokrasi dengan cara yang unik dan inspiratif. Kegiatan ini adalah bukti nyata bahwa partisipasi masyarakat dalam Pemilihan Gubernur Jawa Timur 2024 dapat dimulai dari ruang kreatif seperti ini,&quot; ujarnya.   Bayu menuturkan partisipasi dalam pemilihan kepala daerah serentak juga adalah sebagai bentuk tanggung jawab masyarakat dalam menentukan masa depan Jawa Timur.   &quot;Kami berharap kolaborasi ini tidak hanya meningkatkan kesadaran, tetapi juga memupuk semangat kebersamaan untuk membangun masa depan Jawa Timur yang lebih baik,&quot; jelasnya lagi.   Sementara itu anggota KPU Jatim Eka Wisnu Wardhana menuturkan sosialisasi tersebut juga merupakan wujud kepedulian para pegiat terhadap Pilkada Serentak 2024.   Eka mengungkapkan para pegiat seni dan budaya juga memiliki hak pilih serta kepentingan, yang mana masa depannya turut ditentukan melalui pilkada serentak kali ini, baik itu Pilbup Kediri, Pilwali Kota Kediri serta Pilgub Jatim.   &quot;Insan seni mempunyai fungsi peran atau hak yang sama, yang kaitannya dengan pilkada serentak. Mereka juga punya hak, punya kewajiban. KPU Jatim sangat mengapresiasi kolaborasi dengan Kalibrasi ini,&quot; tuturnya.   Kegiatan tersebut turut menghadirkan dua narasumber yakni pengamat politik serta mantan Ketua KPU Kota Madiun Periode 2019 – 2024 Wisnu Wardhana serta anggota Dewan Kesenian dan Kebudayaan Kabupaten Kediri Yustiyono Fatoni.   Dalam kesempatan itu, Wisnu menyampaikan pentingnya proses demokrasi dalam hal ini, pilkada serentak untuk disukseskan bersama.  Hal itu untuk menjaga suatu proses demokrasi yang sebelumnya telah diperjuangkan para pendiri bangsa, untuk menjaga kualitas demokrasi dan menghasilkan pemimpin atau kepala daerah yang baik.   &quot;Sehingga kita juga bisa punya kesempatan.  Masyarakat bisa memajukan suatu daerah, meningkatkan kualitas kehidupan di daerahnya masing-masing, baik di Kediri maupun di Jawa Timur,&quot; ungkapnya
+Pilih dimensi untuk reduksi SVD:
+1. 50 dimensi
+2. 75 dimensi
+3. 95 dimensi
+Masukkan pilihan (1/2/3): 2
+Kategori berita: Politik
 </pre></div>
 </div>
 </div>
@@ -3946,27 +2796,22 @@ Kategori berita: Gaya Hidup
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-logistic-regression"><strong>persamaan Logistic Regression</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-sigmoid"><strong>fungsi sigmoid</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library"><strong>Library</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>Load Data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing"><strong>Preprosesing</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengubah-kolom-kategori-menjadi-bentuk-biner"><strong>1. Mengubah kolom kategori menjadi bentuk biner</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleansing"><strong>2. Cleansing</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>3. Case folding</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization"><strong>4. Tokenization</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-words"><strong>5. Stop Words</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>6. Stemming</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf"><strong>TF-IDF</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Logistic Regression</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengujian-menggunakan-data-tes">Pengujian menggunakan data tes</a></li>
 </ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
-</ul>
+
   </nav></div>
 
 </div></div>

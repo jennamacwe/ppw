@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +38,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -57,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'klasifikasi-berita';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -64,6 +69,7 @@
     <link rel="prev" title="Vector Space Model" href="Preprocessing-dan-TFIDF.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -99,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +149,17 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -339,24 +330,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -402,7 +385,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing">Preprosesing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-kategori">Klasifikasi Kategori</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-pengguna">Input Pengguna</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-streamlit">Deploy Streamlit </a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment"><strong>Deployment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steamlit">Steamlit :</a></li>
 </ul>
 </li>
 </ul>
@@ -423,17 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
-  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl.metadata (909 bytes)
-Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
-?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺ <span class=" -Color -Color-Green">204.8/209.7 kB</span> <span class=" -Color -Color-Red">6.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">4.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
-Successfully installed Sastrawi-1.0.1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
 </pre></div>
 </div>
 </div>
@@ -556,7 +533,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c2357a6f-eee8-4ad3-95d8-1b356169bf17" class="colab-df-container">
+  <div id="df-51c4d242-b172-426c-9a21-d225a0c73807" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -678,7 +655,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c2357a6f-eee8-4ad3-95d8-1b356169bf17')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-51c4d242-b172-426c-9a21-d225a0c73807')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -730,12 +707,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c2357a6f-eee8-4ad3-95d8-1b356169bf17 button.colab-df-convert');
+        document.querySelector('#df-51c4d242-b172-426c-9a21-d225a0c73807 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c2357a6f-eee8-4ad3-95d8-1b356169bf17');
+        const element = document.querySelector('#df-51c4d242-b172-426c-9a21-d225a0c73807');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -755,8 +732,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-9e5b79b1-cf7b-45cf-932d-53dc8311bcde">
-  <button class="colab-df-quickchart" onclick="quickchart('df-9e5b79b1-cf7b-45cf-932d-53dc8311bcde')"
+<div id="df-37ac75be-14ec-441f-8a0e-41421e3fa6ee">
+  <button class="colab-df-quickchart" onclick="quickchart('df-37ac75be-14ec-441f-8a0e-41421e3fa6ee')"
             title="Suggest charts"
             style="display:none;">
 
@@ -875,14 +852,14 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-9e5b79b1-cf7b-45cf-932d-53dc8311bcde button');
+        document.querySelector('#df-37ac75be-14ec-441f-8a0e-41421e3fa6ee button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
   </script>
 </div>
 
-  <div id="id_303558d5-a131-49e5-94a7-9201bac8f7db">
+  <div id="id_a2c8ebcd-c1cb-4fcb-bc38-27445f5c60b3">
     <style>
       .colab-df-generate {
         background-color: #E8F0FE;
@@ -926,7 +903,7 @@ Successfully installed Sastrawi-1.0.1
     <script>
       (() => {
       const buttonEl =
-        document.querySelector('#id_303558d5-a131-49e5-94a7-9201bac8f7db button.colab-df-generate');
+        document.querySelector('#id_a2c8ebcd-c1cb-4fcb-bc38-27445f5c60b3 button.colab-df-generate');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
@@ -944,8 +921,12 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="preprocessing">
 <h2><strong>Preprocessing</strong><a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
+<p>langkah untuk mengubah data mentah menjadi lebih terstruktur dan siap diolah dengan model</p>
 <section id="label-encoder">
 <h3><strong>Label Encoder</strong><a class="headerlink" href="#label-encoder" title="Link to this heading">#</a></h3>
+<p>Mengonversi label kategori menjadi angka agar dapat digunakan model.
+Contoh:
+Label “Politik” diubah menjadi angka 0, sedangkan “Gaya Hidup” menjadi 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;Politik&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -956,6 +937,10 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="cleaning">
 <h3><strong>Cleaning</strong><a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h3>
+<p>Membersihkan teks dari karakter tidak relevan seperti tanda baca, angka, atau simbol.</p>
+<p>Contoh:</p>
+<p>Teks asli: “Saya sedang belajar pemrograman di rumah!”</p>
+<p>Setelah cleaning: “Saya sedang belajar pemrograman di rumah”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
@@ -970,7 +955,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6bc79e2b-8d5e-4c6a-86d0-3ec64b40dbc6" class="colab-df-container">
+  <div id="df-a50aa6fd-8811-409d-aa8c-da263e4a66c3" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1056,7 +1041,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-6bc79e2b-8d5e-4c6a-86d0-3ec64b40dbc6')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a50aa6fd-8811-409d-aa8c-da263e4a66c3')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1108,12 +1093,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-6bc79e2b-8d5e-4c6a-86d0-3ec64b40dbc6 button.colab-df-convert');
+        document.querySelector('#df-a50aa6fd-8811-409d-aa8c-da263e4a66c3 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-6bc79e2b-8d5e-4c6a-86d0-3ec64b40dbc6');
+        const element = document.querySelector('#df-a50aa6fd-8811-409d-aa8c-da263e4a66c3');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1133,8 +1118,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-88911bbc-3e66-4880-9afd-6c8185ecd4f1">
-  <button class="colab-df-quickchart" onclick="quickchart('df-88911bbc-3e66-4880-9afd-6c8185ecd4f1')"
+<div id="df-59913ea1-9ae7-457a-b1a3-540e1cfde742">
+  <button class="colab-df-quickchart" onclick="quickchart('df-59913ea1-9ae7-457a-b1a3-540e1cfde742')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1253,7 +1238,7 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-88911bbc-3e66-4880-9afd-6c8185ecd4f1 button');
+        document.querySelector('#df-59913ea1-9ae7-457a-b1a3-540e1cfde742 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1267,6 +1252,9 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="case-folding">
 <h3><strong>Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h3>
+<p>Mengubah seluruh teks menjadi huruf kecil</p>
+<p>Contoh:</p>
+<p>“Saya Sedang Belajar Pemrograman” menjadi “saya sedang belajar pemrograman”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1284,7 +1272,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b978e6e4-cdbb-42b6-bad2-470930eaf46a" class="colab-df-container">
+  <div id="df-48d34d64-8ef8-40bc-ac84-4b49e38b3873" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1382,7 +1370,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b978e6e4-cdbb-42b6-bad2-470930eaf46a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-48d34d64-8ef8-40bc-ac84-4b49e38b3873')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1434,12 +1422,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b978e6e4-cdbb-42b6-bad2-470930eaf46a button.colab-df-convert');
+        document.querySelector('#df-48d34d64-8ef8-40bc-ac84-4b49e38b3873 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b978e6e4-cdbb-42b6-bad2-470930eaf46a');
+        const element = document.querySelector('#df-48d34d64-8ef8-40bc-ac84-4b49e38b3873');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1459,8 +1447,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-6c9bc6be-20e6-4689-972f-d6eca1da9a3e">
-  <button class="colab-df-quickchart" onclick="quickchart('df-6c9bc6be-20e6-4689-972f-d6eca1da9a3e')"
+<div id="df-4dcbcb8d-67b5-4b09-a978-aaf29b83cc9b">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4dcbcb8d-67b5-4b09-a978-aaf29b83cc9b')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1579,7 +1567,7 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-6c9bc6be-20e6-4689-972f-d6eca1da9a3e button');
+        document.querySelector('#df-4dcbcb8d-67b5-4b09-a978-aaf29b83cc9b button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1593,6 +1581,10 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="tokenize">
 <h3><strong>Tokenize</strong><a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h3>
+<p>Memecah teks menjadi unit terkecil, seperti kata atau kalimat.</p>
+<p>Contoh:</p>
+<p>Teks: “saya sedang belajar pemrograman di rumah”</p>
+<p>Setelah tokenisasi: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1607,7 +1599,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-1d691ce8-87c6-4e17-a204-afcc897b8cbc" class="colab-df-container">
+  <div id="df-a2f2c5da-c586-4573-a56a-74998d7d2317" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1717,7 +1709,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-1d691ce8-87c6-4e17-a204-afcc897b8cbc')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a2f2c5da-c586-4573-a56a-74998d7d2317')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1769,12 +1761,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-1d691ce8-87c6-4e17-a204-afcc897b8cbc button.colab-df-convert');
+        document.querySelector('#df-a2f2c5da-c586-4573-a56a-74998d7d2317 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-1d691ce8-87c6-4e17-a204-afcc897b8cbc');
+        const element = document.querySelector('#df-a2f2c5da-c586-4573-a56a-74998d7d2317');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1794,8 +1786,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-a57ff50f-6c6c-40f8-8829-6db2e20d07a1">
-  <button class="colab-df-quickchart" onclick="quickchart('df-a57ff50f-6c6c-40f8-8829-6db2e20d07a1')"
+<div id="df-d043379c-36d8-4648-9f73-d10ba35bd384">
+  <button class="colab-df-quickchart" onclick="quickchart('df-d043379c-36d8-4648-9f73-d10ba35bd384')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1914,7 +1906,7 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-a57ff50f-6c6c-40f8-8829-6db2e20d07a1 button');
+        document.querySelector('#df-d043379c-36d8-4648-9f73-d10ba35bd384 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1928,6 +1920,10 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="stop-word-removal">
 <h3><strong>Stop Word Removal</strong><a class="headerlink" href="#stop-word-removal" title="Link to this heading">#</a></h3>
+<p>Menghapus kata-kata umum yang tidak memiliki makna signifikan dalam analisis, seperti “di”, “yang”, atau “dan”.</p>
+<p>Contoh:</p>
+<p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+<p>Setelah stop word removal: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
@@ -1955,7 +1951,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-50d30373-5d88-4f32-8016-ac5e45f4d24f" class="colab-df-container">
+  <div id="df-6c6688af-69fb-4ea4-be97-2e75bff06d58" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2077,7 +2073,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-50d30373-5d88-4f32-8016-ac5e45f4d24f')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6c6688af-69fb-4ea4-be97-2e75bff06d58')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2129,12 +2125,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-50d30373-5d88-4f32-8016-ac5e45f4d24f button.colab-df-convert');
+        document.querySelector('#df-6c6688af-69fb-4ea4-be97-2e75bff06d58 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-50d30373-5d88-4f32-8016-ac5e45f4d24f');
+        const element = document.querySelector('#df-6c6688af-69fb-4ea4-be97-2e75bff06d58');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2154,8 +2150,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-997f0ebe-5a74-4ac6-a270-d5639057af9b">
-  <button class="colab-df-quickchart" onclick="quickchart('df-997f0ebe-5a74-4ac6-a270-d5639057af9b')"
+<div id="df-b9ccab29-7e30-4814-908e-ea5c9db011ab">
+  <button class="colab-df-quickchart" onclick="quickchart('df-b9ccab29-7e30-4814-908e-ea5c9db011ab')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2274,7 +2270,7 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-997f0ebe-5a74-4ac6-a270-d5639057af9b button');
+        document.querySelector('#df-b9ccab29-7e30-4814-908e-ea5c9db011ab button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2288,6 +2284,10 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="stemming">
 <h3><strong>Stemming</strong><a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
+<p>Mengubah kata menjadi bentuk dasarny.</p>
+<p>Contoh:</p>
+<p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+<p>Setelah stemming: <code class="docutils literal notranslate"><span class="pre">[&quot;ajar&quot;,</span> <span class="pre">&quot;program&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi stemmer</span>
@@ -2307,7 +2307,7 @@ Successfully installed Sastrawi-1.0.1
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8f794da3-d6ee-4fea-a78c-c8f2587616ab" class="colab-df-container">
+  <div id="df-ac0ba9b1-238c-4d73-80c0-a315c97ecbc5" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2441,7 +2441,7 @@ Successfully installed Sastrawi-1.0.1
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8f794da3-d6ee-4fea-a78c-c8f2587616ab')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ac0ba9b1-238c-4d73-80c0-a315c97ecbc5')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -2493,12 +2493,12 @@ Successfully installed Sastrawi-1.0.1
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8f794da3-d6ee-4fea-a78c-c8f2587616ab button.colab-df-convert');
+        document.querySelector('#df-ac0ba9b1-238c-4d73-80c0-a315c97ecbc5 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8f794da3-d6ee-4fea-a78c-c8f2587616ab');
+        const element = document.querySelector('#df-ac0ba9b1-238c-4d73-80c0-a315c97ecbc5');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2518,8 +2518,8 @@ Successfully installed Sastrawi-1.0.1
   </div>
 
 
-<div id="df-2ed5e4a6-86a4-4eb7-82ae-f1aab3fc2e87">
-  <button class="colab-df-quickchart" onclick="quickchart('df-2ed5e4a6-86a4-4eb7-82ae-f1aab3fc2e87')"
+<div id="df-17bab4ea-c8f5-4449-8106-d669b93c87ab">
+  <button class="colab-df-quickchart" onclick="quickchart('df-17bab4ea-c8f5-4449-8106-d669b93c87ab')"
             title="Suggest charts"
             style="display:none;">
 
@@ -2638,7 +2638,7 @@ Successfully installed Sastrawi-1.0.1
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-2ed5e4a6-86a4-4eb7-82ae-f1aab3fc2e87 button');
+        document.querySelector('#df-17bab4ea-c8f5-4449-8106-d669b93c87ab button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -2660,6 +2660,9 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="split-data">
 <h3><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h3>
+<p>Membagi dataset menjadi bagian untuk pelatihan (training) dan pengujian (testing) dalam rasio 80:20 atau 70:30.</p>
+<p>80 data untuk pelatihan</p>
+<p>20 data untuk pengujian</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -3448,6 +3451,22 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="tf-idf">
 <h2><strong>TF-IDF</strong><a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h2>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan untuk menentukan seberapa penting sebuah kata dalam suatu dokumen dibandingkan dengan dokumen-dokumen lainnya. Metode ini menggabungkan dua hal: Term Frequency (TF), yaitu seberapa sering kata muncul di dalam sebuah dokumen, dan **Inverse Document Frequency (IDF), yang menunjukkan seberapa jarang kata tersebut muncul di seluruh kumpulan dokumen. Dengan begitu, kata yang sering muncul di dokumen tetapi jarang ada di dokumen lain dianggap lebih penting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi TfidfVectorizer</span>
+<span class="n">vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
+<span class="c1"># Fitting dan transformasi data pelatihan</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vect</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">Xtrain</span><span class="p">)</span>  <span class="c1"># Fitting TF-IDF di data latih</span>
+
+<span class="c1"># Simpan vectorizer ke file pkl</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tfidf_vectorizer.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi TfidfVectorizer</span>
@@ -3511,6 +3530,15 @@ Successfully installed Sastrawi-1.0.1
 </section>
 <section id="logistic-regression">
 <h2><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h2>
+<p>Logistic Regression adalah metode statistik untuk memprediksi probabilitas dari sebuah kejadian, biasanya digunakan untuk klasifikasi biner (contoh: 0 atau 1). Model ini menggunakan fungsi sigmoid untuk mengubah output linear menjadi probabilitas antara 0 dan 1.</p>
+<p>Rumus Logistic Regression:</p>
+<div class="math notranslate nohighlight">
+\[ P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_nx_n)}} \]</div>
+<p><strong>Fungsi Sigmoid</strong></p>
+<p>Fungsi sigmoid digunakan untuk mengubah nilai real menjadi rentang antara 0 dan 1, sehingga cocok untuk merepresentasikan probabilitas.</p>
+<p>Rumus Fungsi Sigmoid:</p>
+<div class="math notranslate nohighlight">
+\[ S(x) = \frac{1}{1 + e^{-x}} \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat model Logistic Regression</span>
@@ -4031,6 +4059,22 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan isi berita: TIMESINDONESIA, KEDIRI – Sukses pemilihan kepala daerah serentak 2024 atau Pilkada 2024 tidak bisa lepas dari partisipasi masyarakat. Mendorong kesadaran masyarakat serta pemahaman akan  pentingnya partisipasi dalam Pilkada Serentak 2024, KPU Provinsi Jawa Timur (KPU Jatim) berkolaborasi dengan Komunitas Film dan Seni Budaya Kali Brantas Sinema (Kalibrasi) menggelar sosialisasi dan pendidikan pemilih bagi para pegiat seni dan budaya di wilayah Kediri Raya.   Ketua Kalibrasi Bayu Pradityo menuturkan melalui sosialisasi tersebut diharapkan bisa meningkatkan kesadaran masyarakat sehingga masyarakat memahami pentingnya partisipasi dalam pemilihan gubernur dan wakil gubernur Jawa Timur 2024. &quot;Kegiatan ini diikuti sekitar 100 orang pegiat seni dan budaya di Kota dan Kabupaten Kediri,&quot; ujarnya, Sabtu (16/11/2024).   Kegiatan itu sendiri mengusung tema “Seni dan Budaya menyatu dalam Semangat Demokrasi.&quot; Tema tersebut, ditambahkan Bayu, merupakan bentuk penghargaan terhadap Keberagaman.   Seperti seni dan budaya yang menjadi simbol keberagaman, demokrasi juga menghormati perbedaan dan memberikan ruang bagi setiap suara untuk didengar.  &quot;Seni dan budaya memiliki kekuatan untuk menyampaikan pesan-pesan demokrasi dengan cara yang unik dan inspiratif. Kegiatan ini adalah bukti nyata bahwa partisipasi masyarakat dalam Pemilihan Gubernur Jawa Timur 2024 dapat dimulai dari ruang kreatif seperti ini,&quot; ujarnya.   Bayu menuturkan partisipasi dalam pemilihan kepala daerah serentak juga adalah sebagai bentuk tanggung jawab masyarakat dalam menentukan masa depan Jawa Timur.   &quot;Kami berharap kolaborasi ini tidak hanya meningkatkan kesadaran, tetapi juga memupuk semangat kebersamaan untuk membangun masa depan Jawa Timur yang lebih baik,&quot; jelasnya lagi.   Sementara itu anggota KPU Jatim Eka Wisnu Wardhana menuturkan sosialisasi tersebut juga merupakan wujud kepedulian para pegiat terhadap Pilkada Serentak 2024.   Eka mengungkapkan para pegiat seni dan budaya juga memiliki hak pilih serta kepentingan, yang mana masa depannya turut ditentukan melalui pilkada serentak kali ini, baik itu Pilbup Kediri, Pilwali Kota Kediri serta Pilgub Jatim.   &quot;Insan seni mempunyai fungsi peran atau hak yang sama, yang kaitannya dengan pilkada serentak. Mereka juga punya hak, punya kewajiban. KPU Jatim sangat mengapresiasi kolaborasi dengan Kalibrasi ini,&quot; tuturnya.   Kegiatan tersebut turut menghadirkan dua narasumber yakni pengamat politik serta mantan Ketua KPU Kota Madiun Periode 2019 – 2024 Wisnu Wardhana serta anggota Dewan Kesenian dan Kebudayaan Kabupaten Kediri Yustiyono Fatoni.   Dalam kesempatan itu, Wisnu menyampaikan pentingnya proses demokrasi dalam hal ini, pilkada serentak untuk disukseskan bersama.  Hal itu untuk menjaga suatu proses demokrasi yang sebelumnya telah diperjuangkan para pendiri bangsa, untuk menjaga kualitas demokrasi dan menghasilkan pemimpin atau kepala daerah yang baik.   &quot;Sehingga kita juga bisa punya kesempatan.  Masyarakat bisa memajukan suatu daerah, meningkatkan kualitas kehidupan di daerahnya masing-masing, baik di Kediri maupun di Jawa Timur,&quot; ungkapnya.
+Kategori berita: Politik
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># input pengguna</span>
+<span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan isi berita: &quot;</span><span class="p">)</span>
+<span class="n">predicted_category</span> <span class="o">=</span> <span class="n">predict_category</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kategori berita: </span><span class="si">{</span><span class="n">predicted_category</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masukkan isi berita: TIMESINDONESIA, JEMBER – Sebanyak 142 barista dari berbagai daerah mengikuti Pandhalungan Coffee Week 2024 yang berlangsung di Main Atrium GF Lippo Plaza Jember, Jember, Jawa Timur (Jatim). Pandhalungan Coffee Week yang pertama kali digelar pada 2023 tersebut menjadi ajang berbagi cerita dan promosi bagi pecinta kopi Nusantara serta pelaku usaha yang tidak jauh dari biji kopi. &quot;Jadi pada awalnya berdiri kegiatan ini di tahun 2023 itu hanya segmented untuk kopi. Kemudian pada tahun ini kami menginisiasi bahwa spektrumnya kami perluas,&quot; kata Resty Subagio selaku Ketua Panitia Pandhalungan Coffee Week saat ditemui di Lippo Plaza Jember, Sabtu (12/10/2024).  Resty mengatakan, Jember merupakan kabupaten yang dikenal sebagai salah satu penghasil kopi terbaik di Indonesia, khususnya kopi robusta.  Namun, dia menyatakan bahwa perhatian terhadap potensi kopi di Jember masih kurang.  &quot;Harapannya setelah ada klaim seperti itu, kami ingin punya banyak acara yang dapat mengangkat kopi itu sendiri. Jadi tahun ini kami angkat semua, baik itu coffee shop, ada teman-teman komunitas, dan juga ada pengusaha,&quot; ujarnya.  Resty juga mengatakan bahwa kegiatan tersebut juga merangkul penjaja kopi keliling agar dapat mempromosikan usahanya ke publik.  &quot;Ada juga teman-teman yang memang UMKM seperti kopi keliling untuk berkolaborasi,&quot; tambahnya.   Untuk diketahui, Pandhalungan Coffee Week berlangsung selama tiga hari yakni 11 - 13 Oktober 2024.  Sementara itu, Marlina Elisabeth Panjaitan, Dep Head Marketing Communications Lippo Plaza Jember mengatakan bahwa pihaknya mendukung Pandhalungan Coffee Week tersebut.  Menurutnya, acara tersebut akan berdampak positif bagi pengusaha kopi lokal yang ada di Jember dan sekitarnya.  &quot;Acara ini tentunya dapat menjadi ajang promosi dan membuka peluang kerja sama bagi para pengusaha kopi, kafe dan industri food and beverages dan Lippo sangat bangga bisa turut mendukung kegiatan ini,&quot; kata perempuan yang akrab disapa Lina tersebut.  Tidak hanya itu, Lina mengatakan bahwa masyarakat umum juga dapat mengenali potensi kopi lokal serta industrinya.  &quot;Tentunya ini membuat kami semakin mengenal dan mengerti industri kopi dan kebutuhan komunitasnya, serta membawa dampak yang baik bagi para pengunjung Lippo karena mungkin mereka belum berkesempatan untuk mencicipi produk-produk dalam pameran ini. Tapi kini pengunjung bisa menikmati ini selama penyelenggaraan Pandhalungan Coffee Week,&quot; imbuhnya.
 Kategori berita: Gaya Hidup
 </pre></div>
@@ -4038,8 +4082,16 @@ Kategori berita: Gaya Hidup
 </div>
 </div>
 </section>
-<section id="deploy-streamlit">
-<h3><a class="reference external" href="https://berita-ppw.streamlit.app/">Deploy Streamlit </a><a class="headerlink" href="#deploy-streamlit" title="Link to this heading">#</a></h3>
+</section>
+<section id="deployment">
+<h2><strong>Deployment</strong><a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<section id="hugging-face">
+<h3>Hugging Face :<a class="headerlink" href="#hugging-face" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://huggingface.co/spaces/jennamacwe/news-ppw">https://huggingface.co/spaces/jennamacwe/news-ppw</a></p>
+</section>
+<section id="steamlit">
+<h3>Steamlit :<a class="headerlink" href="#steamlit" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://berita-ppw.streamlit.app/">https://berita-ppw.streamlit.app/</a></p>
 </section>
 </section>
 </section>
@@ -4099,7 +4151,8 @@ Kategori berita: Gaya Hidup
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -4130,7 +4183,11 @@ Kategori berita: Gaya Hidup
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprosesing">Preprosesing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-kategori">Klasifikasi Kategori</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-pengguna">Input Pengguna</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-streamlit">Deploy Streamlit </a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment"><strong>Deployment</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steamlit">Steamlit :</a></li>
 </ul>
 </li>
 </ul>
@@ -4181,8 +4238,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

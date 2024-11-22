@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +38,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Klasifikasi Berita" href="klasifikasi-berita.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -341,24 +330,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -865,6 +846,77 @@ Lima tahun ke depan adalah periode menentukan bagi Indonesia. Muhlis Ali menegas
 </section>
 <section id="preprosesing">
 <h2>Preprosesing<a class="headerlink" href="#preprosesing" title="Link to this heading">#</a></h2>
+<p>langkah untuk mengubah data mentah menjadi lebih terstruktur dan siap diolah dengan model</p>
+<p>Preprocessing yang dilakukan:</p>
+<ul>
+<li><p>Cleaning :</p>
+<blockquote>
+<div><p>Membersihkan teks dari karakter tidak relevan seperti tanda baca, angka, atau simbol.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Teks asli: “Saya sedang belajar pemrograman di rumah!”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah cleaning: “Saya sedang belajar pemrograman di rumah”</p>
+</div></blockquote>
+</li>
+<li><p>Case Folding</p>
+<blockquote>
+<div><p>Mengubah seluruh teks menjadi huruf kecil</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Saya Sedang Belajar Pemrograman” menjadi “saya sedang belajar pemrograman”.</p>
+</div></blockquote>
+</li>
+<li><p>Tokenize</p>
+<blockquote>
+<div><p>Memecah teks menjadi unit terkecil, seperti kata atau kalimat.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Teks: “saya sedang belajar pemrograman di rumah”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah tokenisasi: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Stop Word Removal</p>
+<blockquote>
+<div><p>Menghapus kata-kata umum yang tidak memiliki makna signifikan dalam analisis, seperti “di”, “yang”, atau “dan”.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah stop word removal: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Stemming</p>
+<blockquote>
+<div><p>Mengubah kata menjadi bentuk dasarny.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah stemming: <code class="docutils literal notranslate"><span class="pre">[&quot;ajar&quot;,</span> <span class="pre">&quot;program&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat objek stemmer</span>
@@ -1168,6 +1220,7 @@ Lima tahun ke depan adalah periode menentukan bagi Indonesia. Muhlis Ali menegas
 </section>
 <section id="tf-idf">
 <h2>TF-IDF<a class="headerlink" href="#tf-idf" title="Link to this heading">#</a></h2>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan untuk menentukan seberapa penting sebuah kata dalam suatu dokumen dibandingkan dengan dokumen-dokumen lainnya. Metode ini menggabungkan dua hal: Term Frequency (TF), yaitu seberapa sering kata muncul di dalam sebuah dokumen, dan **Inverse Document Frequency (IDF), yang menunjukkan seberapa jarang kata tersebut muncul di seluruh kumpulan dokumen. Dengan begitu, kata yang sering muncul di dokumen tetapi jarang ada di dokumen lain dianggap lebih penting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung TF-IDF</span>
@@ -4490,8 +4543,7 @@ Lima tahun ke depan adalah periode menentukan bagi Indonesia. Muhlis Ali menegas
 </section>
 <section id="centrality">
 <h2>Centrality<a class="headerlink" href="#centrality" title="Link to this heading">#</a></h2>
-<p>Centrality adalah konsep dalam teori graf yang digunakan untuk mengukur pentingnya atau pengaruh suatu simpul (node) dalam sebuah graf. dalam code ini, digunakan salah satu jenis dari Centrality yaitu :</p>
-<p><strong>Betweenness Centrality</strong>, Mengukur seberapa sering suatu simpul muncul dalam jalur terpendek antara dua simpul lain.</p>
+<p>Centrality adalah konsep dalam teori graf yang digunakan untuk mengukur pentingnya atau pengaruh suatu simpul (node) dalam sebuah graf.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung centrality</span>
@@ -5005,7 +5057,8 @@ Lima tahun ke depan adalah periode menentukan bagi Indonesia. Muhlis Ali menegas
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -5071,8 +5124,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
