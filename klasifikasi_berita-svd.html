@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Dataset &#8212; My sample book</title>
+    <title>Klasifikasi Berita menggunakan SVD &#8212; My sample book</title>
   
   
   
@@ -173,8 +173,7 @@
 <li class="toctree-l1"><a class="reference internal" href="klasifikasi-berita.html"><strong>Klasifikasi Berita</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ringkasan-kalimat.html"><strong>Ringkasan berita</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="keyword-bismillah.html"><strong>Keyword Ekstraction</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Dataset</strong></a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Klasifikasi Berita menggunakan SVD</strong></a></li>
 </ul>
 
     </div>
@@ -352,7 +351,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dataset</h1>
+    <h1>Klasifikasi Berita menggunakan SVD</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,24 +361,29 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Dataset</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset"><strong>Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition-svd"><strong>Singular Value Decomposition (SVD)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-svd"><strong>Komponen SVD</strong></a></li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -390,7 +394,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-berita-menggunakan-svd">
+<h1><strong>Klasifikasi Berita menggunakan SVD</strong><a class="headerlink" href="#klasifikasi-berita-menggunakan-svd" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
 </pre></div>
@@ -477,7 +483,9 @@
 </div>
 </div>
 <section id="dataset">
-<h1><strong>Dataset</strong><a class="headerlink" href="#dataset" title="Link to this heading">#</a></h1>
+<h2><strong>Dataset</strong><a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://timesindonesia.co.id/#google_vignette">https://timesindonesia.co.id/#google_vignette</a></p>
+<p>Dataset ini berisi kumpulan berita yang diambil dari situs TIMES Indonesia, sebuah portal berita yang memuat berbagai artikel terkait berbagai topik, termasuk politik dan gaya hidup. Data ini dikumpulkan melalui proses web crawling menggunakan Python, yang merupakan teknik pengumpulan data secara otomatis dari situs web.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Tugas-Crawling-Data-Berita-2-kategori.csv&quot;</span><span class="p">)</span>
@@ -875,9 +883,80 @@
 </div>
 </section>
 <section id="preprocessing">
-<h1><strong>Preprocessing</strong><a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h1>
+<h2><strong>Preprocessing</strong><a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
+<p>langkah untuk mengubah data mentah menjadi lebih terstruktur dan siap diolah dengan model</p>
+<p>Preprocessing yang dilakukan:</p>
+<ul>
+<li><p>Cleaning :</p>
+<blockquote>
+<div><p>Membersihkan teks dari karakter tidak relevan seperti tanda baca, angka, atau simbol.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Teks asli: “Saya sedang belajar pemrograman di rumah!”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah cleaning: “Saya sedang belajar pemrograman di rumah”</p>
+</div></blockquote>
+</li>
+<li><p>Case Folding</p>
+<blockquote>
+<div><p>Mengubah seluruh teks menjadi huruf kecil</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Saya Sedang Belajar Pemrograman” menjadi “saya sedang belajar pemrograman”.</p>
+</div></blockquote>
+</li>
+<li><p>Tokenize</p>
+<blockquote>
+<div><p>Memecah teks menjadi unit terkecil, seperti kata atau kalimat.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Teks: “saya sedang belajar pemrograman di rumah”</p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah tokenisasi: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Stop Word Removal</p>
+<blockquote>
+<div><p>Menghapus kata-kata umum yang tidak memiliki makna signifikan dalam analisis, seperti “di”, “yang”, atau “dan”.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;saya&quot;,</span> <span class="pre">&quot;sedang&quot;,</span> <span class="pre">&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;di&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah stop word removal: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Stemming</p>
+<blockquote>
+<div><p>Mengubah kata menjadi bentuk dasarny.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Contoh:</p>
+</div></blockquote>
+<blockquote>
+<div><p>Token: <code class="docutils literal notranslate"><span class="pre">[&quot;belajar&quot;,</span> <span class="pre">&quot;pemrograman&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+<blockquote>
+<div><p>Setelah stemming: <code class="docutils literal notranslate"><span class="pre">[&quot;ajar&quot;,</span> <span class="pre">&quot;program&quot;,</span> <span class="pre">&quot;rumah&quot;]</span></code></p>
+</div></blockquote>
+</li>
+</ul>
 <section id="label-encoder">
-<h2><strong>Label Encoder</strong><a class="headerlink" href="#label-encoder" title="Link to this heading">#</a></h2>
+<h3><strong>Label Encoder</strong><a class="headerlink" href="#label-encoder" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori Berita&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;Politik&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Gaya Hidup&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -887,7 +966,7 @@
 </div>
 </section>
 <section id="cleaning">
-<h2><strong>Cleaning</strong><a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h2>
+<h3><strong>Cleaning</strong><a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_symbols</span><span class="p">(</span><span class="n">data_berita</span><span class="p">):</span>
@@ -1198,7 +1277,7 @@
 </div>
 </section>
 <section id="case-folding">
-<h2><strong>Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h2>
+<h3><strong>Case Folding</strong><a class="headerlink" href="#case-folding" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">case_folding</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1524,7 +1603,7 @@
 </div>
 </section>
 <section id="tokenize">
-<h2><strong>Tokenize</strong><a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h2>
+<h3><strong>Tokenize</strong><a class="headerlink" href="#tokenize" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -1859,7 +1938,7 @@
 </div>
 </section>
 <section id="stop-word-removal">
-<h2><strong>Stop Word Removal</strong><a class="headerlink" href="#stop-word-removal" title="Link to this heading">#</a></h2>
+<h3><strong>Stop Word Removal</strong><a class="headerlink" href="#stop-word-removal" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
@@ -2219,7 +2298,7 @@
 </div>
 </section>
 <section id="stemming">
-<h2><strong>Stemming</strong><a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
+<h3><strong>Stemming</strong><a class="headerlink" href="#stemming" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi stemmer</span>
@@ -2583,7 +2662,10 @@
 </div>
 </section>
 <section id="split-data">
-<h2><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h2>
+<h3><strong>Split Data</strong><a class="headerlink" href="#split-data" title="Link to this heading">#</a></h3>
+<p>Membagi dataset menjadi bagian untuk pelatihan (training) dan pengujian (testing) dalam rasio 80:20 atau 70:30.</p>
+<p>80 data untuk pelatihan</p>
+<p>20 data untuk pengujian</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;stemming&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -2601,7 +2683,8 @@
 </div>
 </section>
 <section id="tfidf">
-<h2><strong>TFIDF</strong><a class="headerlink" href="#tfidf" title="Link to this heading">#</a></h2>
+<h3><strong>TFIDF</strong><a class="headerlink" href="#tfidf" title="Link to this heading">#</a></h3>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) adalah metode yang digunakan untuk menentukan seberapa penting sebuah kata dalam suatu dokumen dibandingkan dengan dokumen-dokumen lainnya. Metode ini menggabungkan dua hal: Term Frequency (TF), yaitu seberapa sering kata muncul di dalam sebuah dokumen, dan **Inverse Document Frequency (IDF), yang menunjukkan seberapa jarang kata tersebut muncul di seluruh kumpulan dokumen. Dengan begitu, kata yang sering muncul di dokumen tetapi jarang ada di dokumen lain dianggap lebih penting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TF-IDF vectorizer</span>
@@ -2617,7 +2700,39 @@
 </div>
 </section>
 <section id="svd">
-<h2><strong>SVD</strong><a class="headerlink" href="#svd" title="Link to this heading">#</a></h2>
+<h3><strong>SVD</strong><a class="headerlink" href="#svd" title="Link to this heading">#</a></h3>
+<section id="singular-value-decomposition-svd">
+<h4><strong>Singular Value Decomposition (SVD)</strong><a class="headerlink" href="#singular-value-decomposition-svd" title="Link to this heading">#</a></h4>
+<p>SVD adalah teknik matematika yang digunakan untuk memecah atau mendekomposisi sebuah matriks menjadi tiga matriks lain. Matriks-matriks ini dapat membantu kita memahami struktur data atau memproses data lebih lanjut, seperti dalam reduksi dimensi, pengolahan gambar, atau sistem rekomendasi.</p>
+<section id="komponen-svd">
+<h5><strong>Komponen SVD</strong><a class="headerlink" href="#komponen-svd" title="Link to this heading">#</a></h5>
+<p>Jika kita memiliki sebuah matriks <strong>A</strong> dengan ukuran ( m \times n ), SVD mendekomposisinya menjadi tiga matriks berikut:</p>
+<p>[
+A = U \Sigma V^T
+]</p>
+<ol class="arabic simple">
+<li><p><strong>Matriks ( U ):</strong></p>
+<ul class="simple">
+<li><p>Ukuran ( m \times m ).</p></li>
+<li><p>Berisi vektor-vektor ortogonal yang dikenal sebagai <em>left singular vectors</em>.</p></li>
+<li><p>Merepresentasikan pola pada baris matriks ( A ).</p></li>
+</ul>
+</li>
+<li><p><strong>Matriks ( \Sigma ):</strong></p>
+<ul class="simple">
+<li><p>Ukuran ( m \times n ).</p></li>
+<li><p>Matriks diagonal yang berisi <em>singular values</em> dalam urutan menurun.</p></li>
+<li><p>Nilai-nilai ini menggambarkan kontribusi atau kekuatan masing-masing dimensi.</p></li>
+</ul>
+</li>
+<li><p><strong>Matriks ( V^T ):</strong></p>
+<ul class="simple">
+<li><p>Ukuran ( n \times n ).</p></li>
+<li><p>Berisi vektor-vektor ortogonal yang dikenal sebagai <em>right singular vectors</em>.</p></li>
+<li><p>Merepresentasikan pola pada kolom matriks ( A ).</p></li>
+</ul>
+</li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dimensi untuk SVD</span>
@@ -2678,8 +2793,10 @@ Akurasi model dengan 95 dimensi: 100.00%
 </div>
 </div>
 </section>
+</section>
+</section>
 <section id="implementasi-user">
-<h2><strong>Implementasi User</strong><a class="headerlink" href="#implementasi-user" title="Link to this heading">#</a></h2>
+<h3><strong>Implementasi User</strong><a class="headerlink" href="#implementasi-user" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_input</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -2751,12 +2868,13 @@ Kategori berita: Politik
 </div>
 </section>
 <section id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<h3>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h3>
 </section>
 <section id="hugging-face">
-<h2>Hugging Face :<a class="headerlink" href="#hugging-face" title="Link to this heading">#</a></h2>
+<h3>Hugging Face :<a class="headerlink" href="#hugging-face" title="Link to this heading">#</a></h3>
 <p><strong>TERDAPAT PADA TAB-MENU KLASIFIKASI DENGAN SVD</strong></p>
 <p><a class="reference external" href="https://jennamacwe-news-ppw.hf.space">https://jennamacwe-news-ppw.hf.space</a></p>
+</section>
 </section>
 </section>
 
@@ -2816,24 +2934,29 @@ Kategori berita: Politik
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Dataset</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset"><strong>Dataset</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing"><strong>Preprocessing</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoder"><strong>Label Encoder</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning"><strong>Cleaning</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-folding"><strong>Case Folding</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize"><strong>Tokenize</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop-word-removal"><strong>Stop Word Removal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming"><strong>Stemming</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data"><strong>Split Data</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tfidf"><strong>TFIDF</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svd"><strong>SVD</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition-svd"><strong>Singular Value Decomposition (SVD)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-svd"><strong>Komponen SVD</strong></a></li>
 </ul>
 </li>
 </ul>
-
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-user"><strong>Implementasi User</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment">Deployment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hugging-face">Hugging Face :</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
